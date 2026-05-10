@@ -7,6 +7,7 @@ from pathlib import Path
 
 VALIDATORS = [
     "validate_content.py",
+    "validate_content_contracts.py",
     "validate_links.py",
     "validate_seo.py",
     "validate_sources.py",
