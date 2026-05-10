@@ -1,0 +1,23 @@
+name: Sovereign Quality Gate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  quality-gate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Validates the sovereign foundation state and future publication controls.
+      # This job does not build, deploy, upload artifacts, or modify public website output.
+      - name: Run sovereign quality gate
+        run: python site/scripts/quality_gate.py
