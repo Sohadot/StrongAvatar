@@ -78,3 +78,15 @@ Implications:
 - No website construction was performed.
 - No CSS, templates, public pages, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, build scripts, sitemap scripts, robots scripts, or generated output were created.
 - Future repository changes must pass the quality gate before they are considered safe.
+
+Decision: Sprint 6 guarded build-engine skeleton created.
+
+Rationale: StrongAvatar.com requires build, sitemap, and robots generation entry points before future construction, but these entry points must remain non-generative while public publishing is disabled.
+
+Implications:
+
+- `build.py`, `generate_sitemap.py`, and `generate_robots.py` now exist as executable guarded skeletons.
+- Public publishing remains disabled.
+- No website construction was performed.
+- No `index.html`, `sitemap.xml`, `robots.txt`, CSS, templates, public pages, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, or generated output were created.
+- Future publishing must explicitly replace the guarded no-op behavior through an approved decision and quality-gated implementation.
