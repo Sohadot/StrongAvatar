@@ -148,3 +148,18 @@ Implications:
 - No website construction was performed.
 - No public pages, final content articles, CSS, templates, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
 - Future public content must comply with source and claim discipline before publication.
+
+Decision: Sprint 9 template contracts created.
+
+Rationale: StrongAvatar.com requires internal template contracts before HTML template construction so future layouts preserve doctrine, SEO discipline, trust elements, buyer logic, accessibility, and monetization boundaries.
+
+Implications:
+
+- Planned templates now have internal construction contracts.
+- Template registry is machine-readable and non-public.
+- No actual HTML templates were created.
+- Public publishing remains disabled.
+- All foundation pages remain non-indexable and unpublished.
+- No website construction was performed.
+- No public pages, final content articles, CSS, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
+- Future HTML templates must follow template contracts and pass the quality gate.
