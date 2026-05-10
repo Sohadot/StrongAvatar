@@ -117,3 +117,17 @@ Implications:
 - No website construction was performed.
 - No public pages, final content articles, CSS, templates, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
 - Future public content must follow validated content contracts and pass the quality gate.
+
+Decision: Sprint 7.6 CI alignment repair completed.
+
+Rationale: GitHub Actions correctly identified validator mismatches in source governance and content contract boundary wording that required narrow repair before further construction.
+
+Implications:
+
+- Company claims are explicitly governed by the source policy.
+- Content contracts now explicitly reject generic blog posts, avatar generator landing pages, affiliate pages, fandom pages, and thin SEO pages.
+- Public publishing remains disabled.
+- All foundation pages remain non-indexable and unpublished.
+- No website construction was performed.
+- No public pages, final content articles, CSS, templates, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
+- GitHub Actions must pass before Sprint 8 begins.

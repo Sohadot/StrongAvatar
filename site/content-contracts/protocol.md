@@ -44,7 +44,7 @@ Final content may require technical_documentation, platform_documentation, acade
 
 ## Content Boundaries
 
-The page must not become a generic AI explainer, avatar maker page, unsourced compliance page, affiliate page, or thin SEO glossary substitute.
+The page must not become a generic blog post, avatar generator landing page, affiliate page, fandom page, thin SEO page, generic AI explainer, avatar maker page, or unsourced compliance page.
 
 ## Reference-Grade Requirements
 

@@ -44,7 +44,7 @@ Final content may require market_research, company_primary_source, platform_docu
 
 ## Content Boundaries
 
-The page must not become a sales page, valuation page, domain listing, affiliate page, generic startup pitch, or thin SEO page.
+The page must not become a generic blog post, avatar generator landing page, affiliate page, fandom page, thin SEO page, sales page, valuation page, domain listing, or generic startup pitch.
 
 ## Reference-Grade Requirements
 

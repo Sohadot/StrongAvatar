@@ -44,7 +44,7 @@ Final public content may require market_research, platform_documentation, techni
 
 ## Content Boundaries
 
-The page must not become an avatar generator landing page, generic blog post, affiliate page, fandom page, legal advice page, hype-heavy startup page, or thin SEO page.
+The page must not become a generic blog post, avatar generator landing page, affiliate page, fandom page, thin SEO page, legal advice page, or hype-heavy startup page.
 
 ## Reference-Grade Requirements
 

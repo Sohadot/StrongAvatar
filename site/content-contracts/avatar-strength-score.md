@@ -43,7 +43,7 @@ Final content may require technical_documentation, academic, platform_documentat
 
 ## Content Boundaries
 
-The page must not become an automated score tool, fake certification, thin tool page, affiliate funnel, or unsupported compliance claim.
+The page must not become a generic blog post, avatar generator landing page, affiliate page, fandom page, thin SEO page, automated score tool, fake certification, thin tool page, affiliate funnel, or unsupported compliance claim.
 
 ## Reference-Grade Requirements
 

@@ -15,9 +15,21 @@ def main() -> None:
     if registry.get("external_source_claims_active") is not False:
         errors.append("external_source_claims_active must be false")
     rule = str(registry.get("rule", "")).lower()
+    claim_governance = registry.get("claim_governance")
+    if not isinstance(claim_governance, dict):
+        errors.append("source_registry.json must contain a claim_governance object")
+        claim_governance = {}
     for term in GOVERNED_CLAIM_TERMS:
         if term not in rule:
             errors.append(f"source policy rule must govern {term} claims")
+        policy = claim_governance.get(term)
+        if not isinstance(policy, dict):
+            errors.append(f"claim_governance missing policy for {term} claims")
+            continue
+        if policy.get("citation_required") is not True:
+            errors.append(f"{term} claims must require citations")
+        if policy.get("public_claim_gate") != "required":
+            errors.append(f"{term} claims must have public_claim_gate required")
 
     source_types = registry.get("source_types")
     if not isinstance(source_types, list) or not source_types:

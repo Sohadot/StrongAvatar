@@ -44,7 +44,7 @@ Final content may require regulatory, legal_analysis, platform_documentation, ac
 
 ## Content Boundaries
 
-The page must not become legal advice, a celebrity likeness article, fandom content, generic blog content, affiliate content, or a thin SEO page.
+The page must not become a generic blog post, avatar generator landing page, affiliate page, fandom page, thin SEO page, legal advice, a celebrity likeness article, fandom content, or affiliate content.
 
 ## Reference-Grade Requirements
 

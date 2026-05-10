@@ -1,7 +1,33 @@
 {
   "registry_status": "reserved",
   "external_source_claims_active": false,
-  "rule": "Sources are required for factual, legal, technical, comparative, regulatory, market, or platform claims before publication.",
+  "rule": "Sources are required for factual, legal, regulatory, market, technical, comparative, company, or platform claims before publication.",
+  "claim_governance": {
+    "legal": {
+      "citation_required": true,
+      "public_claim_gate": "required"
+    },
+    "regulatory": {
+      "citation_required": true,
+      "public_claim_gate": "required"
+    },
+    "market": {
+      "citation_required": true,
+      "public_claim_gate": "required"
+    },
+    "technical": {
+      "citation_required": true,
+      "public_claim_gate": "required"
+    },
+    "comparative": {
+      "citation_required": true,
+      "public_claim_gate": "required"
+    },
+    "company": {
+      "citation_required": true,
+      "public_claim_gate": "required"
+    }
+  },
   "source_types": [
     {
       "type": "regulatory",

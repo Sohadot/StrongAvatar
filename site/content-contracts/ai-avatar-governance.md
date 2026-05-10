@@ -44,7 +44,7 @@ Final content may require regulatory, legal_analysis, platform_documentation, te
 
 ## Content Boundaries
 
-The page must not become legal advice, a generic AI blog post, an affiliate roundup, a policy panic article, or a thin SEO page.
+The page must not become a generic blog post, avatar generator landing page, affiliate page, fandom page, thin SEO page, legal advice, a generic AI blog post, an affiliate roundup, or a policy panic article.
 
 ## Reference-Grade Requirements
 

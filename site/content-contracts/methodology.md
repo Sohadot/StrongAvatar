@@ -44,7 +44,7 @@ Final content may require academic, technical_documentation, regulatory, legal_a
 
 ## Content Boundaries
 
-The page must not become a vague principles page, sales page, legal advice page, affiliate page, or thin SEO page.
+The page must not become a generic blog post, avatar generator landing page, affiliate page, fandom page, thin SEO page, vague principles page, sales page, or legal advice page.
 
 ## Reference-Grade Requirements
 

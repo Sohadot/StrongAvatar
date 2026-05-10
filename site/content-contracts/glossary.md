@@ -43,7 +43,7 @@ Final definitions may require academic, technical_documentation, platform_docume
 
 ## Content Boundaries
 
-The page must not become a mass glossary, thin SEO page collection, scraped definition page, generic AI dictionary, affiliate page, or fandom page.
+The page must not become a generic blog post, avatar generator landing page, affiliate page, fandom page, thin SEO page, mass glossary, thin SEO page collection, scraped definition page, or generic AI dictionary.
 
 ## Reference-Grade Requirements
 

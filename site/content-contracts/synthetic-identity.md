@@ -44,7 +44,7 @@ Final content may require technical_documentation, academic, regulatory, platfor
 
 ## Content Boundaries
 
-The page must not become a generic identity article, cybercrime explainer, avatar generator page, affiliate page, or thin SEO page.
+The page must not become a generic blog post, avatar generator landing page, affiliate page, fandom page, thin SEO page, generic identity article, cybercrime explainer, or avatar generator page.
 
 ## Reference-Grade Requirements
 
