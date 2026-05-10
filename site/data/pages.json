@@ -23,7 +23,9 @@
       ],
       "source_requirement": "methodology and market claims require sources before publication",
       "quality_status": "not_reviewed",
-      "notes": "Reserved homepage record only; no content file or public page exists."
+      "notes": "Reserved homepage record only; no content file or public page exists.",
+      "content_contract": "site/content-contracts/home.md",
+      "content_contract_status": "created"
     },
     {
       "slug": "/protocol/",
@@ -43,7 +45,9 @@
       ],
       "source_requirement": "protocol claims require internal methodology and external sources where factual",
       "quality_status": "not_reviewed",
-      "notes": "No public protocol page is authorized."
+      "notes": "No public protocol page is authorized.",
+      "content_contract": "site/content-contracts/protocol.md",
+      "content_contract_status": "created"
     },
     {
       "slug": "/avatar-strength-score/",
@@ -62,7 +66,9 @@
       ],
       "source_requirement": "scoring methodology must be documented before publication",
       "quality_status": "not_reviewed",
-      "notes": "No tool, score calculator, or assessment page exists."
+      "notes": "No tool, score calculator, or assessment page exists.",
+      "content_contract": "site/content-contracts/avatar-strength-score.md",
+      "content_contract_status": "created"
     },
     {
       "slug": "/digital-likeness/",
@@ -82,7 +88,9 @@
       ],
       "source_requirement": "legal, regulatory, and platform claims require sources",
       "quality_status": "not_reviewed",
-      "notes": "Reserved only; no content file exists."
+      "notes": "Reserved only; no content file exists.",
+      "content_contract": "site/content-contracts/digital-likeness.md",
+      "content_contract_status": "created"
     },
     {
       "slug": "/synthetic-identity/",
@@ -102,7 +110,9 @@
       ],
       "source_requirement": "identity, security, and trust claims require sources",
       "quality_status": "not_reviewed",
-      "notes": "Reserved only; no content file exists."
+      "notes": "Reserved only; no content file exists.",
+      "content_contract": "site/content-contracts/synthetic-identity.md",
+      "content_contract_status": "created"
     },
     {
       "slug": "/ai-avatar-governance/",
@@ -122,7 +132,9 @@
       ],
       "source_requirement": "governance, compliance, and platform claims require sources",
       "quality_status": "not_reviewed",
-      "notes": "Reserved only; no content file exists."
+      "notes": "Reserved only; no content file exists.",
+      "content_contract": "site/content-contracts/ai-avatar-governance.md",
+      "content_contract_status": "created"
     },
     {
       "slug": "/methodology/",
@@ -142,7 +154,9 @@
       ],
       "source_requirement": "methodology must distinguish internal doctrine from external evidence",
       "quality_status": "not_reviewed",
-      "notes": "Reserved only; no methodology page exists."
+      "notes": "Reserved only; no methodology page exists.",
+      "content_contract": "site/content-contracts/methodology.md",
+      "content_contract_status": "created"
     },
     {
       "slug": "/glossary/",
@@ -161,7 +175,9 @@
       ],
       "source_requirement": "definitions must be original, non-thin, and sourced where factual",
       "quality_status": "not_reviewed",
-      "notes": "No glossary pages are published or indexable."
+      "notes": "No glossary pages are published or indexable.",
+      "content_contract": "site/content-contracts/glossary.md",
+      "content_contract_status": "created"
     },
     {
       "slug": "/strategic-asset/",
@@ -181,7 +197,9 @@
       ],
       "source_requirement": "no valuation, traffic, or revenue claims without evidence",
       "quality_status": "not_reviewed",
-      "notes": "Reserved only; no public acquisition or sales page exists."
+      "notes": "Reserved only; no public acquisition or sales page exists.",
+      "content_contract": "site/content-contracts/strategic-asset.md",
+      "content_contract_status": "created"
     }
   ]
 }

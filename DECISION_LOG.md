@@ -90,3 +90,16 @@ Implications:
 - No website construction was performed.
 - No `index.html`, `sitemap.xml`, `robots.txt`, CSS, templates, public pages, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, or generated output were created.
 - Future publishing must explicitly replace the guarded no-op behavior through an approved decision and quality-gated implementation.
+
+Decision: Sprint 7 foundation content contracts created.
+
+Rationale: StrongAvatar.com requires page-level editorial contracts before any public content drafting, template construction, indexing, or monetization activation.
+
+Implications:
+
+- Foundation pages now have internal content contracts defining strategic purpose, SEO role, buyer logic role, monetization boundaries, source requirements, internal link requirements, indexing conditions, and prohibited directions.
+- Public publishing remains disabled.
+- All foundation pages remain non-indexable and unpublished.
+- No website construction was performed.
+- No public pages, final content articles, CSS, templates, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
+- Future public content must follow the content contracts and pass the quality gate.
