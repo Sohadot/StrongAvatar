@@ -1,26 +1,34 @@
 # Foundation Doctrine
 
-StrongAvatar.com is built on the premise that digital representation is becoming a governed trust surface, not a decorative media output.
+StrongAvatar.com is the global reference layer for avatar strength, synthetic likeness governance, and digital identity trust.
 
 A weak avatar is generated. A strong avatar is governed.
 
-## Doctrine
+## Core Doctrine
 
-An avatar becomes strong when its creation, use, consent basis, identity relationship, risk boundary, and representational context are legible.
+Digital representation is becoming an identity-bearing trust surface. The strategic question is no longer whether an avatar can be generated, but whether it can be governed, attributed, constrained, verified, and trusted in context.
 
-The Avatar Strength Protocol is the organizing concept for this asset. It treats avatar quality as a governance problem: who or what is represented, under what authority, in which environment, with what safeguards, and with what durable trust signals.
+The Avatar Strength Protocol is the core conceptual frame of StrongAvatar.com. It evaluates avatar strength through governance signals: authority, consent, likeness boundaries, representational context, disclosure, integrity, accountability, and institutional fitness.
 
-## Asset Position
+## Strategic Category
 
-StrongAvatar.com must earn reference authority through precise definitions, controlled topic architecture, original synthesis, credible sourcing, and disciplined publishing.
+StrongAvatar.com operates at the intersection of Digital Identity, Synthetic Likeness, and AI Avatars.
 
-The asset must avoid hype cycles, generic AI content, entertainment-first positioning, thin comparison pages, and ungoverned monetization.
+Its expansion perimeter includes Digital Humans, AI Interfaces, Spatial Computing, Creator Identity, Brand Representation, Virtual Personas, Synthetic Media Trust, and Likeness Governance.
 
-## Non-Negotiables
+## Market Posture
 
-- English is the public operating language.
+The asset is global and English-language. Arabic is only an owner-operator working language and must not appear in public-facing content, SEO strategy, buyer-facing positioning, or asset doctrine except where this internal distinction must be documented.
+
+## Mandatory Exclusions
+
+StrongAvatar.com must not be treated as a generic AI avatar generator, a low-quality avatar maker, a generic AI blog, an affiliate shell, a mass SEO page factory, a fandom site, an Arabic-language content site, or a trend-chasing avatar design blog.
+
+## Operating Principles
+
 - Doctrine precedes design.
 - Registration precedes publication.
 - Quality gates precede indexing.
-- Buyer logic informs monetization but never corrupts reference integrity.
-- Acquisition readiness is built through governance, not cosmetic scale.
+- Reference authority precedes monetization.
+- Buyer logic informs strategy but does not override trust.
+- Acquisition readiness is built through governance, not inflated surface area.

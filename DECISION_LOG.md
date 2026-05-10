@@ -15,3 +15,18 @@ Implications:
 - Monetization scripts, affiliate links, CSS, placeholder content, and thin SEO pages are excluded from the foundation.
 
 Decision: Reserved empty directories are preserved with .gitkeep files so the sovereign repository structure remains visible and stable before public site construction.
+
+Decision: Sprint 2 doctrine layer deepened.
+
+Rationale: StrongAvatar.com requires a stronger institutional doctrine layer before any public site construction, publishing system, SEO expansion, or monetization activity.
+
+Implications:
+
+- The Avatar Strength Protocol is confirmed as the core conceptual frame.
+- StrongAvatar.com remains positioned as the global reference layer for avatar strength, synthetic likeness governance, and digital identity trust.
+- The asset's strategic category is Digital Identity x Synthetic Likeness x AI Avatars.
+- The English-only global market posture is confirmed.
+- Arabic remains only an owner-operator working language and is excluded from public-facing content, SEO strategy, buyer-facing positioning, and asset doctrine except where this internal distinction must be documented.
+- Public publishing remains disabled.
+- Monetization remains principle-only and non-active.
+- No website construction, public pages, CSS, templates, publishing enablement, monetization scripts, affiliate links, placeholder content, or thin SEO pages were created.
