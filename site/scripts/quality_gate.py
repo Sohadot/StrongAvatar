@@ -11,6 +11,7 @@ VALIDATORS = [
     "validate_links.py",
     "validate_seo.py",
     "validate_sources.py",
+    "validate_claim_discipline.py",
     "validate_monetization.py",
     "validate_buyer_logic.py",
     "validate_no_thin_pages.py",

@@ -131,3 +131,20 @@ Implications:
 - No website construction was performed.
 - No public pages, final content articles, CSS, templates, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
 - GitHub Actions must pass before Sprint 8 begins.
+
+Decision: Sprint 8 source and claim discipline layer created.
+
+Rationale: StrongAvatar.com requires formal claim classification and source discipline before any public content drafting, indexing, monetization activation, or acquisition-facing publication.
+
+Implications:
+
+- Claim types are now registry-controlled.
+- Conceptual analysis is separated from factual, legal, regulatory, market, technical, comparative, company, platform, risk, monetization, and acquisition claims.
+- Source requirements are machine-readable and validated by the quality gate.
+- Legal and regulatory claims require source support and disclaimer discipline.
+- Company claims remain explicitly source-governed.
+- Public publishing remains disabled.
+- All foundation pages remain non-indexable and unpublished.
+- No website construction was performed.
+- No public pages, final content articles, CSS, templates, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
+- Future public content must comply with source and claim discipline before publication.

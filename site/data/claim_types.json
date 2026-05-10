@@ -1,0 +1,232 @@
+{
+  "registry_status": "reserved",
+  "public_claims_enabled": false,
+  "claim_types": [
+    {
+      "claim_type": "conceptual_analysis",
+      "status": "governed",
+      "public_enabled": false,
+      "description": "Original strategic or conceptual framing used to explain avatar strength, governed representation, or the Avatar Strength Protocol.",
+      "source_required": false,
+      "allowed_source_types": [],
+      "disclaimer_required": false,
+      "prohibited_without_source": [
+        "presenting analysis as factual proof",
+        "claiming external validation without evidence"
+      ],
+      "notes": "Must be clearly framed as analysis and not as factual proof."
+    },
+    {
+      "claim_type": "definition_claim",
+      "status": "governed",
+      "public_enabled": false,
+      "description": "A controlled definition of a term used in the StrongAvatar.com reference system.",
+      "source_required": false,
+      "allowed_source_types": [
+        "academic",
+        "technical_documentation",
+        "platform_documentation"
+      ],
+      "disclaimer_required": false,
+      "prohibited_without_source": [
+        "claiming legal, regulatory, market, or technical authority inside a definition"
+      ],
+      "notes": "Original definitions may be used, but factual claims inside definitions must follow their claim type."
+    },
+    {
+      "claim_type": "legal_claim",
+      "status": "governed",
+      "public_enabled": false,
+      "description": "A claim about legal rights, obligations, liability, likeness rights, consent, ownership, or legal interpretation.",
+      "source_required": true,
+      "allowed_source_types": [
+        "regulatory",
+        "legal_analysis",
+        "company_primary_source"
+      ],
+      "disclaimer_required": true,
+      "prohibited_without_source": [
+        "legal advice",
+        "compliance certainty",
+        "rights conclusions"
+      ],
+      "notes": "Must include reference-only / not legal advice discipline."
+    },
+    {
+      "claim_type": "regulatory_claim",
+      "status": "governed",
+      "public_enabled": false,
+      "description": "A claim about regulation, official guidance, enforcement, policy, or formal regulatory requirements.",
+      "source_required": true,
+      "allowed_source_types": [
+        "regulatory",
+        "legal_analysis",
+        "platform_documentation"
+      ],
+      "disclaimer_required": true,
+      "prohibited_without_source": [
+        "regulatory certainty",
+        "unsupported enforcement claims"
+      ],
+      "notes": "Must use high-trust official or legal-analysis sources."
+    },
+    {
+      "claim_type": "market_claim",
+      "status": "governed",
+      "public_enabled": false,
+      "description": "A claim about market size, growth, adoption, pricing, traffic, buyer behavior, or category movement.",
+      "source_required": true,
+      "allowed_source_types": [
+        "market_research",
+        "company_primary_source",
+        "academic"
+      ],
+      "disclaimer_required": false,
+      "prohibited_without_source": [
+        "market-size claims",
+        "growth claims",
+        "pricing claims",
+        "traffic claims"
+      ],
+      "notes": "May be framed as strategic analysis only when evidence is not asserted as fact."
+    },
+    {
+      "claim_type": "technical_claim",
+      "status": "governed",
+      "public_enabled": false,
+      "description": "A claim about systems, standards, interoperability, security, APIs, model behavior, or technical capability.",
+      "source_required": true,
+      "allowed_source_types": [
+        "technical_documentation",
+        "platform_documentation",
+        "academic",
+        "company_primary_source"
+      ],
+      "disclaimer_required": false,
+      "prohibited_without_source": [
+        "unsupported capability claims",
+        "security claims",
+        "interoperability claims"
+      ],
+      "notes": "Must distinguish observed capability from implementation assumption."
+    },
+    {
+      "claim_type": "platform_capability_claim",
+      "status": "governed",
+      "public_enabled": false,
+      "description": "A claim about what a platform, API, product, avatar system, or identity system can do.",
+      "source_required": true,
+      "allowed_source_types": [
+        "platform_documentation",
+        "technical_documentation",
+        "company_primary_source"
+      ],
+      "disclaimer_required": false,
+      "prohibited_without_source": [
+        "feature claims",
+        "API claims",
+        "platform policy claims"
+      ],
+      "notes": "Prefer platform documentation or company primary sources."
+    },
+    {
+      "claim_type": "company_claim",
+      "status": "governed",
+      "public_enabled": false,
+      "description": "A claim about a company, product, policy, pricing, feature, disclosure, or official positioning.",
+      "source_required": true,
+      "allowed_source_types": [
+        "company_primary_source",
+        "platform_documentation",
+        "market_research"
+      ],
+      "disclaimer_required": false,
+      "prohibited_without_source": [
+        "company behavior claims",
+        "product claims",
+        "pricing claims",
+        "policy claims"
+      ],
+      "notes": "Use company primary sources or trusted platform documentation where possible."
+    },
+    {
+      "claim_type": "comparative_claim",
+      "status": "governed",
+      "public_enabled": false,
+      "description": "A claim comparing tools, platforms, frameworks, policies, capabilities, or governance approaches.",
+      "source_required": true,
+      "allowed_source_types": [
+        "company_primary_source",
+        "platform_documentation",
+        "technical_documentation",
+        "market_research"
+      ],
+      "disclaimer_required": false,
+      "prohibited_without_source": [
+        "unsupported rankings",
+        "best claims",
+        "affiliate-style comparisons"
+      ],
+      "notes": "Must be balanced, specific, and source-aware."
+    },
+    {
+      "claim_type": "risk_claim",
+      "status": "governed",
+      "public_enabled": false,
+      "description": "A claim about misuse, harm, impersonation, deepfake risk, abuse resistance, fraud, security, or trust failure.",
+      "source_required": true,
+      "allowed_source_types": [
+        "academic",
+        "technical_documentation",
+        "regulatory",
+        "legal_analysis",
+        "platform_documentation"
+      ],
+      "disclaimer_required": false,
+      "prohibited_without_source": [
+        "harm claims",
+        "fraud claims",
+        "security claims"
+      ],
+      "notes": "May use explicit analysis framing only when not asserting factual incidence, prevalence, or legal consequence."
+    },
+    {
+      "claim_type": "monetization_claim",
+      "status": "governed",
+      "public_enabled": false,
+      "description": "A claim about revenue, paid products, sponsorship, directories, audits, briefs, or commercial activation.",
+      "source_required": true,
+      "allowed_source_types": [
+        "market_research",
+        "company_primary_source"
+      ],
+      "disclaimer_required": false,
+      "prohibited_without_source": [
+        "revenue claims",
+        "conversion claims",
+        "pricing claims"
+      ],
+      "notes": "Must be supported or framed as internal strategy; monetization remains inactive."
+    },
+    {
+      "claim_type": "acquisition_claim",
+      "status": "governed",
+      "public_enabled": false,
+      "description": "A claim about acquisition readiness, buyer interest, valuation, strategic fit, or exit potential.",
+      "source_required": true,
+      "allowed_source_types": [
+        "market_research",
+        "company_primary_source",
+        "legal_analysis"
+      ],
+      "disclaimer_required": false,
+      "prohibited_without_source": [
+        "valuation promises",
+        "buyer certainty",
+        "traffic claims",
+        "revenue claims"
+      ],
+      "notes": "Must not make valuation promises and must be framed as strategic posture unless sourced."
+    }
+  ]
+}
