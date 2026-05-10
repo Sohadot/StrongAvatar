@@ -1,0 +1,25 @@
+{
+  "status": "strategic_mapping",
+  "segments": [
+    {
+      "id": "identity_trust_platforms",
+      "name": "Identity and Trust Platforms",
+      "logic": "May value category authority around governed digital representation."
+    },
+    {
+      "id": "synthetic_media_governance",
+      "name": "Synthetic Media Governance Companies",
+      "logic": "May value protocol language for likeness, consent, and representational risk."
+    },
+    {
+      "id": "enterprise_avatar_systems",
+      "name": "Enterprise Avatar Systems",
+      "logic": "May value trust frameworks for workplace, customer, or agentic representation."
+    },
+    {
+      "id": "brand_safety_and_compliance",
+      "name": "Brand Safety and Compliance Organizations",
+      "logic": "May value governed standards for avatar use, disclosure, and accountability."
+    }
+  ]
+}

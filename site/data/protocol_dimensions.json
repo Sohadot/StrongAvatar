@@ -1,0 +1,31 @@
+{
+  "status": "conceptual_foundation",
+  "protocol": "Avatar Strength Protocol",
+  "dimensions": [
+    {
+      "id": "authority",
+      "name": "Authority",
+      "description": "The basis on which a digital representation is allowed to exist and act."
+    },
+    {
+      "id": "consent",
+      "name": "Consent",
+      "description": "The permission and boundaries governing likeness, identity, or representational use."
+    },
+    {
+      "id": "context",
+      "name": "Context",
+      "description": "The environment in which an avatar is presented, interpreted, or relied upon."
+    },
+    {
+      "id": "integrity",
+      "name": "Integrity",
+      "description": "The durability, accuracy, and tamper resistance of representational signals."
+    },
+    {
+      "id": "accountability",
+      "name": "Accountability",
+      "description": "The ability to assign responsibility for creation, deployment, disclosure, and misuse."
+    }
+  ]
+}

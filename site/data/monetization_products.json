@@ -1,0 +1,27 @@
+{
+  "status": "principles_only",
+  "monetizationAuthorized": false,
+  "products": [
+    {
+      "id": "governance_briefs",
+      "name": "Governance Briefs",
+      "status": "future_candidate"
+    },
+    {
+      "id": "institutional_reports",
+      "name": "Institutional Reports",
+      "status": "future_candidate"
+    },
+    {
+      "id": "assessment_tools",
+      "name": "Assessment Tools",
+      "status": "future_candidate"
+    }
+  ],
+  "prohibited": [
+    "generic avatar generator referrals",
+    "unapproved affiliate links",
+    "low-quality ads",
+    "thin SEO monetization pages"
+  ]
+}

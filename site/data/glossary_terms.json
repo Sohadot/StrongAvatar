@@ -1,0 +1,11 @@
+{
+  "status": "registry_reserved",
+  "terms": [
+    {
+      "term": "Avatar Strength Protocol",
+      "status": "core_concept",
+      "publicDefinitionAuthorized": false,
+      "governanceNote": "The organizing concept for evaluating governed digital representation."
+    }
+  ]
+}
