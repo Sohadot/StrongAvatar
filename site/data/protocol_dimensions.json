@@ -1,31 +1,79 @@
 {
-  "status": "conceptual_foundation",
-  "protocol": "Avatar Strength Protocol",
+  "registry_status": "reserved",
+  "protocol": "The Avatar Strength Protocol",
+  "public_protocol_enabled": false,
   "dimensions": [
     {
-      "id": "authority",
-      "name": "Authority",
-      "description": "The basis on which a digital representation is allowed to exist and act."
+      "name": "Identity Integrity",
+      "status": "planned",
+      "public_enabled": false,
+      "purpose": "Assess whether the avatar's identity relationship is coherent, attributable, and not misleading.",
+      "scoring_status": "reserved",
+      "source_requirement": "identity and verification claims require sources"
     },
     {
-      "id": "consent",
-      "name": "Consent",
-      "description": "The permission and boundaries governing likeness, identity, or representational use."
+      "name": "Likeness Control",
+      "status": "planned",
+      "public_enabled": false,
+      "purpose": "Assess whether likeness use is governed by clear rights, boundaries, and representation controls.",
+      "scoring_status": "reserved",
+      "source_requirement": "likeness, legal, and platform claims require sources"
     },
     {
-      "id": "context",
-      "name": "Context",
-      "description": "The environment in which an avatar is presented, interpreted, or relied upon."
+      "name": "Consent Clarity",
+      "status": "planned",
+      "public_enabled": false,
+      "purpose": "Assess whether consent for creation, use, modification, and distribution is explicit and reviewable.",
+      "scoring_status": "reserved",
+      "source_requirement": "consent and compliance claims require sources"
     },
     {
-      "id": "integrity",
-      "name": "Integrity",
-      "description": "The durability, accuracy, and tamper resistance of representational signals."
+      "name": "Platform Portability",
+      "status": "planned",
+      "public_enabled": false,
+      "purpose": "Assess whether avatar identity and governance signals can move across platforms without losing trust.",
+      "scoring_status": "reserved",
+      "source_requirement": "technical and platform claims require sources"
     },
     {
-      "id": "accountability",
-      "name": "Accountability",
-      "description": "The ability to assign responsibility for creation, deployment, disclosure, and misuse."
+      "name": "Visual Authority",
+      "status": "planned",
+      "public_enabled": false,
+      "purpose": "Assess whether the avatar's visual presentation communicates legitimacy, context, and intended role.",
+      "scoring_status": "reserved",
+      "source_requirement": "design and brand representation claims require sources where factual"
+    },
+    {
+      "name": "Synthetic Trust",
+      "status": "planned",
+      "public_enabled": false,
+      "purpose": "Assess whether synthetic generation, modification, and disclosure practices support trust.",
+      "scoring_status": "reserved",
+      "source_requirement": "synthetic media and disclosure claims require sources"
+    },
+    {
+      "name": "Commercial Readiness",
+      "status": "planned",
+      "public_enabled": false,
+      "purpose": "Assess whether the avatar can support professional, brand, platform, or creator use without governance gaps.",
+      "scoring_status": "reserved",
+      "source_requirement": "commercial and buyer claims require sources"
+    },
+    {
+      "name": "Abuse Resistance",
+      "status": "planned",
+      "public_enabled": false,
+      "purpose": "Assess whether the avatar system anticipates impersonation, misuse, deepfake risk, and unauthorized replication.",
+      "scoring_status": "reserved",
+      "source_requirement": "security, abuse, and risk claims require sources"
+    },
+    {
+      "name": "Long-Term Narrative Coherence",
+      "status": "planned",
+      "public_enabled": false,
+      "purpose": "Assess whether the avatar remains consistent with identity, context, and representation over time.",
+      "scoring_status": "reserved",
+      "source_requirement": "methodology claims require internal documentation before publication"
     }
   ]
 }

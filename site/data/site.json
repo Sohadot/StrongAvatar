@@ -1,11 +1,33 @@
 {
-  "name": "StrongAvatar.com",
-  "publicLanguage": "en",
-  "assetType": "sovereign digital identity reference asset",
-  "coreThesis": "StrongAvatar.com is the global reference layer for avatar strength, synthetic likeness governance, and digital identity trust.",
-  "foundationalLine": "A weak avatar is generated. A strong avatar is governed.",
-  "coreConcept": "Avatar Strength Protocol",
-  "websiteStatus": "not_built",
-  "publicPublishingAuthorized": false,
-  "repositoryRule": "No public page may be published unless it is registered, purposeful, sourced where needed, internally linked, SEO-controlled, and quality-gated."
+  "asset_name": "StrongAvatar.com",
+  "domain": "https://strongavatar.com",
+  "market_language": "en",
+  "public_publishing_enabled": false,
+  "asset_stage": "sovereign_foundation",
+  "core_concept": "The Avatar Strength Protocol",
+  "foundational_line": "A weak avatar is generated. A strong avatar is governed.",
+  "thesis": "StrongAvatar.com is the global reference layer for avatar strength, synthetic likeness governance, and digital identity trust.",
+  "strategic_category": "Digital Identity × Synthetic Likeness × AI Avatars",
+  "expansion_categories": [
+    "Digital Humans",
+    "AI Interfaces",
+    "Spatial Computing",
+    "Creator Identity",
+    "Brand Representation",
+    "Virtual Personas",
+    "Synthetic Media Trust",
+    "Likeness Governance"
+  ],
+  "prohibited_directions": [
+    "generic AI avatar generator",
+    "low-quality avatar maker",
+    "generic AI blog",
+    "affiliate shell",
+    "mass SEO page factory",
+    "fandom site",
+    "Arabic-language content site",
+    "trend-chasing avatar design blog"
+  ],
+  "monetization_status": "principle_only_non_active",
+  "indexing_status": "disabled_until_quality_gate_exists"
 }

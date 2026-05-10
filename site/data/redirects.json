@@ -1,4 +1,14 @@
 {
-  "status": "reserved",
-  "redirects": []
+  "registry_status": "reserved",
+  "redirects_active": false,
+  "redirects": [],
+  "schema": {
+    "from": "source path beginning with /",
+    "to": "destination path beginning with / or approved absolute URL",
+    "status_code": "301 or 302",
+    "reason": "governance reason for redirect",
+    "active": false,
+    "review_status": "reserved"
+  },
+  "notes": "No active redirects exist. Redirects require registry approval, destination validation, and quality-gate review."
 }

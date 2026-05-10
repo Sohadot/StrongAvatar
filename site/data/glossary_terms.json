@@ -1,11 +1,86 @@
 {
-  "status": "registry_reserved",
+  "registry_status": "reserved",
+  "public_glossary_enabled": false,
   "terms": [
     {
-      "term": "Avatar Strength Protocol",
-      "status": "core_concept",
-      "publicDefinitionAuthorized": false,
-      "governanceNote": "The organizing concept for evaluating governed digital representation."
+      "term": "Avatar Strength",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "avatar strength",
+      "source_requirement": "internal doctrine plus external sources where factual claims are used"
+    },
+    {
+      "term": "Synthetic Likeness",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "synthetic likeness",
+      "source_requirement": "legal, platform, and governance claims require sources"
+    },
+    {
+      "term": "Digital Identity Trust",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "digital identity trust",
+      "source_requirement": "identity and trust claims require sources"
+    },
+    {
+      "term": "Governed Avatar",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "avatar governance",
+      "source_requirement": "internal doctrine plus external sources where factual claims are used"
+    },
+    {
+      "term": "Digital Human",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "digital humans",
+      "source_requirement": "technical and market claims require sources"
+    },
+    {
+      "term": "Synthetic Persona",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "synthetic identity",
+      "source_requirement": "identity, representation, and platform claims require sources"
+    },
+    {
+      "term": "Avatar Consent",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "avatar consent",
+      "source_requirement": "legal and governance claims require sources"
+    },
+    {
+      "term": "Avatar Disclosure",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "avatar disclosure",
+      "source_requirement": "regulatory, platform, and policy claims require sources"
+    },
+    {
+      "term": "Avatar Portability",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "avatar portability",
+      "source_requirement": "technical and platform claims require sources"
+    },
+    {
+      "term": "Likeness Governance",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "likeness governance",
+      "source_requirement": "legal, compliance, and governance claims require sources"
     }
   ]
 }

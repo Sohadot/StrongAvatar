@@ -1,6 +1,187 @@
 {
-  "status": "foundation_only",
-  "publicPublishingAuthorized": false,
-  "rule": "No public page may be published unless it is registered, purposeful, sourced where needed, internally linked, SEO-controlled, and quality-gated.",
-  "pages": []
+  "registry_status": "reserved",
+  "public_publishing_enabled": false,
+  "default_indexable": false,
+  "default_publication_allowed": false,
+  "rule": "No public page may be published unless it is registered, validated, internally linked, SEO-controlled, sourced where required, non-thin, non-placeholder, and quality-gated.",
+  "pages": [
+    {
+      "slug": "/",
+      "title": "StrongAvatar.com",
+      "status": "reserved",
+      "indexable": false,
+      "publication_allowed": false,
+      "template_planned": "homepage",
+      "strategic_purpose": "Introduce StrongAvatar.com as the reference layer for avatar strength, synthetic likeness governance, and digital identity trust.",
+      "seo_cluster": "avatar strength",
+      "buyer_logic_role": "category authority",
+      "monetization_role": "none_active",
+      "required_links": [
+        "/protocol/",
+        "/methodology/",
+        "/strategic-asset/"
+      ],
+      "source_requirement": "methodology and market claims require sources before publication",
+      "quality_status": "not_reviewed",
+      "notes": "Reserved homepage record only; no content file or public page exists."
+    },
+    {
+      "slug": "/protocol/",
+      "title": "The Avatar Strength Protocol",
+      "status": "planned",
+      "indexable": false,
+      "publication_allowed": false,
+      "template_planned": "protocol_overview",
+      "strategic_purpose": "Define the future protocol frame for evaluating governed avatar strength.",
+      "seo_cluster": "avatar governance",
+      "buyer_logic_role": "reference framework",
+      "monetization_role": "supports future audits and briefs without activating monetization",
+      "required_links": [
+        "/",
+        "/avatar-strength-score/",
+        "/methodology/"
+      ],
+      "source_requirement": "protocol claims require internal methodology and external sources where factual",
+      "quality_status": "not_reviewed",
+      "notes": "No public protocol page is authorized."
+    },
+    {
+      "slug": "/avatar-strength-score/",
+      "title": "Avatar Strength Score",
+      "status": "planned",
+      "indexable": false,
+      "publication_allowed": false,
+      "template_planned": "assessment_explainer",
+      "strategic_purpose": "Reserve a future assessment concept for governed avatar strength.",
+      "seo_cluster": "avatar strength",
+      "buyer_logic_role": "future assessment surface",
+      "monetization_role": "supports future manual Avatar Strength Audit only after approval",
+      "required_links": [
+        "/protocol/",
+        "/methodology/"
+      ],
+      "source_requirement": "scoring methodology must be documented before publication",
+      "quality_status": "not_reviewed",
+      "notes": "No tool, score calculator, or assessment page exists."
+    },
+    {
+      "slug": "/digital-likeness/",
+      "title": "Digital Likeness",
+      "status": "planned",
+      "indexable": false,
+      "publication_allowed": false,
+      "template_planned": "reference_page",
+      "strategic_purpose": "Reserve a future reference surface for synthetic likeness and digital representation governance.",
+      "seo_cluster": "synthetic likeness",
+      "buyer_logic_role": "likeness governance education",
+      "monetization_role": "none_active",
+      "required_links": [
+        "/protocol/",
+        "/ai-avatar-governance/",
+        "/glossary/"
+      ],
+      "source_requirement": "legal, regulatory, and platform claims require sources",
+      "quality_status": "not_reviewed",
+      "notes": "Reserved only; no content file exists."
+    },
+    {
+      "slug": "/synthetic-identity/",
+      "title": "Synthetic Identity",
+      "status": "planned",
+      "indexable": false,
+      "publication_allowed": false,
+      "template_planned": "reference_page",
+      "strategic_purpose": "Reserve a future page connecting synthetic representation to digital identity trust.",
+      "seo_cluster": "digital identity trust",
+      "buyer_logic_role": "identity trust positioning",
+      "monetization_role": "none_active",
+      "required_links": [
+        "/digital-likeness/",
+        "/protocol/",
+        "/methodology/"
+      ],
+      "source_requirement": "identity, security, and trust claims require sources",
+      "quality_status": "not_reviewed",
+      "notes": "Reserved only; no content file exists."
+    },
+    {
+      "slug": "/ai-avatar-governance/",
+      "title": "AI Avatar Governance",
+      "status": "planned",
+      "indexable": false,
+      "publication_allowed": false,
+      "template_planned": "governance_page",
+      "strategic_purpose": "Reserve a future governance page for AI avatar use, consent, disclosure, and risk boundaries.",
+      "seo_cluster": "avatar governance",
+      "buyer_logic_role": "platform and compliance relevance",
+      "monetization_role": "supports future governance briefs without activating monetization",
+      "required_links": [
+        "/protocol/",
+        "/digital-likeness/",
+        "/methodology/"
+      ],
+      "source_requirement": "governance, compliance, and platform claims require sources",
+      "quality_status": "not_reviewed",
+      "notes": "Reserved only; no content file exists."
+    },
+    {
+      "slug": "/methodology/",
+      "title": "Methodology",
+      "status": "planned",
+      "indexable": false,
+      "publication_allowed": false,
+      "template_planned": "methodology_page",
+      "strategic_purpose": "Reserve a future explanation of how StrongAvatar.com evaluates avatar strength and governance claims.",
+      "seo_cluster": "avatar strength methodology",
+      "buyer_logic_role": "trust and diligence support",
+      "monetization_role": "supports future audits and reports without activating monetization",
+      "required_links": [
+        "/protocol/",
+        "/avatar-strength-score/",
+        "/glossary/"
+      ],
+      "source_requirement": "methodology must distinguish internal doctrine from external evidence",
+      "quality_status": "not_reviewed",
+      "notes": "Reserved only; no methodology page exists."
+    },
+    {
+      "slug": "/glossary/",
+      "title": "Glossary",
+      "status": "planned",
+      "indexable": false,
+      "publication_allowed": false,
+      "template_planned": "glossary_index",
+      "strategic_purpose": "Reserve a controlled glossary index for governed terminology after definitions are approved.",
+      "seo_cluster": "avatar terminology",
+      "buyer_logic_role": "reference clarity",
+      "monetization_role": "none_active",
+      "required_links": [
+        "/protocol/",
+        "/methodology/"
+      ],
+      "source_requirement": "definitions must be original, non-thin, and sourced where factual",
+      "quality_status": "not_reviewed",
+      "notes": "No glossary pages are published or indexable."
+    },
+    {
+      "slug": "/strategic-asset/",
+      "title": "Strategic Asset",
+      "status": "planned",
+      "indexable": false,
+      "publication_allowed": false,
+      "template_planned": "strategic_asset_page",
+      "strategic_purpose": "Reserve a future institutional page explaining the asset posture without becoming a sales page.",
+      "seo_cluster": "digital identity asset",
+      "buyer_logic_role": "acquisition readiness context",
+      "monetization_role": "none_active",
+      "required_links": [
+        "/",
+        "/methodology/",
+        "/protocol/"
+      ],
+      "source_requirement": "no valuation, traffic, or revenue claims without evidence",
+      "quality_status": "not_reviewed",
+      "notes": "Reserved only; no public acquisition or sales page exists."
+    }
+  ]
 }

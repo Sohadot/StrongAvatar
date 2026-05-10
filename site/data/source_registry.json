@@ -1,5 +1,57 @@
 {
-  "status": "reserved",
-  "sources": [],
-  "rule": "Sources are required for factual, legal, technical, comparative, or market claims."
+  "registry_status": "reserved",
+  "external_source_claims_active": false,
+  "rule": "Sources are required for factual, legal, technical, comparative, regulatory, market, or platform claims before publication.",
+  "source_types": [
+    {
+      "type": "regulatory",
+      "allowed": true,
+      "use_case": "Support claims about regulatory requirements, official guidance, or public policy boundaries.",
+      "citation_required": true,
+      "public_claim_gate": "required"
+    },
+    {
+      "type": "legal_analysis",
+      "allowed": true,
+      "use_case": "Support legal context while avoiding legal advice or unsupported compliance claims.",
+      "citation_required": true,
+      "public_claim_gate": "required"
+    },
+    {
+      "type": "market_research",
+      "allowed": true,
+      "use_case": "Support market sizing, adoption, investment, buyer behavior, and category trend claims.",
+      "citation_required": true,
+      "public_claim_gate": "required"
+    },
+    {
+      "type": "platform_documentation",
+      "allowed": true,
+      "use_case": "Support claims about platform policies, APIs, avatar systems, disclosure rules, and feature behavior.",
+      "citation_required": true,
+      "public_claim_gate": "required"
+    },
+    {
+      "type": "technical_documentation",
+      "allowed": true,
+      "use_case": "Support claims about standards, interoperability, security, identity systems, and implementation constraints.",
+      "citation_required": true,
+      "public_claim_gate": "required"
+    },
+    {
+      "type": "academic",
+      "allowed": true,
+      "use_case": "Support research-backed claims about identity, synthetic media, trust, cognition, social presence, or misuse.",
+      "citation_required": true,
+      "public_claim_gate": "required"
+    },
+    {
+      "type": "company_primary_source",
+      "allowed": true,
+      "use_case": "Support claims about a company's products, policies, disclosures, pricing, features, or official positioning.",
+      "citation_required": true,
+      "public_claim_gate": "required"
+    }
+  ],
+  "sources": []
 }

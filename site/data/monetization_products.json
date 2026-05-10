@@ -1,27 +1,108 @@
 {
-  "status": "principles_only",
-  "monetizationAuthorized": false,
+  "registry_status": "reserved",
+  "monetization_active": false,
+  "monetization_status": "principle_only_non_active",
   "products": [
     {
-      "id": "governance_briefs",
-      "name": "Governance Briefs",
-      "status": "future_candidate"
+      "product_id": "avatar_strength_checklist",
+      "title": "Avatar Strength Checklist",
+      "type": "checklist",
+      "status": "planned",
+      "active": false,
+      "authority_impact": "May support practical understanding of governed avatar readiness after reference authority exists.",
+      "buyer_logic_support": "Useful for platforms, brands, creators, and compliance teams evaluating representation quality.",
+      "activation_conditions": [
+        "methodology approved",
+        "quality gate active",
+        "no public publishing violations",
+        "clear non-legal disclaimer"
+      ],
+      "prohibited_shortcuts": [
+        "thin checklist page",
+        "email capture before authority exists",
+        "affiliate tool funnel"
+      ]
     },
     {
-      "id": "institutional_reports",
-      "name": "Institutional Reports",
-      "status": "future_candidate"
+      "product_id": "synthetic_likeness_governance_brief",
+      "title": "Synthetic Likeness Governance Brief",
+      "type": "paid_strategic_brief",
+      "status": "planned",
+      "active": false,
+      "authority_impact": "May deepen reference authority through sourced governance analysis.",
+      "buyer_logic_support": "Supports legal, compliance, platform, and rights-management buyer segments.",
+      "activation_conditions": [
+        "source registry populated",
+        "editorial disclosure rules active",
+        "quality gate active",
+        "brief format approved"
+      ],
+      "prohibited_shortcuts": [
+        "unsourced compliance claims",
+        "generic AI report packaging",
+        "paid placement without disclosure"
+      ]
     },
     {
-      "id": "assessment_tools",
-      "name": "Assessment Tools",
-      "status": "future_candidate"
+      "product_id": "avatar_strength_audit",
+      "title": "Avatar Strength Audit",
+      "type": "manual_audit",
+      "status": "planned",
+      "active": false,
+      "authority_impact": "May convert protocol doctrine into a controlled expert assessment surface.",
+      "buyer_logic_support": "Supports enterprise, creator, platform, and digital human readiness evaluation.",
+      "activation_conditions": [
+        "scoring methodology approved",
+        "manual review process documented",
+        "quality gate active",
+        "scope and disclaimer approved"
+      ],
+      "prohibited_shortcuts": [
+        "automated score without methodology",
+        "fake certification language",
+        "thin tool page"
+      ]
+    },
+    {
+      "product_id": "strong_avatar_intelligence_report",
+      "title": "Strong Avatar Intelligence Report",
+      "type": "controlled_intelligence_report",
+      "status": "planned",
+      "active": false,
+      "authority_impact": "May create high-trust market and governance intelligence after sourcing standards exist.",
+      "buyer_logic_support": "Supports strategic buyers evaluating synthetic identity, avatar platforms, and governance trends.",
+      "activation_conditions": [
+        "source registry populated",
+        "report methodology approved",
+        "no valuation claims without evidence",
+        "quality gate active"
+      ],
+      "prohibited_shortcuts": [
+        "scraped market roundup",
+        "unsupported ranking",
+        "affiliate-driven report"
+      ]
+    },
+    {
+      "product_id": "curated_tool_directory",
+      "title": "Curated Tool Directory",
+      "type": "controlled_directory",
+      "status": "planned",
+      "active": false,
+      "authority_impact": "May support utility only after reference authority and editorial controls exist.",
+      "buyer_logic_support": "Supports discovery for aligned tools while preserving trust if disclosures are strict.",
+      "activation_conditions": [
+        "authority exists",
+        "directory criteria approved",
+        "sponsorship disclosure active",
+        "quality gate active"
+      ],
+      "prohibited_shortcuts": [
+        "random affiliate listings",
+        "paid placement without disclosure",
+        "mass tool pages",
+        "low-quality sponsorships"
+      ]
     }
-  ],
-  "prohibited": [
-    "generic avatar generator referrals",
-    "unapproved affiliate links",
-    "low-quality ads",
-    "thin SEO monetization pages"
   ]
 }

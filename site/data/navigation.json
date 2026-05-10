@@ -1,5 +1,48 @@
 {
-  "status": "not_published",
-  "publicNavigationAuthorized": false,
-  "items": []
+  "registry_status": "reserved",
+  "public_navigation_enabled": false,
+  "items": [
+    {
+      "label": "Protocol",
+      "target": "/protocol/",
+      "enabled": false,
+      "publication_allowed": false,
+      "notes": "Reserved navigation item only."
+    },
+    {
+      "label": "Digital Likeness",
+      "target": "/digital-likeness/",
+      "enabled": false,
+      "publication_allowed": false,
+      "notes": "Reserved navigation item only."
+    },
+    {
+      "label": "Governance",
+      "target": "/ai-avatar-governance/",
+      "enabled": false,
+      "publication_allowed": false,
+      "notes": "Reserved navigation item only."
+    },
+    {
+      "label": "Methodology",
+      "target": "/methodology/",
+      "enabled": false,
+      "publication_allowed": false,
+      "notes": "Reserved navigation item only."
+    },
+    {
+      "label": "Glossary",
+      "target": "/glossary/",
+      "enabled": false,
+      "publication_allowed": false,
+      "notes": "Reserved navigation item only."
+    },
+    {
+      "label": "Strategic Asset",
+      "target": "/strategic-asset/",
+      "enabled": false,
+      "publication_allowed": false,
+      "notes": "Reserved navigation item only."
+    }
+  ]
 }

@@ -1,25 +1,62 @@
 {
-  "status": "strategic_mapping",
+  "registry_status": "reserved",
+  "public_buyer_segments_enabled": false,
   "segments": [
     {
-      "id": "identity_trust_platforms",
-      "name": "Identity and Trust Platforms",
-      "logic": "May value category authority around governed digital representation."
+      "segment": "AI Avatar and AI Video Platforms",
+      "status": "planned",
+      "strategic_need": "Differentiate generated avatars from governed representations with trust, consent, and disclosure discipline.",
+      "asset_relevance": "StrongAvatar.com can provide reference language and protocol framing for avatar strength.",
+      "acquisition_logic": "The asset may support category education, governance positioning, and product trust expansion.",
+      "public_enabled": false
     },
     {
-      "id": "synthetic_media_governance",
-      "name": "Synthetic Media Governance Companies",
-      "logic": "May value protocol language for likeness, consent, and representational risk."
+      "segment": "Enterprise Creative and Identity Platforms",
+      "status": "planned",
+      "strategic_need": "Support brand-safe digital representation across teams, campaigns, and identity-bearing assets.",
+      "asset_relevance": "The Avatar Strength Protocol can frame readiness, authority, and governance requirements.",
+      "acquisition_logic": "The asset may strengthen enterprise credibility around governed creative identity systems.",
+      "public_enabled": false
     },
     {
-      "id": "enterprise_avatar_systems",
-      "name": "Enterprise Avatar Systems",
-      "logic": "May value trust frameworks for workplace, customer, or agentic representation."
+      "segment": "Digital Human Infrastructure Companies",
+      "status": "planned",
+      "strategic_need": "Connect digital human deployment to trust, likeness control, and long-term representation quality.",
+      "asset_relevance": "StrongAvatar.com can organize protocol language around digital humans and synthetic identity surfaces.",
+      "acquisition_logic": "The asset may provide category authority for infrastructure providers moving into trust and governance.",
+      "public_enabled": false
     },
     {
-      "id": "brand_safety_and_compliance",
-      "name": "Brand Safety and Compliance Organizations",
-      "logic": "May value governed standards for avatar use, disclosure, and accountability."
+      "segment": "Synthetic Likeness Legal and Compliance Companies",
+      "status": "planned",
+      "strategic_need": "Explain consent, rights, disclosure, and compliance boundaries for synthetic likeness use.",
+      "asset_relevance": "The repository can support source-governed reference content and future briefs.",
+      "acquisition_logic": "The asset may complement advisory, compliance, or rights-management positioning.",
+      "public_enabled": false
+    },
+    {
+      "segment": "Gaming and Spatial Computing Identity Platforms",
+      "status": "planned",
+      "strategic_need": "Govern persistent avatars, identity continuity, and representation across immersive environments.",
+      "asset_relevance": "StrongAvatar.com can frame avatar strength for portability, trust, and virtual persona coherence.",
+      "acquisition_logic": "The asset may support platform differentiation around trusted avatar identity.",
+      "public_enabled": false
+    },
+    {
+      "segment": "Creator Economy Platforms",
+      "status": "planned",
+      "strategic_need": "Protect creator likeness, synthetic personas, disclosure, and commercial representation rights.",
+      "asset_relevance": "StrongAvatar.com can provide language for creator identity governance and future audit products.",
+      "acquisition_logic": "The asset may support creator trust, education, and rights-aware platform strategy.",
+      "public_enabled": false
+    },
+    {
+      "segment": "Deepfake Protection and Rights Management Companies",
+      "status": "planned",
+      "strategic_need": "Connect abuse resistance, likeness control, and governed representation to protection workflows.",
+      "asset_relevance": "The protocol can clarify trust signals and governance standards around synthetic misuse.",
+      "acquisition_logic": "The asset may strengthen category authority for protection, detection, or rights-management products.",
+      "public_enabled": false
     }
   ]
 }
