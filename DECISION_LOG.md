@@ -30,3 +30,15 @@ Implications:
 - Public publishing remains disabled.
 - Monetization remains principle-only and non-active.
 - No website construction, public pages, CSS, templates, publishing enablement, monetization scripts, affiliate links, placeholder content, or thin SEO pages were created.
+
+Decision: Sprint 3 architecture and publishing control layer defined.
+
+Rationale: StrongAvatar.com requires architecture, indexing, publishing, design, workflow, SEO, monetization, and acquisition controls before public site construction.
+
+Implications:
+
+- Public publishing remains disabled.
+- No website construction was performed.
+- No CSS, templates, public pages, JavaScript, monetization scripts, affiliate links, placeholder content, or thin SEO pages were created.
+- The future site must be built through registry-controlled, quality-gated publishing.
+- The homepage is wireframed as a reference authority surface, not an avatar generator landing page.
