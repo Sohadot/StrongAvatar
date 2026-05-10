@@ -13,3 +13,5 @@ Implications:
 - The Avatar Strength Protocol is the organizing concept.
 - Public pages are not authorized in this phase.
 - Monetization scripts, affiliate links, CSS, placeholder content, and thin SEO pages are excluded from the foundation.
+
+Decision: Reserved empty directories are preserved with .gitkeep files so the sovereign repository structure remains visible and stable before public site construction.
