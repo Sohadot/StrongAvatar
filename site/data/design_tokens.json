@@ -1,0 +1,105 @@
+{
+  "status": "contract_created",
+  "css_exists": false,
+  "public_enabled": false,
+  "output_allowed": false,
+  "visual_doctrine": [
+    "restrained institutional interface",
+    "dark graphite and black-blue foundation",
+    "electric blue or cyan identity-field accents",
+    "white, silver, and muted slate typography",
+    "controlled grid systems",
+    "reference-grade spacing",
+    "strong editorial hierarchy",
+    "trust, governance, identity, and protocol aesthetics"
+  ],
+  "color_tokens": {
+    "background_primary": "deep institutional foundation",
+    "background_secondary": "secondary black-blue field",
+    "surface_primary": "main editorial surface",
+    "surface_elevated": "raised module surface",
+    "text_primary": "high-contrast primary text",
+    "text_secondary": "silver or muted slate supporting text",
+    "text_muted": "low-emphasis metadata text",
+    "accent_primary": "electric blue identity-field accent",
+    "accent_secondary": "cyan protocol accent",
+    "border_subtle": "quiet structural boundary",
+    "border_active": "active focus boundary",
+    "warning": "governance warning signal",
+    "trust": "validated trust signal",
+    "source_note": "source and evidence signal",
+    "disabled": "inactive or non-public state"
+  },
+  "typography_tokens": {
+    "display": "rare page-level authority statement",
+    "headline": "primary page or section headline",
+    "section_title": "structured editorial label",
+    "body": "durable reading text",
+    "small": "compact supporting text",
+    "metadata": "review and registry details",
+    "code_or_registry": "paths, slugs, registry keys, and protocol identifiers"
+  },
+  "spacing_tokens": {
+    "xs": "inline metadata spacing",
+    "sm": "compact grouping spacing",
+    "md": "default module spacing",
+    "lg": "major content unit spacing",
+    "xl": "authority section spacing",
+    "section": "page section rhythm",
+    "page": "outer page margin rhythm"
+  },
+  "layout_tokens": {
+    "max_content_width": "readable institutional content width",
+    "grid_behavior": "controlled editorial grids and link rails",
+    "editorial_rhythm": "clear separation of doctrine, evidence, links, and trust markers",
+    "protocol_card_layout": "dimension, purpose, source status, and quality status",
+    "reference_page_layout": "body, source notes, internal links, and methodology context",
+    "mobile_first_constraints": "preserve hierarchy and trust signals on small screens"
+  },
+  "component_token_expectations": {
+    "sovereign_hero": ["background_primary", "display", "accent_primary", "page"],
+    "thesis_block": ["headline", "body", "accent_secondary", "section"],
+    "protocol_dimension_card": ["surface_elevated", "border_subtle", "metadata", "trust"],
+    "score_module": ["border_active", "warning", "trust", "metadata"],
+    "governance_warning_block": ["warning", "text_primary", "border_active", "source_note"],
+    "source_note": ["source_note", "metadata", "border_subtle"],
+    "internal_link_rail": ["surface_primary", "text_muted", "border_subtle", "border_active"],
+    "buyer_logic_strip": ["background_secondary", "metadata", "accent_secondary"],
+    "acquisition_signal_block": ["trust", "source_note", "section_title"],
+    "glossary_card": ["surface_primary", "section_title", "text_secondary", "border_subtle"]
+  },
+  "accessibility_requirements": [
+    "strong contrast",
+    "readable text",
+    "semantic hierarchy",
+    "keyboard-safe future components",
+    "no motion dependence",
+    "no visual clutter"
+  ],
+  "performance_requirements": [
+    "lightweight CSS when created",
+    "no unnecessary assets",
+    "no decorative heavy scripts",
+    "no font-file sharing",
+    "no large image dependency"
+  ],
+  "prohibited_visual_directions": [
+    "cartoon avatar maker",
+    "gaming toy interface",
+    "generic SaaS gradient template",
+    "affiliate directory look",
+    "hype-heavy AI startup style",
+    "neon chaos",
+    "fandom aesthetic",
+    "cheap tool website",
+    "childish mascot identity"
+  ],
+  "css_activation_conditions": [
+    "design token registry exists",
+    "template contracts are validated",
+    "public construction is explicitly authorized",
+    "quality gate passes",
+    "decision log records CSS authorization"
+  ],
+  "notes": "Design tokens are internal planning artifacts only. No CSS, fonts, external assets, generated output, or public construction are authorized."
+}
