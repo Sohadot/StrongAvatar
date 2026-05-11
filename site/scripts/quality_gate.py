@@ -9,6 +9,7 @@ VALIDATORS = [
     "validate_content.py",
     "validate_content_contracts.py",
     "validate_template_contracts.py",
+    "validate_design_tokens.py",
     "validate_links.py",
     "validate_seo.py",
     "validate_sources.py",

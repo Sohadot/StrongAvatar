@@ -194,3 +194,18 @@ Implications:
 - No website construction was performed.
 - No public pages, final content articles, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
 - Future CSS must follow the design token contract and pass the quality gate.
+
+Decision: Sprint 10.5 design token validation added.
+
+Rationale: StrongAvatar.com requires automated enforcement of the design token layer before CSS construction, HTML template construction, public content, indexing, or monetization activation.
+
+Implications:
+
+- Design token contract and registry are now validated by the sovereign quality gate.
+- Future CSS must follow the validated design token system.
+- `site/static/css/` remains reserved and contains no actual CSS files.
+- Public publishing remains disabled.
+- All foundation pages remain non-indexable and unpublished.
+- No website construction was performed.
+- No public pages, final content articles, HTML templates, CSS, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
+- Future CSS construction must pass the design token validator and quality gate.
