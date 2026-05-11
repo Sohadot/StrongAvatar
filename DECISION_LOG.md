@@ -163,3 +163,18 @@ Implications:
 - No website construction was performed.
 - No public pages, final content articles, CSS, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
 - Future HTML templates must follow template contracts and pass the quality gate.
+
+Decision: Sprint 9.5 template contract validation added.
+
+Rationale: StrongAvatar.com requires automated enforcement of internal template contracts before HTML template construction, CSS, public content, indexing, or monetization activation.
+
+Implications:
+
+- Template contracts and template registry are now validated by the sovereign quality gate.
+- Future HTML templates must follow validated template contracts.
+- `site/templates/` remains reserved and contains no actual HTML templates.
+- Public publishing remains disabled.
+- All foundation pages remain non-indexable and unpublished.
+- No website construction was performed.
+- No public pages, final content articles, CSS, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
+- Future template construction must pass the template contract validator and quality gate.
