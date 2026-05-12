@@ -12,6 +12,11 @@ REQUIRED_TOP_LEVEL_FIELDS = [
     "layout_tokens", "component_token_expectations", "accessibility_requirements",
     "performance_requirements", "prohibited_visual_directions",
     "css_activation_conditions", "notes",
+    "visual_sovereignty", "proprietary_visual_standard", "violet_gold_identity_field",
+    "warm_spatial_institutional_ux", "prohibited_generic_conventions",
+    "spatial_ux_doctrine", "depth_principles", "motion_principles",
+    "spatial_component_expectations", "prohibited_immersive_shortcuts",
+    "future_activation_conditions",
 ]
 REQUIRED_COLOR_TOKENS = [
     "background_primary", "background_secondary", "surface_primary", "surface_elevated",
@@ -26,6 +31,18 @@ REQUIRED_PROHIBITED_DIRECTIONS = [
     "cartoon avatar maker", "gaming toy interface", "generic SaaS gradient template",
     "affiliate directory look", "hype-heavy AI startup style", "neon chaos",
     "fandom aesthetic", "cheap tool website", "childish mascot identity",
+    "black-blue dominance", "cold cyberpunk darkness", "childish purple/yellow gaming style",
+    "cheap luxury gold", "conventional SaaS landing page style",
+    "consumer avatar-maker visual language", "borrowed category conventions",
+    "decorative novelty without strategic authority", "visual trend-chasing",
+]
+REQUIRED_GENERIC_CONVENTIONS = [
+    "generic AI website", "consumer avatar maker", "gaming interface",
+    "cyberpunk dashboard", "conventional SaaS landing page",
+    "luxury-tech cliché", "borrowed market convention",
+]
+REQUIRED_VIOLET_GOLD_TERMS = [
+    "warm violet", "muted purple", "plum", "pale gold", "amber", "cream-gold",
 ]
 REQUIRED_CSS_ACTIVATION_TERMS = [
     "design token registry", "template contracts", "explicitly authorized",
@@ -116,6 +133,18 @@ def main() -> None:
     for direction in REQUIRED_PROHIBITED_DIRECTIONS:
         if direction.lower() not in prohibited:
             errors.append(f"prohibited_visual_directions missing: {direction}")
+    generic_conventions = [str(item).lower() for item in registry.get("prohibited_generic_conventions", [])]
+    for convention in REQUIRED_GENERIC_CONVENTIONS:
+        if convention.lower() not in generic_conventions:
+            errors.append(f"prohibited_generic_conventions missing: {convention}")
+    violet_gold_text = " ".join(str(item).lower() for item in registry.get("violet_gold_identity_field", []))
+    for term in REQUIRED_VIOLET_GOLD_TERMS:
+        if term not in violet_gold_text:
+            errors.append(f"violet_gold_identity_field must mention: {term}")
+    sovereignty_text = " ".join([str(registry.get("visual_sovereignty", "")).lower()] + [str(item).lower() for item in registry.get("proprietary_visual_standard", [])])
+    for term in ["sovereign assets define category conventions", "proprietary", "invented"]:
+        if term not in sovereignty_text:
+            errors.append(f"visual sovereignty/proprietary standard must mention: {term}")
     activation = " ".join(str(item).lower() for item in registry.get("css_activation_conditions", []))
     for term in REQUIRED_CSS_ACTIVATION_TERMS:
         if term not in activation:

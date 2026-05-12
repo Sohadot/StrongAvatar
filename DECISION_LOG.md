@@ -209,3 +209,34 @@ Implications:
 - No website construction was performed.
 - No public pages, final content articles, HTML templates, CSS, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
 - Future CSS construction must pass the design token validator and quality gate.
+
+Decision: Sprint 10.6 spatial UX doctrine added.
+
+Rationale: StrongAvatar.com requires a smart, modern, VR-inspired but institutionally restrained UX doctrine before CSS construction, so the future interface communicates spatial identity governance without becoming a gaming toy, avatar generator, or heavy immersive gimmick.
+
+Implications:
+
+- Spatial Institutional UX is now part of the design doctrine.
+- Identity Field Interface is established as the future visual metaphor.
+- Future UX may use subtle spatial layering, protocol nodes, controlled grids, and identity-field surfaces.
+- Actual VR/WebXR/WebGL/heavy animation remains prohibited until explicitly authorized.
+- Public publishing remains disabled.
+- No CSS, HTML templates, public pages, JavaScript, assets, monetization scripts, affiliate links, sitemap, robots file, index.html, or generated output were created.
+- Future CSS must preserve the spatial institutional doctrine and pass the quality gate.
+
+Decision: Sprint 10.7 visual direction corrected to warm violet-gold spatial institutional UX.
+
+Rationale: StrongAvatar.com should not proceed into CSS construction under a dark graphite / black-blue visual assumption. The preferred interface direction is a warm purplish-gold, violet-amber, spatial institutional system that preserves intelligence, modernity, trust, reference authority, visual sovereignty, and VR-inspired depth without becoming cyberpunk, childish, generic, or trend-dependent.
+
+Implications:
+
+- Warm Spatial Institutional UX replaces dark graphite / black-blue as the primary visual direction.
+- Violet-Gold Identity Field Interface becomes the preferred visual metaphor.
+- Visual Sovereignty is now part of the design doctrine.
+- StrongAvatar.com must create its own disciplined visual standard rather than imitate generic AI SaaS, avatar-maker, gaming, cyberpunk, metaverse, or luxury-tech conventions.
+- Future CSS must follow the warm purplish-gold / violet-amber token direction.
+- Future interface work must feel invented, proprietary, spatial, institutional, and reference-grade rather than templated, borrowed, decorative, or trend-driven.
+- Dark cyberpunk, black-blue dominance, childish purple/yellow gaming style, cheap luxury gold, neon chaos, generic AI SaaS gradients, fandom aesthetics, consumer avatar-maker visuals, and conventional SaaS landing page patterns remain prohibited.
+- Public publishing remains disabled.
+- No CSS, HTML templates, public pages, JavaScript, assets, monetization scripts, affiliate links, sitemap, robots file, index.html, or generated output were created.
+- Future CSS construction must pass the updated design token validator and quality gate.
