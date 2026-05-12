@@ -1,37 +1,25 @@
 # Monetization Principles
 
-Revenue is permitted only when it strengthens or preserves strategic value, trust, reference authority, buyer logic, or acquisition readiness.
+StrongAvatar.com may monetize only in ways that strengthen the asset's authority, trust position, and acquisition readiness.
 
-StrongAvatar.com must not monetize in ways that make the asset look like a niche affiliate site, ad surface, low-quality avatar maker, or mass SEO operation.
-
-## Monetization Doctrine
+## Principles
 
 - Reference integrity comes before revenue.
-- Authority must precede commercial extraction.
 - Monetization must be disclosed where public-facing.
-- Revenue surfaces must align with avatar strength, synthetic likeness governance, digital identity trust, or governed digital representation.
-- Monetization must never pressure the asset into thin SEO pages, unsourced claims, or low-trust rankings.
-- Buyer logic may guide product selection but must not corrupt editorial independence.
+- No affiliate links may be added without governance approval.
+- No ad clutter, deceptive placements, or low-trust lead capture.
+- Products must align with avatar strength, synthetic likeness governance, digital identity trust, or governed digital representation.
+- Revenue surfaces must not pressure content into thin SEO patterns.
 
-## Allowed Future Monetization
+## Preferred Future Models
 
-- Paid strategic briefs
-- Manual Avatar Strength Audit
-- Controlled intelligence reports
-- Curated directory after authority exists
-- Newsletter as distribution layer, not the core asset
-- Sponsored listings only under strict editorial disclosure and quality control
+- Governance briefs
+- Institutional reports
+- Assessment tools
+- Buyer education materials
+- Protocol licensing or advisory products
+- Carefully controlled sponsorships from aligned trust and identity companies
 
-## Prohibited Monetization
+## Forbidden Models
 
-- Early AdSense
-- Random affiliate pages
-- Popups
-- Low-quality sponsorships
-- Paid placement without disclosure
-- Thin tool pages
-- Monetization that makes the asset look like a niche affiliate site
-
-## Current Status
-
-Monetization is principle-only and non-active. No scripts, affiliate links, ads, payment flows, sponsored listings, or monetized public pages are authorized.
+Generic avatar generator referrals, prompt packs, unrelated software affiliates, scraped directories, low-quality ads, and public pages created only to capture search traffic are prohibited.

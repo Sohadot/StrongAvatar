@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="{{ lang }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ meta_description }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <meta name="robots" content="{{ robots_directive }}">
+    <meta property="og:title" content="{{ og_title }}">
+    <meta property="og:description" content="{{ og_description }}">
+    <meta property="og:url" content="{{ og_url }}">
+    <meta property="og:type" content="{{ og_type }}">
+    <meta name="twitter:card" content="{{ twitter_card }}">
+    <meta name="twitter:title" content="{{ twitter_title }}">
+    <meta name="twitter:description" content="{{ twitter_description }}">
+    <meta name="structured-data-placeholder" content="{{ structured_data }}">
+    <link rel="stylesheet" href="/static/css/main.css">
+  </head>
+  <body class="site-shell" data-interface="violet-gold-identity-field">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="site-shell__page">
+      <header class="site-shell__header" role="banner">
+        {{ header }}
+      </header>
+      <main id="main-content" class="site-shell__main" tabindex="-1">
+        {{ main_content }}
+      </main>
+      <aside class="site-shell__trust" aria-label="Trust, source, and methodology context">
+        {{ trust_context }}
+      </aside>
+      <footer class="site-shell__footer">
+        {{ footer }}
+      </footer>
+    </div>
+  </body>
+</html>

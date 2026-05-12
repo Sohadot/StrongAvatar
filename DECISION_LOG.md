@@ -255,3 +255,19 @@ Implications:
 - All foundation pages remain non-indexable and unpublished.
 - No HTML templates, public pages, final content articles, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
 - Future HTML template construction must use this CSS foundation and pass the quality gate.
+
+Decision: Sprint 12 base HTML template shell authorized and created.
+
+Rationale: StrongAvatar.com requires a controlled base HTML shell before future page-specific template construction so SEO structure, accessibility, trust placeholders, CSS linkage, and sovereign interface discipline can be established without creating public pages, homepage content, or generated output.
+
+Implications:
+
+- `site/templates/base.html` now exists as the only authorized HTML template implementation.
+- `base.html` is a foundation shell only and does not create a public website.
+- All other templates remain contract-only and non-implemented.
+- Template registry now authorizes exactly one base shell template.
+- Template validator now permits and validates only the authorized `base.html` shell.
+- Public publishing remains disabled.
+- All foundation pages remain non-indexable and unpublished.
+- No homepage template, public pages, final content articles, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
+- Future page-specific template construction must follow template contracts and pass the quality gate.
