@@ -6,10 +6,15 @@ from pathlib import Path
 from validation_utils import fail, load_json, pass_message, repo_root
 
 
-AUTHORIZED_HTML_TEMPLATE = "base.html"
-AUTHORIZED_IMPLEMENTED_FILE = "site/templates/base.html"
-AUTHORIZED_IMPLEMENTATION_SCOPE = "base_shell_only"
+AUTHORIZED_BASE_TEMPLATE = "base.html"
+AUTHORIZED_HOMEPAGE_TEMPLATE = "homepage.html"
+AUTHORIZED_HTML_TEMPLATES = {AUTHORIZED_BASE_TEMPLATE, AUTHORIZED_HOMEPAGE_TEMPLATE}
+AUTHORIZED_BASE_FILE = "site/templates/base.html"
+AUTHORIZED_HOMEPAGE_FILE = "site/templates/homepage.html"
+AUTHORIZED_BASE_SCOPE = "base_shell_only"
+AUTHORIZED_HOMEPAGE_SCOPE = "homepage_shell_only"
 AUTHORIZED_CSS_DEPENDENCY = "site/static/css/main.css"
+AUTHORIZED_BASE_DEPENDENCY = "site/templates/base.html"
 AUTHORIZED_CSS_PUBLIC_PATH = "/static/css/main.css"
 
 REQUIRED_PLANNED_FILES = [
@@ -138,6 +143,84 @@ BASE_PUBLIC_CONTENT_PATTERNS = [
     r"\bmarketing\b",
 ]
 
+HOMEPAGE_REQUIRED_PLACEHOLDERS = [
+    "{{ homepage_hero }}",
+    "{{ foundational_line }}",
+    "{{ category_thesis }}",
+    "{{ protocol_overview }}",
+    "{{ digital_likeness_governance }}",
+    "{{ reference_system_sections }}",
+    "{{ audience_segments }}",
+    "{{ future_monetization_surface }}",
+    "{{ acquisition_signal }}",
+    "{{ trust_and_methodology_links }}",
+]
+
+HOMEPAGE_REQUIRED_CLASSES = [
+    "homepage-shell",
+    "homepage-region--hero",
+    "homepage-region--thesis",
+    "homepage-region--protocol",
+    "homepage-region--governance",
+    "homepage-region--reference",
+    "homepage-region--audience",
+    "homepage-region--monetization",
+    "homepage-region--acquisition",
+    "homepage-region--trust",
+]
+
+HOMEPAGE_PROHIBITED_TERMS = [
+    "create your ai avatar",
+    "generate your avatar",
+    "start now",
+    "buy now",
+    "subscribe now",
+    "best ai avatar generator",
+    "top ai avatar tools",
+    "affiliate",
+    "sponsored placement",
+    "ad scripts",
+    "google analytics",
+    "google tag manager",
+    "tracking pixel",
+    "tracking pixels",
+    "external cdn",
+    "cdn",
+    "javascript",
+    "webxr",
+    "webgl",
+    "three.js",
+    "avatar maker",
+    "gaming hud",
+    "cyberpunk",
+    "neon chaos",
+    "fandom",
+    "cheap luxury",
+    "lorem ipsum",
+    "todo",
+    "tbd",
+    "coming soon",
+    "placeholder article content",
+]
+
+HOMEPAGE_PROHIBITED_CLASSES = [
+    "cta-buy",
+    "generate-avatar",
+    "avatar-maker",
+    "start-now",
+    "pricing",
+    "affiliate-card",
+    "ad-slot",
+]
+
+HOMEPAGE_PUBLIC_CONTENT_PATTERNS = [
+    r"<article\b",
+    r"\bpublished\b",
+    r"\blaunched\b",
+    r"\blive homepage\b",
+    r"\bindexable\b",
+]
+
 
 def site_templates_files(root: Path) -> list[Path]:
     templates_dir = root / "site" / "templates"
@@ -191,6 +274,43 @@ def validate_base_html(root: Path, base_path: Path, errors: list[str]) -> None:
             errors.append(f"{relative_path} contains public-page or article-oriented structure: {pattern}")
 
 
+def validate_homepage_html(root: Path, homepage_path: Path, errors: list[str]) -> None:
+    content = homepage_path.read_text(encoding="utf-8")
+    lower_content = content.lower()
+    relative_path = homepage_path.relative_to(root).as_posix()
+
+    if "non-public homepage template shell" not in lower_content:
+        errors.append(f"{relative_path} missing non-public homepage shell comment")
+    if "homepage-shell" not in content:
+        errors.append(f"{relative_path} missing homepage shell wrapper")
+    if "<script" in lower_content or "</script" in lower_content:
+        errors.append(f"{relative_path} must not contain script tags")
+    if re.search(r"\b(?:src|href)=['\"]https?://", content, flags=re.IGNORECASE):
+        errors.append(f"{relative_path} must not reference external asset URLs")
+    if re.search(r"\b(?:src|href)=['\"]//", content, flags=re.IGNORECASE):
+        errors.append(f"{relative_path} must not reference protocol-relative external URLs")
+    if re.search(r"\b(?:src|href)=['\"][^'\"]+\.js(?:[?#][^'\"]*)?['\"]", content, flags=re.IGNORECASE):
+        errors.append(f"{relative_path} must not reference JavaScript files")
+    if "@import" in lower_content or "font" in lower_content and ("googleapis" in lower_content or "typekit" in lower_content):
+        errors.append(f"{relative_path} must not contain font imports")
+
+    for placeholder in HOMEPAGE_REQUIRED_PLACEHOLDERS:
+        if placeholder not in content:
+            errors.append(f"{relative_path} missing required structural placeholder: {placeholder}")
+    for class_name in HOMEPAGE_REQUIRED_CLASSES:
+        if class_name not in content:
+            errors.append(f"{relative_path} missing required structural class: {class_name}")
+    for class_name in HOMEPAGE_PROHIBITED_CLASSES:
+        if class_name in lower_content:
+            errors.append(f"{relative_path} contains prohibited consumer-product class: {class_name}")
+    for term in HOMEPAGE_PROHIBITED_TERMS:
+        if term in lower_content:
+            errors.append(f"{relative_path} contains prohibited language or reference: {term}")
+    for pattern in HOMEPAGE_PUBLIC_CONTENT_PATTERNS:
+        if re.search(pattern, lower_content):
+            errors.append(f"{relative_path} suggests public homepage or article content: {pattern}")
+
+
 def main() -> None:
     root = repo_root()
     contract_root = (root / "site" / "template-contracts").resolve()
@@ -210,42 +330,70 @@ def main() -> None:
     non_gitkeep_template_files = [path for path in template_files if path.name != ".gitkeep"]
     html_templates = [path for path in template_files if path.suffix.lower() == ".html"]
     unauthorized_template_files = [
-        path for path in non_gitkeep_template_files if path.name != AUTHORIZED_HTML_TEMPLATE
+        path for path in non_gitkeep_template_files if path.name not in AUTHORIZED_HTML_TEMPLATES
     ]
     if unauthorized_template_files:
         unauthorized = ", ".join(path.relative_to(root).as_posix() for path in unauthorized_template_files)
         errors.append(f"site/templates/ contains unauthorized template files: {unauthorized}")
     unauthorized_html_templates = [
-        path for path in html_templates if path.name != AUTHORIZED_HTML_TEMPLATE
+        path for path in html_templates if path.name not in AUTHORIZED_HTML_TEMPLATES
     ]
     if unauthorized_html_templates:
         unauthorized = ", ".join(path.relative_to(root).as_posix() for path in unauthorized_html_templates)
         errors.append(f"site/templates/ contains unauthorized HTML templates: {unauthorized}")
 
-    base_path = root / AUTHORIZED_IMPLEMENTED_FILE
+    base_path = root / AUTHORIZED_BASE_FILE
+    homepage_path = root / AUTHORIZED_HOMEPAGE_FILE
     templates_by_file = {template.get("planned_file"): template for template in templates}
-    base_template = templates_by_file.get(AUTHORIZED_HTML_TEMPLATE)
+    base_template = templates_by_file.get(AUTHORIZED_BASE_TEMPLATE)
+    homepage_template = templates_by_file.get(AUTHORIZED_HOMEPAGE_TEMPLATE)
     if base_template and base_template.get("html_exists") is True and not base_path.exists():
-        errors.append(f"{AUTHORIZED_IMPLEMENTED_FILE} is missing while registry html_exists is true")
+        errors.append(f"{AUTHORIZED_BASE_FILE} is missing while registry html_exists is true")
     if base_path.exists():
         if not base_template:
-            errors.append(f"{AUTHORIZED_IMPLEMENTED_FILE} exists but is missing from template_registry.json")
+            errors.append(f"{AUTHORIZED_BASE_FILE} exists but is missing from template_registry.json")
         else:
             if base_template.get("html_exists") is not True:
-                errors.append(f"{AUTHORIZED_IMPLEMENTED_FILE} exists but registry html_exists is not true")
+                errors.append(f"{AUTHORIZED_BASE_FILE} exists but registry html_exists is not true")
             if base_template.get("implementation_authorized") is not True:
-                errors.append(f"{AUTHORIZED_IMPLEMENTED_FILE} exists but registry does not explicitly authorize it")
-            if base_template.get("implemented_file") != AUTHORIZED_IMPLEMENTED_FILE:
-                errors.append(f"{AUTHORIZED_IMPLEMENTED_FILE} exists but registry implemented_file is incorrect")
-            if base_template.get("implementation_scope") != AUTHORIZED_IMPLEMENTATION_SCOPE:
-                errors.append(f"{AUTHORIZED_IMPLEMENTED_FILE} exists but implementation_scope is not {AUTHORIZED_IMPLEMENTATION_SCOPE}")
+                errors.append(f"{AUTHORIZED_BASE_FILE} exists but registry does not explicitly authorize it")
+            if base_template.get("implemented_file") != AUTHORIZED_BASE_FILE:
+                errors.append(f"{AUTHORIZED_BASE_FILE} exists but registry implemented_file is incorrect")
+            if base_template.get("implementation_scope") != AUTHORIZED_BASE_SCOPE:
+                errors.append(f"{AUTHORIZED_BASE_FILE} exists but implementation_scope is not {AUTHORIZED_BASE_SCOPE}")
             if base_template.get("public_enabled") is not False:
-                errors.append(f"{AUTHORIZED_IMPLEMENTED_FILE} exists but public_enabled is not false")
+                errors.append(f"{AUTHORIZED_BASE_FILE} exists but public_enabled is not false")
             if base_template.get("output_allowed") is not False:
-                errors.append(f"{AUTHORIZED_IMPLEMENTED_FILE} exists but output_allowed is not false")
+                errors.append(f"{AUTHORIZED_BASE_FILE} exists but output_allowed is not false")
             if base_template.get("css_dependency") != AUTHORIZED_CSS_DEPENDENCY:
-                errors.append(f"{AUTHORIZED_IMPLEMENTED_FILE} exists but css_dependency is not {AUTHORIZED_CSS_DEPENDENCY}")
+                errors.append(f"{AUTHORIZED_BASE_FILE} exists but css_dependency is not {AUTHORIZED_CSS_DEPENDENCY}")
         validate_base_html(root, base_path, errors)
+    else:
+        errors.append(f"{AUTHORIZED_BASE_FILE} must exist as the authorized base shell")
+
+    if homepage_template and homepage_template.get("html_exists") is True and not homepage_path.exists():
+        errors.append(f"{AUTHORIZED_HOMEPAGE_FILE} is missing while registry html_exists is true")
+    if homepage_path.exists():
+        if not homepage_template:
+            errors.append(f"{AUTHORIZED_HOMEPAGE_FILE} exists but is missing from template_registry.json")
+        else:
+            if homepage_template.get("html_exists") is not True:
+                errors.append(f"{AUTHORIZED_HOMEPAGE_FILE} exists but registry html_exists is not true")
+            if homepage_template.get("implementation_authorized") is not True:
+                errors.append(f"{AUTHORIZED_HOMEPAGE_FILE} exists but registry does not explicitly authorize it")
+            if homepage_template.get("implemented_file") != AUTHORIZED_HOMEPAGE_FILE:
+                errors.append(f"{AUTHORIZED_HOMEPAGE_FILE} exists but registry implemented_file is incorrect")
+            if homepage_template.get("implementation_scope") != AUTHORIZED_HOMEPAGE_SCOPE:
+                errors.append(f"{AUTHORIZED_HOMEPAGE_FILE} exists but implementation_scope is not {AUTHORIZED_HOMEPAGE_SCOPE}")
+            if homepage_template.get("public_enabled") is not False:
+                errors.append(f"{AUTHORIZED_HOMEPAGE_FILE} exists but public_enabled is not false")
+            if homepage_template.get("output_allowed") is not False:
+                errors.append(f"{AUTHORIZED_HOMEPAGE_FILE} exists but output_allowed is not false")
+            if homepage_template.get("css_dependency") != AUTHORIZED_CSS_DEPENDENCY:
+                errors.append(f"{AUTHORIZED_HOMEPAGE_FILE} exists but css_dependency is not {AUTHORIZED_CSS_DEPENDENCY}")
+            if homepage_template.get("base_dependency") != AUTHORIZED_BASE_DEPENDENCY:
+                errors.append(f"{AUTHORIZED_HOMEPAGE_FILE} exists but base_dependency is not {AUTHORIZED_BASE_DEPENDENCY}")
+        validate_homepage_html(root, homepage_path, errors)
 
     for template in templates:
         planned_file = template.get("planned_file", "<missing planned_file>")
@@ -254,8 +402,8 @@ def main() -> None:
             if key not in template:
                 errors.append(f"{context} missing required key: {key}")
 
-        is_base_template = planned_file == AUTHORIZED_HTML_TEMPLATE
-        if not is_base_template:
+        is_authorized_implemented_template = planned_file in AUTHORIZED_HTML_TEMPLATES
+        if not is_authorized_implemented_template:
             if template.get("status") != "contract_created":
                 errors.append(f"{context} status must be contract_created")
             if template.get("html_exists") is not False:
@@ -314,7 +462,7 @@ def main() -> None:
     if errors:
         fail("; ".join(errors))
 
-    pass_message("template contracts and authorized base shell are non-public and non-generative")
+    pass_message("template contracts and authorized base/homepage shells are non-public and non-generative")
 
 
 if __name__ == "__main__":

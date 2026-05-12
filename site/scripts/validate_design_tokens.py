@@ -69,9 +69,11 @@ CSS_DECLARATION_PATTERNS = [
     "color:", "background:", "font-family:", "margin:", "padding:", "display:", "{", "}",
 ]
 AUTHORIZED_CSS_FILE = Path("site/static/css/main.css")
-AUTHORIZED_HTML_FILE = Path("site/templates/base.html")
+AUTHORIZED_HTML_FILES = {
+    Path("site/templates/base.html"),
+    Path("site/templates/homepage.html"),
+}
 PLANNED_TEMPLATE_FILES = {
-    "homepage.html",
     "reference-page.html",
     "protocol-page.html",
     "comparison-page.html",
@@ -215,21 +217,23 @@ def main() -> None:
     if not gitkeep_only(output_dir):
         errors.append("output/ must remain .gitkeep-only")
 
-    authorized_html = root / AUTHORIZED_HTML_FILE
+    authorized_html_files = {root / html_file for html_file in AUTHORIZED_HTML_FILES}
     html_files = tracked_files(root, "*.html")
-    allowed_html = {authorized_html.resolve()}
+    allowed_html = {path.resolve() for path in authorized_html_files}
     unauthorized_html = [path for path in html_files if path.resolve() not in allowed_html]
     if unauthorized_html:
         unauthorized = ", ".join(path.relative_to(root).as_posix() for path in unauthorized_html)
         errors.append(f"unauthorized HTML files exist: {unauthorized}")
-    if authorized_html.exists():
-        html_text = authorized_html.read_text(encoding="utf-8").lower()
-        for pattern in PUBLIC_HTML_PATTERNS:
-            if pattern in html_text:
-                errors.append(f"site/templates/base.html suggests a public page was created: {pattern}")
+    for authorized_html in authorized_html_files:
+        if authorized_html.exists():
+            html_text = authorized_html.read_text(encoding="utf-8").lower()
+            for pattern in PUBLIC_HTML_PATTERNS:
+                if pattern in html_text:
+                    relative_html = authorized_html.relative_to(root).as_posix()
+                    errors.append(f"{relative_html} suggests a public page was created: {pattern}")
     templates_dir = root / "site" / "templates"
     template_html = tracked_files(templates_dir, "*.html") if templates_dir.exists() else []
-    unauthorized_template_html = [path for path in template_html if path.resolve() != authorized_html.resolve()]
+    unauthorized_template_html = [path for path in template_html if path.resolve() not in allowed_html]
     if unauthorized_template_html:
         unauthorized = ", ".join(path.relative_to(root).as_posix() for path in unauthorized_template_html)
         errors.append(f"site/templates/ contains unauthorized HTML templates: {unauthorized}")
@@ -244,7 +248,7 @@ def main() -> None:
     for planned_template in PLANNED_TEMPLATE_FILES:
         if (templates_dir / planned_template).exists():
             errors.append(f"unauthorized planned template exists: site/templates/{planned_template}")
-    index_files = [path for path in tracked_files(root, "index.html") if path.resolve() != authorized_html.resolve()]
+    index_files = [path for path in tracked_files(root, "index.html") if path.resolve() not in allowed_html]
     if index_files:
         found = ", ".join(path.relative_to(root).as_posix() for path in index_files)
         errors.append(f"index.html must not exist as generated output: {found}")

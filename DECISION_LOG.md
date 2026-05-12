@@ -285,3 +285,20 @@ Implications:
 - All foundation pages remain non-indexable and unpublished.
 - No homepage template, public pages, final content articles, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
 - Future template construction must continue through explicit authorization and the quality gate.
+
+Decision: Sprint 13 homepage HTML template shell authorized and created.
+
+Rationale: StrongAvatar.com requires a controlled non-public homepage template shell before controlled preview publication, so the future homepage can preserve the Avatar Strength Protocol, Warm Spatial Institutional UX, Violet-Gold Identity Field Interface, Visual Sovereignty, trust placeholders, buyer-logic structure, and strategic acquisition signal without creating public output or indexable content.
+
+Implications:
+
+- `site/templates/homepage.html` now exists as the only authorized homepage template shell.
+- `homepage.html` is non-public, non-generative, and does not create a public homepage.
+- `base.html` remains the authorized base shell.
+- All other templates remain contract-only and non-implemented.
+- Template registry now authorizes exactly two HTML templates: `base.html` and `homepage.html`.
+- Template validator now permits and validates only the authorized base and homepage shells.
+- Public publishing remains disabled.
+- All foundation pages remain non-indexable and unpublished.
+- No public pages, final content articles, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
+- Future controlled preview publication must be explicitly authorized and quality-gated.

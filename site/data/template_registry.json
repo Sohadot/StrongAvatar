@@ -27,15 +27,21 @@
       "planned_file": "homepage.html",
       "contract": "site/template-contracts/homepage.md",
       "status": "contract_created",
-      "html_exists": false,
+      "html_exists": true,
+      "implementation_authorized": true,
+      "implemented_file": "site/templates/homepage.html",
+      "implementation_scope": "homepage_shell_only",
       "public_enabled": false,
       "output_allowed": false,
+      "css_dependency": "site/static/css/main.css",
+      "base_dependency": "site/templates/base.html",
+      "implementation_status": "implemented_homepage_shell",
       "allowed_page_types": ["homepage", "landing_reference_surface"],
       "required_data_inputs": ["route", "planned_title", "thesis", "foundational_line", "protocol_summary", "required_links", "seo_cluster", "buyer_logic_role", "quality_status"],
       "required_seo_elements": ["title", "meta_description", "canonical", "robots", "open_graph_tags", "twitter_tags", "structured_data_when_applicable"],
       "required_trust_elements": ["source_note", "reference_only_disclaimer_when_needed", "last_reviewed_marker", "methodology_link"],
       "prohibited_behaviors": ["generic_blog_layout", "avatar_generator_landing_page_layout", "affiliate_directory_layout", "fandom_page_layout", "thin_seo_landing_page_layout", "hype_heavy_startup_landing_page_layout", "unsourced_claim_presentation"],
-      "notes": "Future homepage reference surface; no HTML exists."
+      "notes": "Future homepage reference surface; HTML exists only for the authorized non-public homepage shell."
     },
     {
       "template_id": "reference_page",
