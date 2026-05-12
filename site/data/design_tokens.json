@@ -1,6 +1,11 @@
 {
   "status": "contract_created",
-  "css_exists": false,
+  "css_exists": true,
+  "css_authorized": true,
+  "css_authorized_file": "site/static/css/main.css",
+  "css_authorization_scope": "foundation_only",
+  "css_public_surface": false,
+  "css_output_allowed": false,
   "public_enabled": false,
   "output_allowed": false,
   "visual_doctrine": [
@@ -217,6 +222,26 @@
     "public construction is explicitly authorized",
     "quality gate passes",
     "decision log records CSS authorization"
+  ],
+  "css_constraints": [
+    "foundation primitives only",
+    "no public page layout",
+    "no homepage-specific classes",
+    "no external imports",
+    "no external asset references",
+    "no font files",
+    "no JavaScript dependencies",
+    "no monetization modules",
+    "no affiliate modules",
+    "no WebXR, WebGL, Three.js, or heavy animation"
+  ],
+  "css_validation_expectations": [
+    "exactly one authorized CSS file",
+    "authorized file must be site/static/css/main.css",
+    "public publishing remains disabled",
+    "output remains disabled",
+    "no HTML files are created",
+    "CSS remains primitive and token-based"
   ],
   "future_activation_conditions": [
     "explicit authorization for CSS construction",

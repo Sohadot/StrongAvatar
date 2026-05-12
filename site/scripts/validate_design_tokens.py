@@ -8,6 +8,9 @@ from validation_utils import fail, load_json, pass_message, repo_root
 
 REQUIRED_TOP_LEVEL_FIELDS = [
     "status", "css_exists", "public_enabled", "output_allowed",
+    "css_authorized", "css_authorized_file", "css_authorization_scope",
+    "css_public_surface", "css_output_allowed", "css_constraints",
+    "css_validation_expectations",
     "visual_doctrine", "color_tokens", "typography_tokens", "spacing_tokens",
     "layout_tokens", "component_token_expectations", "accessibility_requirements",
     "performance_requirements", "prohibited_visual_directions",
@@ -65,6 +68,41 @@ PROHIBITED_REGISTRY_REFERENCES = [
 CSS_DECLARATION_PATTERNS = [
     "color:", "background:", "font-family:", "margin:", "padding:", "display:", "{", "}",
 ]
+AUTHORIZED_CSS_FILE = Path("site/static/css/main.css")
+CSS_PROHIBITED_PATTERNS = [
+    "@import",
+    "url(",
+    "http://",
+    "https://",
+    ".woff",
+    ".woff2",
+    ".ttf",
+    ".otf",
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".svg",
+    ".webp",
+    "webxr",
+    "webgl",
+    "three.js",
+    "threejs",
+    "tracking",
+    "ads",
+    "affiliate",
+    "monetization script",
+    "javascript dependency",
+    ".homepage",
+    ".homepage-hero",
+    "cyberpunk",
+    "neon chaos",
+    "gaming hud",
+    "avatar generator",
+    "fandom styling",
+    "cheap luxury gold",
+    "generic saas gradient",
+]
 
 
 def flatten_strings(value: Any) -> list[str]:
@@ -91,6 +129,14 @@ def gitkeep_only(path: Path) -> bool:
     return all(file.name == ".gitkeep" for file in files)
 
 
+def gitkeep_or_authorized_css_only(path: Path, authorized_css: Path) -> bool:
+    if not path.exists():
+        return False
+    files = [file for file in path.rglob("*") if file.is_file()]
+    allowed = {".gitkeep", authorized_css.name}
+    return all(file.name in allowed for file in files)
+
+
 def main() -> None:
     root = repo_root()
     errors: list[str] = []
@@ -104,20 +150,40 @@ def main() -> None:
             errors.append(f"design_tokens.json missing required field: {field}")
     if registry.get("status") != "contract_created":
         errors.append("design_tokens.json status must be contract_created")
-    if registry.get("css_exists") is not False:
-        errors.append("design_tokens.json css_exists must be false")
+    if registry.get("css_exists") is not True:
+        errors.append("design_tokens.json css_exists must be true for the authorized foundation CSS")
+    if registry.get("css_authorized") is not True:
+        errors.append("design_tokens.json css_authorized must be true when css_exists is true")
+    if registry.get("css_authorized_file") != "site/static/css/main.css":
+        errors.append("css_authorized_file must be site/static/css/main.css")
+    if registry.get("css_authorization_scope") != "foundation_only":
+        errors.append("css_authorization_scope must be foundation_only")
+    if registry.get("css_public_surface") is not False:
+        errors.append("css_public_surface must be false")
+    if registry.get("css_output_allowed") is not False:
+        errors.append("css_output_allowed must be false")
     if registry.get("public_enabled") is not False:
         errors.append("design_tokens.json public_enabled must be false")
     if registry.get("output_allowed") is not False:
         errors.append("design_tokens.json output_allowed must be false")
 
     css_dir = root / "site" / "static" / "css"
-    if not gitkeep_only(css_dir):
-        errors.append("site/static/css/ must remain .gitkeep-only")
-    if css_dir.exists() and list(css_dir.rglob("*.css")):
-        errors.append("no .css files may exist under site/static/css/")
-    if [path for path in root.rglob("*.css") if ".git" not in path.parts]:
-        errors.append("no CSS files may exist anywhere in the repository")
+    authorized_css = root / AUTHORIZED_CSS_FILE
+    if not gitkeep_or_authorized_css_only(css_dir, authorized_css):
+        errors.append("site/static/css/ must contain only .gitkeep and main.css")
+    css_files = [path for path in root.rglob("*.css") if ".git" not in path.parts]
+    if sorted(path.relative_to(root).as_posix() for path in css_files) != ["site/static/css/main.css"]:
+        errors.append("site/static/css/main.css must be the only CSS file in the repository")
+    if not authorized_css.exists():
+        errors.append("site/static/css/main.css must exist when css_exists is true")
+
+    html_files = [path for path in root.rglob("*.html") if ".git" not in path.parts]
+    if html_files:
+        errors.append("no HTML files may exist during the CSS foundation sprint")
+
+    output_dir = root / "output"
+    if not gitkeep_only(output_dir):
+        errors.append("output/ must remain .gitkeep-only")
 
     for token in REQUIRED_COLOR_TOKENS:
         if token not in registry.get("color_tokens", {}):
@@ -158,6 +224,14 @@ def main() -> None:
             if pattern in text:
                 errors.append(f"design_tokens.json must not contain actual CSS declaration syntax: {pattern}")
 
+    if authorized_css.exists():
+        css_text = authorized_css.read_text(encoding="utf-8").lower()
+        for pattern in CSS_PROHIBITED_PATTERNS:
+            if pattern in css_text:
+                errors.append(f"main.css contains prohibited foundation CSS content: {pattern}")
+        if ".page-shell" not in css_text or ".protocol-card" not in css_text:
+            errors.append("main.css must remain a foundation primitive layer")
+
     if design_doc.exists():
         content = design_doc.read_text(encoding="utf-8")
         lower_content = content.lower()
@@ -170,7 +244,7 @@ def main() -> None:
 
     if errors:
         fail("; ".join(errors))
-    pass_message("design token contract and registry are reserved, non-public, and CSS-free")
+    pass_message("design token contract and authorized foundation CSS remain controlled and non-public")
 
 
 if __name__ == "__main__":

@@ -240,3 +240,18 @@ Implications:
 - Public publishing remains disabled.
 - No CSS, HTML templates, public pages, JavaScript, assets, monetization scripts, affiliate links, sitemap, robots file, index.html, or generated output were created.
 - Future CSS construction must pass the updated design token validator and quality gate.
+
+Decision: Sprint 11 token-based CSS foundation authorized and created.
+
+Rationale: StrongAvatar.com requires a controlled CSS foundation before HTML template construction so the future interface can implement the Warm Spatial Institutional UX, Violet-Gold Identity Field Interface, and Visual Sovereignty doctrine without drifting into generic AI SaaS, avatar-maker, gaming, cyberpunk, or luxury cliché aesthetics.
+
+Implications:
+
+- `site/static/css/main.css` now exists as the only authorized CSS foundation file.
+- CSS exists only as a foundation layer and does not create a public website.
+- Design token registry now authorizes exactly one foundation CSS file.
+- Design token validator now permits and validates only the authorized CSS foundation.
+- Public publishing remains disabled.
+- All foundation pages remain non-indexable and unpublished.
+- No HTML templates, public pages, final content articles, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
+- Future HTML template construction must use this CSS foundation and pass the quality gate.
