@@ -271,3 +271,17 @@ Implications:
 - All foundation pages remain non-indexable and unpublished.
 - No homepage template, public pages, final content articles, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
 - Future page-specific template construction must follow template contracts and pass the quality gate.
+
+Decision: Sprint 12.1 design-token validator aligned with authorized base template shell.
+
+Rationale: GitHub Actions correctly exposed that validate_design_tokens.py still enforced a Sprint 11 CSS-foundation rule rejecting all HTML, even though Sprint 12 authorized exactly one non-public base template shell. The validator must allow the authorized base.html shell while continuing to reject public pages, unauthorized templates, generated output, and any broader site construction.
+
+Implications:
+
+- `validate_design_tokens.py` now permits only the authorized `site/templates/base.html` shell.
+- Unauthorized HTML templates and public generated HTML remain prohibited.
+- The base shell remains non-public and non-generative.
+- Public publishing remains disabled.
+- All foundation pages remain non-indexable and unpublished.
+- No homepage template, public pages, final content articles, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
+- Future template construction must continue through explicit authorization and the quality gate.

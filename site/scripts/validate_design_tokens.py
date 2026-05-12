@@ -69,6 +69,32 @@ CSS_DECLARATION_PATTERNS = [
     "color:", "background:", "font-family:", "margin:", "padding:", "display:", "{", "}",
 ]
 AUTHORIZED_CSS_FILE = Path("site/static/css/main.css")
+AUTHORIZED_HTML_FILE = Path("site/templates/base.html")
+PLANNED_TEMPLATE_FILES = {
+    "homepage.html",
+    "reference-page.html",
+    "protocol-page.html",
+    "comparison-page.html",
+    "glossary-term.html",
+    "brief-page.html",
+    "strategic-asset-page.html",
+}
+PUBLIC_HTML_PATTERNS = [
+    "<article",
+    "create your ai avatar",
+    "generate your avatar",
+    "start now",
+    "buy now",
+    "affiliate",
+    "sponsored placement",
+    "google analytics",
+    "google tag manager",
+    "tracking pixel",
+    "lorem ipsum",
+    "coming soon",
+]
+JAVASCRIPT_EXTENSIONS = {".js", ".mjs", ".cjs", ".jsx", ".ts", ".tsx"}
+IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp", ".ico", ".avif"}
 CSS_PROHIBITED_PATTERNS = [
     "@import",
     "url(",
@@ -137,11 +163,19 @@ def gitkeep_or_authorized_css_only(path: Path, authorized_css: Path) -> bool:
     return all(file.name in allowed for file in files)
 
 
+def tracked_files(root: Path, pattern: str) -> list[Path]:
+    return sorted(path for path in root.rglob(pattern) if ".git" not in path.parts and path.is_file())
+
+
 def main() -> None:
     root = repo_root()
     errors: list[str] = []
     design_doc = root / "architecture" / "DESIGN_TOKENS.md"
     registry = load_json("site/data/design_tokens.json")
+    site = load_json("site/data/site.json")
+
+    if site.get("public_publishing_enabled") is not False:
+        errors.append("public_publishing_enabled must remain false during sovereign foundation mode")
 
     if not design_doc.exists():
         errors.append("architecture/DESIGN_TOKENS.md must exist")
@@ -177,13 +211,65 @@ def main() -> None:
     if not authorized_css.exists():
         errors.append("site/static/css/main.css must exist when css_exists is true")
 
-    html_files = [path for path in root.rglob("*.html") if ".git" not in path.parts]
-    if html_files:
-        errors.append("no HTML files may exist during the CSS foundation sprint")
-
     output_dir = root / "output"
     if not gitkeep_only(output_dir):
         errors.append("output/ must remain .gitkeep-only")
+
+    authorized_html = root / AUTHORIZED_HTML_FILE
+    html_files = tracked_files(root, "*.html")
+    allowed_html = {authorized_html.resolve()}
+    unauthorized_html = [path for path in html_files if path.resolve() not in allowed_html]
+    if unauthorized_html:
+        unauthorized = ", ".join(path.relative_to(root).as_posix() for path in unauthorized_html)
+        errors.append(f"unauthorized HTML files exist: {unauthorized}")
+    if authorized_html.exists():
+        html_text = authorized_html.read_text(encoding="utf-8").lower()
+        for pattern in PUBLIC_HTML_PATTERNS:
+            if pattern in html_text:
+                errors.append(f"site/templates/base.html suggests a public page was created: {pattern}")
+    templates_dir = root / "site" / "templates"
+    template_html = tracked_files(templates_dir, "*.html") if templates_dir.exists() else []
+    unauthorized_template_html = [path for path in template_html if path.resolve() != authorized_html.resolve()]
+    if unauthorized_template_html:
+        unauthorized = ", ".join(path.relative_to(root).as_posix() for path in unauthorized_template_html)
+        errors.append(f"site/templates/ contains unauthorized HTML templates: {unauthorized}")
+    content_html = tracked_files(root / "site" / "content", "*.html")
+    if content_html:
+        unauthorized = ", ".join(path.relative_to(root).as_posix() for path in content_html)
+        errors.append(f"site/content/ contains unauthorized HTML: {unauthorized}")
+    output_html = tracked_files(output_dir, "*.html")
+    if output_html:
+        unauthorized = ", ".join(path.relative_to(root).as_posix() for path in output_html)
+        errors.append(f"output/ contains generated HTML: {unauthorized}")
+    for planned_template in PLANNED_TEMPLATE_FILES:
+        if (templates_dir / planned_template).exists():
+            errors.append(f"unauthorized planned template exists: site/templates/{planned_template}")
+    index_files = [path for path in tracked_files(root, "index.html") if path.resolve() != authorized_html.resolve()]
+    if index_files:
+        found = ", ".join(path.relative_to(root).as_posix() for path in index_files)
+        errors.append(f"index.html must not exist as generated output: {found}")
+    sitemap_files = tracked_files(root, "sitemap.xml")
+    if sitemap_files:
+        found = ", ".join(path.relative_to(root).as_posix() for path in sitemap_files)
+        errors.append(f"sitemap.xml must not exist: {found}")
+    robots_files = tracked_files(root, "robots.txt")
+    if robots_files:
+        found = ", ".join(path.relative_to(root).as_posix() for path in robots_files)
+        errors.append(f"robots.txt must not exist: {found}")
+    javascript_files = [
+        path for path in tracked_files(root, "*")
+        if path.suffix.lower() in JAVASCRIPT_EXTENSIONS
+    ]
+    if javascript_files:
+        found = ", ".join(path.relative_to(root).as_posix() for path in javascript_files)
+        errors.append(f"JavaScript website files must not exist: {found}")
+    image_files = [
+        path for path in tracked_files(root, "*")
+        if path.suffix.lower() in IMAGE_EXTENSIONS
+    ]
+    if image_files:
+        found = ", ".join(path.relative_to(root).as_posix() for path in image_files)
+        errors.append(f"image assets must not exist: {found}")
 
     for token in REQUIRED_COLOR_TOKENS:
         if token not in registry.get("color_tokens", {}):
