@@ -302,3 +302,24 @@ Implications:
 - All foundation pages remain non-indexable and unpublished.
 - No public pages, final content articles, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
 - Future controlled preview publication must be explicitly authorized and quality-gated.
+
+## 2026-06-16
+
+Decision: Sprint 14 — Avatar Integrity Ontology, Strong Avatar Standard, and Avatar Strength Assessment Protocol documents created. Reference layer registered in pages.json. Glossary and protocol dimensions expanded.
+
+Rationale: StrongAvatar.com requires the three core intellectual documents before any reference layer page or engine can be built. The ontology defines failure modes and governance components. The standard defines strength bands. The protocol defines the deterministic assessment procedure. Together these documents are the intellectual foundation that makes the Category Intelligence Factory function possible — turning the asset from a governance framework into a machine that takes an avatar deployment as input and returns a governed classification of its strength.
+
+Implications:
+
+- `AVATAR_INTEGRITY_ONTOLOGY.md` formally defines W-01…W-10 (weakness classes) and C-01…C-08 (governance components) with entry criteria, observable signals, compounding relationships, and a deterministic weakness-to-component mapping table. Identifiers are permanent once assigned.
+- `STRONG_AVATAR_STANDARD.md` defines four strength bands — Ungoverned, Provisional, Governed, Sovereign — with precise criteria, unconditional band determination rules, and stakeholder implications for each band.
+- `AVATAR_STRENGTH_ASSESSMENT_PROTOCOL.md` defines the bounded questionnaire (10 inputs across 5 sections), the deterministic rule table mapping inputs to weakness classes, and the output specification. Two operators assessing the same deployment from the same inputs must reach the same band, the same dominant weakness class, and the same remediating components.
+- The nine existing protocol assessment dimensions (Identity Integrity, Likeness Control, Consent Clarity, Platform Portability, Visual Authority, Synthetic Trust, Commercial Readiness, Abuse Resistance, Long-Term Narrative Coherence) are formally positioned as structured inputs to the protocol. Each dimension maps to specific weakness classes via the `maps_to_weakness_classes` field added to `site/data/protocol_dimensions.json`. The dimension framework is preserved and extended — not replaced.
+- `site/data/glossary_terms.json` is expanded from 10 to 20 terms. Ten original-language terms are added as reserved planned entries: Weak Avatar, Likeness Provenance, Consent Basis, Identity Drift, Impersonation Surface, Disclosure Integrity, Revocation Gap, Avatar Trust Score, Likeness Rights Chain, and Content Credentials. All remain non-indexable and non-public.
+- `site/data/pages.json` is expanded from 9 to 29 pages. Twenty new pages are registered: `/ontology/`, `/standard/`, ten weakness-class pages (`/weakness/consent-absence/` through `/weakness/robustness-weakness/`), and eight governance-component pages (`/component/consent-infrastructure/` through `/component/attribution-binding/`). All are reserved, non-indexable, and not publication-allowed.
+- Content contracts are created for all 20 new pages, following the validated content contract schema. Required Internal Links in each contract reference only registered routes, ensuring no orphan pages exist in the reference layer.
+- Public publishing remains disabled.
+- All pages remain non-indexable and unpublished.
+- No website construction was performed.
+- No public pages, final content articles, CSS changes, HTML template changes, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
+- Future construction of reference layer pages must follow the content contracts, pass the quality gate, and produce a complete internal link graph before any page is authorized for publication.
