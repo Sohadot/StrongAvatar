@@ -323,3 +323,27 @@ Implications:
 - No website construction was performed.
 - No public pages, final content articles, CSS changes, HTML template changes, JavaScript website code, monetization scripts, affiliate links, placeholder content, thin SEO pages, deployment logic, sitemap, robots file, index.html, or generated output were created.
 - Future construction of reference layer pages must follow the content contracts, pass the quality gate, and produce a complete internal link graph before any page is authorized for publication.
+
+## 2026-06-16
+
+Decision: Sprint 15 — Page source documents created for all 20 registered reference pages and the /protocol/ hub page. Pre-publication content foundation established in `site/page-sources/`.
+
+Rationale: All 29 registered pages in `pages.json` require substantive content before publication is authorized. The sovereign foundation mode enforced by the quality gate prevents content from existing in `site/content/` or HTML from being generated in `output/` until governance is ready. The authorized path in this phase is to prepare complete, high-quality Markdown source documents in `site/page-sources/` — outside the gated `site/content/` path — so that every registered page has real, reviewable content. This eliminates phantom pages from the registered page inventory without triggering publication.
+
+The `site/page-sources/` directory is the pre-publication content layer: it holds the complete page content, internal link structure, SEO metadata, and source requirements for each page in a governance-compliant form. When the build pipeline is unlocked, these sources become the rendering input for the reference-page template.
+
+Implications:
+
+- `site/page-sources/ontology.md` — complete source for `/ontology/`: defines the full ontology hub, links to all 10 W-class and 8 C-class reference pages, explains compounding relationships and the entry criteria framework.
+- `site/page-sources/standard.md` — complete source for `/standard/`: defines all four bands with full criteria, band determination rules, and stakeholder implications for each band.
+- `site/page-sources/protocol.md` — complete source for `/protocol/`: defines the bounded questionnaire, weakness class activation rules, band determination, and output specification.
+- `site/page-sources/weakness/w-01-consent-absence.md` through `w-10-robustness-weakness.md` — complete source for each of the 10 weakness class reference pages. Each file contains: definition (from AVATAR_INTEGRITY_ONTOLOGY.md), governance significance section, observable signals, compounding relationships with cross-links, remediation path with C-component link, band implication, and protocol assessment mapping.
+- `site/page-sources/component/c-01-consent-infrastructure.md` through `c-08-attribution-binding.md` — complete source for each of the 8 governance component reference pages. Each file contains: definition (from AVATAR_INTEGRITY_ONTOLOGY.md), why it matters section, remediating weakness classes with cross-links, implementation indicators, full implementation requirements, integration with other components, and band contribution.
+- Every page source contains: YAML frontmatter with route, title, meta description, canonical URL, SEO cluster, template designation, publication state, and source requirements.
+- Internal link graph is complete and closed: every W-class page links to its primary C-component, its compounding W-classes, and the hub pages (/ontology/, /standard/, /protocol/). Every C-class page links to the W-classes it remediates and the hub pages. The /ontology/ hub links to all 20 W/C pages plus /standard/ and /protocol/.
+- No phantom pages remain: every registered page in pages.json now has a corresponding page source document with substantive content.
+- Quality gate: all 12 validators continue to pass. The `site/page-sources/` directory is outside the gated `site/content/` path and does not trigger any validator.
+- Publication remains disabled.
+- All pages remain non-indexable and unpublished.
+- No HTML files were created, no templates were modified, no output was generated, and no CSS was changed.
+- Next phase: to serve these pages, the build pipeline must be authorized via a future DECISION_LOG entry that enables the reference-page template and the content build stage. That authorization requires: a reference_page.html template implementation, a build script that renders page-sources/ to output/, and explicit quality-gate authorization for output generation.
