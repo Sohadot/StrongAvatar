@@ -383,3 +383,27 @@ Implications:
 - Quality gate: all 13 validators pass. 22 sources confirmed, 22 launch-set routes confirmed, all links registered and closed.
 - Publication remains disabled. `public_publishing_enabled` remains false. output/ remains .gitkeep-only. No HTML generated.
 - Next phase: Sprint 16B — Controlled Foundation HTML Generation. Authorization requires updating site/data/launch_set.json (`output_generation_enabled: true`), implementing site/templates/reference-page.html, and enabling the build pipeline in build.py. That authorization must be recorded in DECISION_LOG.md before any HTML is generated.
+
+## 2026-06-16
+
+Decision: Sprint 16B — Controlled Foundation HTML Generation completed. 22 static HTML pages generated, sitemap and robots.txt produced.
+
+Rationale: Sprint 16A established route alignment and authorized the launch set of 22 routes. Sprint 16B activates the build pipeline under controlled governance: output_generation_enabled is now true, public_generation_enabled is true, and indexing_enabled is true. Monetization, JavaScript, diagnostic engine, and external assets remain disabled.
+
+Implications:
+
+- **`site/data/launch_set.json`** updated: `launch_set_status` set to `foundation_output_authorized`, `output_generation_enabled: true`, `public_generation_enabled: true`, `indexing_enabled: true`. All 22 launch-set routes unchanged.
+- **`site/data/site.json`** updated: `public_publishing_enabled: true`, `asset_stage: "foundation_output"`, `indexing_status: "foundation_launch_set_only"`.
+- **`site/data/pages.json`** updated: all 22 launch-set routes updated to `status: "generated_foundation"`, `indexable: true`, `publication_allowed: true`, `quality_status: "source_backed_foundation"`. Non-launch-set pages remain unchanged.
+- **`site/scripts/build.py`** rewritten: full static HTML generator. Reads launch_set.json, scans site/page-sources/ for frontmatter route mapping, converts Markdown to HTML, and writes output/{route}/index.html for all 22 authorized routes. Also copies site/static/css/main.css to output/static/css/main.css.
+- **`site/scripts/generate_sitemap.py`** rewritten: generates output/sitemap.xml for all 22 indexable launch-set routes. Confirms output HTML exists for each route before inclusion.
+- **`site/scripts/generate_robots.py`** rewritten: generates output/robots.txt with Allow: /, Disallow for internal paths, and Sitemap directive.
+- **`site/scripts/validate_output_integrity.py`** created: 22-check output integrity validator covering HTML structure, canonical URLs, link integrity, prohibited terms, sitemap and robots correctness, W-class/C-component cross-link requirements, and non-launch-set page governance.
+- **`site/scripts/validate_design_tokens.py`** updated: launch_set-aware. Allows output HTML and CSS when `output_generation_enabled` and `public_generation_enabled` are both true.
+- **`site/scripts/validate_seo.py`** updated: launch_set-aware. Allows `indexable: true` for launch-set pages and `indexing_status: "foundation_launch_set_only"` when generation is authorized.
+- **`site/scripts/validate_content.py`** updated: launch_set-aware. Allows `publication_allowed: true` and `indexable: true` for launch-set pages when generation is authorized.
+- **`site/scripts/validate_no_thin_pages.py`** updated: launch_set-aware. Allows `indexable: true` for launch-set pages when generation is authorized.
+- **`site/scripts/validate_page_source_integrity.py`** updated: relaxed `output_generation_enabled` check to allow boolean true (was hard-requiring false).
+- **`site/scripts/quality_gate.py`** updated: `validate_output_integrity.py` added as 14th validator.
+- Quality gate: all 14 validators pass. 22 HTML files generated. sitemap.xml and robots.txt present. No JavaScript, no images, no external assets.
+- Monetization remains disabled.
