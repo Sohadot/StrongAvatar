@@ -407,3 +407,20 @@ Implications:
 - **`site/scripts/quality_gate.py`** updated: `validate_output_integrity.py` added as 14th validator.
 - Quality gate: all 14 validators pass. 22 HTML files generated. sitemap.xml and robots.txt present. No JavaScript, no images, no external assets.
 - Monetization remains disabled.
+
+## 2026-06-16
+
+Decision: Sprint 17 creates the production launch gate for StrongAvatar.com by deploying only the controlled output/ foundation set through GitHub Pages.
+
+Rationale: Sprint 16B generated the approved 22-page foundation output and passed 14/14 validators. The next step is not more content or an engine; it is a controlled deployment gate that publishes only source-backed, launch-set HTML while excluding repository internals, scripts, analytics, monetization, and unauthorized routes.
+
+Implications:
+
+- **`output/CNAME`** created: declares `strongavatar.com` as the custom domain for GitHub Pages deployment.
+- **`.github/workflows/deploy-pages.yml`** created: two-job workflow (validate → deploy). The validate job runs all 14 quality gate validators plus output integrity checks before deployment is permitted. The deploy job uploads only `./output` as the Pages artifact and runs only on `main`.
+- **`site/scripts/validate_output_integrity.py`** updated: added CNAME existence and content checks, unauthorized root-file check, and font-file check. Pass message updated to reflect CNAME validation.
+- Deployment is authorized only from `output/`. Repository root, `site/`, `governance/`, `page-sources/`, and hidden internals are never uploaded.
+- No route expansion is authorized.
+- No diagnostic engine, Avatar Trust Score API, monetization, JavaScript, analytics, images, fonts, external assets, or forms are authorized.
+- Quality gate: all 14 validators pass. CNAME validates as `strongavatar.com`. Deploy workflow gates on full quality gate before publication.
+- Post-launch verification becomes Sprint 18.

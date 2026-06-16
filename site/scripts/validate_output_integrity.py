@@ -39,6 +39,9 @@ PROHIBITED_CONTENT_TERMS = [
 
 JAVASCRIPT_EXTENSIONS = {".js", ".mjs", ".cjs", ".jsx", ".ts", ".tsx"}
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp", ".ico", ".avif"}
+FONT_EXTENSIONS = {".woff", ".woff2", ".ttf", ".otf", ".eot"}
+
+AUTHORIZED_OUTPUT_ROOT_FILES = {"index.html", "sitemap.xml", "robots.txt", "CNAME", ".gitkeep"}
 
 
 def html_path_to_route(output_dir: Path, html_path: Path) -> str:
@@ -109,6 +112,22 @@ def main() -> None:
     if not (output_dir / "robots.txt").exists():
         errors.append("output/robots.txt does not exist")
 
+    # Check CNAME-1: output/CNAME exists
+    cname_path = output_dir / "CNAME"
+    if not cname_path.exists():
+        errors.append("output/CNAME does not exist")
+    else:
+        # Check CNAME-2: content is exactly strongavatar.com (with optional trailing newline)
+        cname_content = cname_path.read_text(encoding="utf-8").strip()
+        if cname_content != "strongavatar.com":
+            errors.append(f"output/CNAME content must be exactly strongavatar.com, got: {cname_content!r}")
+
+    # Check CNAME-3: no unauthorized files at output/ root level
+    root_files = [p.name for p in output_dir.iterdir() if p.is_file()]
+    for fname in root_files:
+        if fname not in AUTHORIZED_OUTPUT_ROOT_FILES:
+            errors.append(f"unauthorized file at output/ root: {fname}")
+
     # Check 13: output/static/css/main.css exists and matches source
     src_css = root / "site" / "static" / "css" / "main.css"
     dst_css = output_dir / "static" / "css" / "main.css"
@@ -128,6 +147,12 @@ def main() -> None:
     if img_files:
         found = ", ".join(str(p.relative_to(root)) for p in img_files)
         errors.append(f"image files found in output/: {found}")
+
+    # Check font: no font files in output/
+    font_files = [p for p in output_dir.rglob("*") if p.is_file() and p.suffix.lower() in FONT_EXTENSIONS]
+    if font_files:
+        found = ", ".join(str(p.relative_to(root)) for p in font_files)
+        errors.append(f"font files found in output/: {found}")
 
     # Check 14: no unauthorized CSS in output/
     css_files = [p for p in output_dir.rglob("*.css") if p.is_file()]
@@ -289,7 +314,7 @@ def main() -> None:
     if errors:
         fail("; ".join(errors))
 
-    pass_message("output integrity: all 22 generated HTML files verified, sitemap and robots valid")
+    pass_message("output integrity: CNAME, 22 HTML pages, sitemap, robots, CSS verified — no JS/images/fonts/external assets")
 
 
 if __name__ == "__main__":

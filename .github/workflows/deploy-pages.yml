@@ -1,0 +1,71 @@
+name: Deploy StrongAvatar Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Validate output integrity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run quality gate (14 validators)
+        run: python site/scripts/quality_gate.py
+
+      - name: Run output integrity validator
+        run: python site/scripts/validate_output_integrity.py
+
+      - name: Confirm output/CNAME exists
+        run: test -f output/CNAME && echo "PASS output/CNAME exists"
+
+      - name: Confirm output/index.html exists
+        run: test -f output/index.html && echo "PASS output/index.html exists"
+
+      - name: Confirm output/sitemap.xml exists
+        run: test -f output/sitemap.xml && echo "PASS output/sitemap.xml exists"
+
+      - name: Confirm output/robots.txt exists
+        run: test -f output/robots.txt && echo "PASS output/robots.txt exists"
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: validate
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact (output/ only)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./output
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
