@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W-07: Revocation Gap — Avatar Governance Weakness Class</title>
+  <meta name="description" content="W-07 Revocation Gap classifies synthetic avatar deployments where no mechanism exists to withdraw consent or decommission the avatar once deployed.">
+  <link rel="canonical" href="https://strongavatar.com/weakness/revocation-gap/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="W-07: Revocation Gap — Avatar Governance Weakness Class">
+  <meta property="og:description" content="W-07 Revocation Gap classifies synthetic avatar deployments where no mechanism exists to withdraw consent or decommission the avatar once deployed.">
+  <meta property="og:url" content="https://strongavatar.com/weakness/revocation-gap/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="W-07: Revocation Gap — Avatar Governance Weakness Class">
+  <meta name="twitter:description" content="W-07 Revocation Gap classifies synthetic avatar deployments where no mechanism exists to withdraw consent or decommission the avatar once deployed.">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="site-shell" data-interface="violet-gold-identity-field">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-shell__page">
+    <header class="site-shell__header" role="banner">
+      <nav class="site-nav" aria-label="Site navigation">
+        <a class="site-nav__brand" href="/">StrongAvatar.com</a>
+        <ul class="site-nav__list">
+          <li><a href="/ontology/">Ontology</a></li>
+          <li><a href="/standard/">Standard</a></li>
+          <li><a href="/protocol/">Protocol</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="site-shell__main page-shell" tabindex="-1">
+      <div class="page-shell__content protocol-card">
+        <h1>W-07: Revocation Gap</h1>
+<h2>Definition</h2>
+<p>No mechanism exists to withdraw consent, decommission the avatar, or remove it from active deployment. Once deployed, the avatar cannot be recalled by the subject, the rights holder, or the deploying platform.</p>
+<hr>
+<h2>Why This Matters</h2>
+<p>A revocation gap means the subject of a synthetic avatar has no exit — once consent is given and the avatar is deployed, the subject cannot undo the deployment. This is a fundamental imbalance in the consent relationship. Regulatory frameworks for synthetic media increasingly require not just initial consent but ongoing consent with meaningful withdrawal rights. Without a revocation mechanism, a deployment that begins with valid consent can become non-consensual the moment the subject attempts to withdraw and cannot.</p>
+<hr>
+<h2>Observable Signals</h2>
+<p>A deployment exhibits W-07: Revocation Gap when one or more of the following is present:</p>
+<ul>
+<li>No kill-switch, decommission process, or revocation procedure is documented</li>
+<li>The consent basis contains no expiry, withdrawal clause, or termination right</li>
+<li>The avatar persists in deployment after the subject or rights holder has requested removal</li>
+</ul>
+<hr>
+<h2>Compounding Relationships</h2>
+<p>W-07: Revocation Gap compounds with:</p>
+<ul>
+<li><a href="/weakness/consent-absence/">W-01 Consent Absence</a></li>
+<li><a href="/weakness/rights-ambiguity/">W-06 Rights Ambiguity</a></li>
+</ul>
+<p>Revocation gap compounds with consent absence (W-01) because a consent framework that offers no path to withdrawal is structurally incomplete — it authorizes deployment but cannot honor a decision to un-authorize. It compounds with rights ambiguity (W-06) because unclear rights ownership makes it impossible to identify who holds the authority to initiate revocation.</p>
+<hr>
+<h2>Remediation Path</h2>
+<p>The primary remediation is <a href="/component/revocation-mechanism/">C-07 Revocation and Kill-Switch Mechanism</a>: a documented process that allows the subject, rights holder, or authorized authority to withdraw consent and remove the avatar from active deployment within a defined timeframe. The mechanism must be documented in the consent basis, technically implementable by the deploying platform, and tested to confirm it works.</p>
+<hr>
+<h2>Band Implication</h2>
+<p>W-07 active → at minimum <strong>Provisional</strong> (assuming W-01, W-02, W-03 are mitigated). W-07 prevents <strong>Sovereign</strong> classification unless C-07 is fully implemented with a tested revocation process.</p>
+<p>See the <a href="/standard/">Strong Avatar Standard</a> for full band determination rules.</p>
+<hr>
+<h2>Protocol Assessment</h2>
+<p><strong>Questions mapping to this class:</strong> A3 (Revocation Mechanism)</p>
+<p>Protocol input A3 determines W-07 status. A3-N (no revocation mechanism) activates W-07 as active. A3-P (withdrawal process exists but response time undefined or untested) activates W-07 as partial. A3-Y deactivates W-07.</p>
+<p><strong>Assessment dimension mapping:</strong> Consent Clarity (primary), Commercial Readiness (secondary)</p>
+<hr>
+<h2>Source Note</h2>
+<p>This weakness class definition is internal doctrine under the Sovereign Asset System, governed by the <a href="/ontology/">Avatar Integrity Ontology</a>. The identifier W-07 is permanent. Legal and regulatory claims require external source documentation before publication.</p>
+<p>See also: <a href="/protocol/">Avatar Strength Assessment Protocol</a> · <a href="/standard/">Strong Avatar Standard</a></p>
+      </div>
+    </main>
+    <aside class="site-shell__trust" aria-label="Source and methodology context">
+      <p class="trust-note">StrongAvatar.com is a governance reference layer. Content reflects internal doctrine and methodology. External claims require documented sources before publication.</p>
+    </aside>
+    <footer class="site-shell__footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">StrongAvatar.com</a>
+        <a href="/ontology/">Ontology</a>
+        <a href="/standard/">Standard</a>
+        <a href="/protocol/">Protocol</a>
+      </nav>
+      <p class="footer-legal">&#169; 2026 StrongAvatar.com. Avatar governance reference layer.</p>
+    </footer>
+  </div>
+</body>
+</html>

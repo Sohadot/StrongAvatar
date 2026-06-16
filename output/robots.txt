@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /site/
+Disallow: /site/data/
+Disallow: /site/page-sources/
+Disallow: /.git/
+Sitemap: https://strongavatar.com/sitemap.xml

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C-07: Revocation and Kill-Switch Mechanism — Avatar Governance Component</title>
+  <meta name="description" content="C-07 Revocation and Kill-Switch Mechanism documents the process allowing a subject or rights holder to withdraw consent and remove a synthetic avatar from active deployment within a defined timeframe.">
+  <link rel="canonical" href="https://strongavatar.com/component/revocation-mechanism/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="C-07: Revocation and Kill-Switch Mechanism — Avatar Governance Component">
+  <meta property="og:description" content="C-07 Revocation and Kill-Switch Mechanism documents the process allowing a subject or rights holder to withdraw consent and remove a synthetic avatar from active deployment within a defined timeframe.">
+  <meta property="og:url" content="https://strongavatar.com/component/revocation-mechanism/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="C-07: Revocation and Kill-Switch Mechanism — Avatar Governance Component">
+  <meta name="twitter:description" content="C-07 Revocation and Kill-Switch Mechanism documents the process allowing a subject or rights holder to withdraw consent and remove a synthetic avatar from active deployment within a defined timeframe.">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="site-shell" data-interface="violet-gold-identity-field">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-shell__page">
+    <header class="site-shell__header" role="banner">
+      <nav class="site-nav" aria-label="Site navigation">
+        <a class="site-nav__brand" href="/">StrongAvatar.com</a>
+        <ul class="site-nav__list">
+          <li><a href="/ontology/">Ontology</a></li>
+          <li><a href="/standard/">Standard</a></li>
+          <li><a href="/protocol/">Protocol</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="site-shell__main page-shell" tabindex="-1">
+      <div class="page-shell__content protocol-card">
+        <h1>C-07: Revocation and Kill-Switch Mechanism</h1>
+<h2>Definition</h2>
+<p>A documented process that allows the subject, the rights holder, or an authorized authority to withdraw consent and remove the avatar from active deployment within a defined timeframe.</p>
+<hr>
+<h2>Why This Matters</h2>
+<p>The revocation mechanism is the exit path for governed avatar deployment. Without it, consent is a one-way door — once given, it cannot be withdrawn. This violates the principle that consent must be freely given and freely revocable. Regulators and legal frameworks for synthetic media are increasingly treating revocability as a minimum governance requirement, not an optional enhancement. The mechanism must be technical (the platform can actually remove the avatar), procedural (there is a documented process), and time-bounded (removal happens within a defined period, not eventually).</p>
+<hr>
+<h2>Remediates</h2>
+<ul>
+<li><a href="/weakness/revocation-gap/">W-07 Revocation Gap</a> (primary)</li>
+</ul>
+<hr>
+<h2>Implementation Indicators</h2>
+<p>A deployment has implemented C-07: Revocation and Kill-Switch Mechanism when:</p>
+<ul>
+<li>A revocation procedure exists and is documented in the consent basis or deployment agreement</li>
+<li>The deploying platform has a technical mechanism to deactivate or remove the avatar on request</li>
+<li>A defined response time for revocation requests is documented</li>
+</ul>
+<hr>
+<h2>Full Implementation Requirements</h2>
+<p>Full implementation requires A3-Y in the assessment protocol: a revocation procedure exists with a defined response time. For Sovereign classification, the revocation mechanism must also have been tested — it must be verified that the deactivation mechanism actually works, not just documented in theory.</p>
+<hr>
+<h2>Integration with Other Components</h2>
+<p>C-07 integrates with <a href="/component/consent-infrastructure/">C-01 Consent Infrastructure</a> — the consent infrastructure must include withdrawal terms that C-07 can enforce. C-07 also integrates with <a href="/component/rights-chain-documentation/">C-06 Rights Chain Documentation</a> — rights clarity determines who holds the authority to initiate revocation.</p>
+<hr>
+<h2>Band Contribution</h2>
+<p>C-07 implemented deactivates W-07. W-07 deactivated is required for <strong>Sovereign</strong> classification. Governed classification allows W-07 partial. The Sovereign requirement for C-07 is full implementation with a tested mechanism — documented-only revocation is insufficient for Sovereign.</p>
+<p>See the <a href="/standard/">Strong Avatar Standard</a> for full band determination criteria.</p>
+<hr>
+<h2>Source Note</h2>
+<p>This governance component definition is internal doctrine under the Sovereign Asset System, governed by the <a href="/ontology/">Avatar Integrity Ontology</a>. The identifier C-07 is permanent. Legal and technical claims require external source documentation before publication.</p>
+<p>See also: <a href="/protocol/">Avatar Strength Assessment Protocol</a> · <a href="/standard/">Strong Avatar Standard</a></p>
+      </div>
+    </main>
+    <aside class="site-shell__trust" aria-label="Source and methodology context">
+      <p class="trust-note">StrongAvatar.com is a governance reference layer. Content reflects internal doctrine and methodology. External claims require documented sources before publication.</p>
+    </aside>
+    <footer class="site-shell__footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">StrongAvatar.com</a>
+        <a href="/ontology/">Ontology</a>
+        <a href="/standard/">Standard</a>
+        <a href="/protocol/">Protocol</a>
+      </nav>
+      <p class="footer-legal">&#169; 2026 StrongAvatar.com. Avatar governance reference layer.</p>
+    </footer>
+  </div>
+</body>
+</html>

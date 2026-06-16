@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W-08: Context Collapse — Avatar Governance Weakness Class</title>
+  <meta name="description" content="W-08 Context Collapse classifies synthetic avatar deployments reused outside their authorized context or platform without renewed consent, provenance verification, or scope confirmation.">
+  <link rel="canonical" href="https://strongavatar.com/weakness/context-collapse/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="W-08: Context Collapse — Avatar Governance Weakness Class">
+  <meta property="og:description" content="W-08 Context Collapse classifies synthetic avatar deployments reused outside their authorized context or platform without renewed consent, provenance verification, or scope confirmation.">
+  <meta property="og:url" content="https://strongavatar.com/weakness/context-collapse/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="W-08: Context Collapse — Avatar Governance Weakness Class">
+  <meta name="twitter:description" content="W-08 Context Collapse classifies synthetic avatar deployments reused outside their authorized context or platform without renewed consent, provenance verification, or scope confirmation.">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="site-shell" data-interface="violet-gold-identity-field">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-shell__page">
+    <header class="site-shell__header" role="banner">
+      <nav class="site-nav" aria-label="Site navigation">
+        <a class="site-nav__brand" href="/">StrongAvatar.com</a>
+        <ul class="site-nav__list">
+          <li><a href="/ontology/">Ontology</a></li>
+          <li><a href="/standard/">Standard</a></li>
+          <li><a href="/protocol/">Protocol</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="site-shell__main page-shell" tabindex="-1">
+      <div class="page-shell__content protocol-card">
+        <h1>W-08: Context Collapse</h1>
+<h2>Definition</h2>
+<p>The avatar is reused outside its authorized context, platform, or audience. A deployment authorized for one context is applied in another without renewal of consent, provenance verification, or scope confirmation.</p>
+<hr>
+<h2>Why This Matters</h2>
+<p>Context collapse is the portability failure of governance. As avatars become more portable — usable across platforms, contexts, and audiences — the governance obligations of each context must travel with the avatar. An avatar governed for one platform is not automatically governed for another. Context collapse is particularly important in commercial deployment, where the same avatar may need to operate across jurisdictions, audience types, and platform environments with different regulatory requirements.</p>
+<hr>
+<h2>Observable Signals</h2>
+<p>A deployment exhibits W-08: Context Collapse when one or more of the following is present:</p>
+<ul>
+<li>Avatar originally authorized for one platform or audience appears in another without documented re-authorization</li>
+<li>Context-specific disclosures are not adapted when the avatar moves to a new deployment context</li>
+<li>Consent basis does not specify permitted contexts, creating ambiguity that enables expansion</li>
+</ul>
+<hr>
+<h2>Compounding Relationships</h2>
+<p>W-08: Context Collapse compounds with:</p>
+<ul>
+<li><a href="/weakness/disclosure-failure/">W-03 Disclosure Failure</a></li>
+<li><a href="/weakness/identity-drift/">W-04 Identity Drift</a></li>
+</ul>
+<p>Context collapse compounds with disclosure failure (W-03) because an avatar redeployed in a new context carries old disclosure requirements that may not apply. A disclosure adequate for one context may be absent, misleading, or inadequate in another. It compounds with identity drift (W-04) because context change without re-authorization is a mechanism for identity drift — the avatar begins acting in contexts its authorized identity never covered.</p>
+<hr>
+<h2>Remediation Path</h2>
+<p>The primary remediation is <a href="/component/scope-usage-binding/">C-04 Scope and Usage Binding</a>: a documented boundary specifying permitted contexts, platforms, and audiences. Any use outside the binding requires explicit re-authorization. Secondary remediation includes <a href="/component/disclosure-layer/">C-03 Disclosure Layer</a> to ensure disclosure obligations are context-adapted when the avatar moves to a new deployment.</p>
+<hr>
+<h2>Band Implication</h2>
+<p>W-08 active → at minimum <strong>Provisional</strong> (assuming W-01, W-02, W-03 are mitigated). Context collapse that is not caught by scope binding indicates an incomplete governance layer.</p>
+<p>See the <a href="/standard/">Strong Avatar Standard</a> for full band determination rules.</p>
+<hr>
+<h2>Protocol Assessment</h2>
+<p><strong>Questions mapping to this class:</strong> A2 (Consent Scope), D1 (Usage Scope Binding)</p>
+<p>Protocol inputs A2 and D1 both map to W-08. W-08 is active if D1 is N. W-08 is partial if A2 is P or N while D1 is P.</p>
+<p><strong>Assessment dimension mapping:</strong> Platform Portability (primary), Long-Term Narrative Coherence (secondary)</p>
+<hr>
+<h2>Source Note</h2>
+<p>This weakness class definition is internal doctrine under the Sovereign Asset System, governed by the <a href="/ontology/">Avatar Integrity Ontology</a>. The identifier W-08 is permanent. Legal and regulatory claims require external source documentation before publication.</p>
+<p>See also: <a href="/protocol/">Avatar Strength Assessment Protocol</a> · <a href="/standard/">Strong Avatar Standard</a></p>
+      </div>
+    </main>
+    <aside class="site-shell__trust" aria-label="Source and methodology context">
+      <p class="trust-note">StrongAvatar.com is a governance reference layer. Content reflects internal doctrine and methodology. External claims require documented sources before publication.</p>
+    </aside>
+    <footer class="site-shell__footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">StrongAvatar.com</a>
+        <a href="/ontology/">Ontology</a>
+        <a href="/standard/">Standard</a>
+        <a href="/protocol/">Protocol</a>
+      </nav>
+      <p class="footer-legal">&#169; 2026 StrongAvatar.com. Avatar governance reference layer.</p>
+    </footer>
+  </div>
+</body>
+</html>

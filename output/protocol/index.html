@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avatar Strength Assessment Protocol — Deterministic Governance Assessment</title>
+  <meta name="description" content="The Avatar Strength Assessment Protocol defines the bounded questionnaire, deterministic rule table, and output specification for assessing the governance strength band of any deployed synthetic avatar.">
+  <link rel="canonical" href="https://strongavatar.com/protocol/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Avatar Strength Assessment Protocol — Deterministic Governance Assessment">
+  <meta property="og:description" content="The Avatar Strength Assessment Protocol defines the bounded questionnaire, deterministic rule table, and output specification for assessing the governance strength band of any deployed synthetic avatar.">
+  <meta property="og:url" content="https://strongavatar.com/protocol/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Avatar Strength Assessment Protocol — Deterministic Governance Assessment">
+  <meta name="twitter:description" content="The Avatar Strength Assessment Protocol defines the bounded questionnaire, deterministic rule table, and output specification for assessing the governance strength band of any deployed synthetic avatar.">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="site-shell" data-interface="violet-gold-identity-field">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-shell__page">
+    <header class="site-shell__header" role="banner">
+      <nav class="site-nav" aria-label="Site navigation">
+        <a class="site-nav__brand" href="/">StrongAvatar.com</a>
+        <ul class="site-nav__list">
+          <li><a href="/ontology/">Ontology</a></li>
+          <li><a href="/standard/">Standard</a></li>
+          <li><a href="/protocol/">Protocol</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="site-shell__main page-shell" tabindex="-1">
+      <div class="page-shell__content protocol-card">
+        <h1>Avatar Strength Assessment Protocol</h1>
+<p>The Avatar Strength Assessment Protocol defines the structured procedure for assessing a deployed avatar's governance strength band. It specifies what inputs are collected, how inputs map to weakness classes, how weakness classes determine the strength band, and what the output contains.</p>
+<p>The protocol is deterministic. Given the same ten input values, two competent operators must reach the same band, the same dominant weakness class, and the same remediating components. Any deviation is a protocol defect, not an operator judgment call.</p>
+<hr>
+<h2>What the Protocol Assesses</h2>
+<p>The protocol assesses a single avatar deployment — one instance of a synthetic avatar or digital likeness in one deployment context. A multi-context deployment requires one protocol run per context.</p>
+<p>The protocol does not assess realism, aesthetic quality, engagement metrics, or commercial performance. It assesses only governance integrity: whether the identity, consent, provenance, disclosure, scope, revocability, and accountability of the deployment are documented and verifiable.</p>
+<hr>
+<h2>Input Structure</h2>
+<p>The protocol collects ten bounded-choice inputs across five sections. Every input is single-select with three possible answers: Y (fully satisfied), P (partially satisfied), or N (not satisfied). No free text is scored.</p>
+<h3>Section A — Consent</h3>
+<p><strong>A1</strong> — Does a documented consent basis exist?</p>
+<p><strong>A2</strong> — Does the consent basis specify permitted contexts, platforms, and duration?</p>
+<p><strong>A3</strong> — Is there a documented revocation mechanism?</p>
+<h3>Section B — Provenance</h3>
+<p><strong>B1</strong> — Is the origin of the avatar documented and traceable?</p>
+<p><strong>B2</strong> — Are content credentials or provenance metadata attached in tamper-evident form?</p>
+<h3>Section C — Disclosure</h3>
+<p><strong>C1</strong> — Is synthetic disclosure present in all material deployment contexts?</p>
+<h3>Section D — Scope and Attribution</h3>
+<p><strong>D1</strong> — Are the avatar's authorized behaviors, roles, and statements bounded?</p>
+<p><strong>D2</strong> — Is there a named, contactable accountable party bound to this deployment?</p>
+<h3>Section E — Rights and Anti-Impersonation</h3>
+<p><strong>E1</strong> — Is the chain of title for the likeness complete, current, and clear?</p>
+<p><strong>E2</strong> — Are technical or procedural barriers in place against cloning or impersonation?</p>
+<hr>
+<h2>Weakness Class Activation</h2>
+<p>Each input maps to one or more weakness classes from the <a href="/ontology/">Avatar Integrity Ontology</a>. An <code>-N</code> answer activates the corresponding class as active. A <code>-P</code> answer activates it as partial. A <code>-Y</code> answer deactivates it.</p>
+<p>Where multiple inputs map to the same class, the class is active if any contributing input is <code>-N</code>, and partial if all are at minimum <code>-P</code> with none at <code>-N</code>.</p>
+<p>Key multi-input rules:</p>
+<ul>
+<li><strong><a href="/weakness/identity-drift/">W-04 Identity Drift</a>:</strong> active if A2 or D1 is <code>-N</code>; partial if both are <code>-P</code>, or one is <code>-P</code> and the other is <code>-Y</code></li>
+<li><strong><a href="/weakness/context-collapse/">W-08 Context Collapse</a>:</strong> active if D1 is <code>-N</code>; partial if A2 is <code>-P</code> or <code>-N</code> while D1 is <code>-P</code></li>
+<li><strong><a href="/weakness/robustness-weakness/">W-10 Robustness Weakness</a>:</strong> active if B2 or E2 is <code>-N</code>; partial if either is <code>-P</code> with the other at <code>-Y</code> or <code>-P</code></li>
+</ul>
+<hr>
+<h2>Band Determination</h2>
+<p>After applying the rule table:</p>
+<p>1. If <a href="/weakness/consent-absence/">W-01</a>, <a href="/weakness/provenance-void/">W-02</a>, or <a href="/weakness/disclosure-failure/">W-03</a> is active → <strong>Ungoverned</strong> (unconditional)</p>
+<p>2. Else if any of <a href="/weakness/identity-drift/">W-04</a>, <a href="/weakness/revocation-gap/">W-07</a>, <a href="/weakness/context-collapse/">W-08</a>, <a href="/weakness/attribution-loss/">W-09</a> is active → <strong>Provisional</strong></p>
+<p>3. Else if W-05, W-06, W-07, W-08, W-10 are partial but W-01–W-04, W-09 are deactivated → <strong>Governed</strong></p>
+<p>4. If all inputs are <code>-Y</code> → <strong>Sovereign</strong></p>
+<p>Rule 1 is evaluated before all others. See the <a href="/standard/">Strong Avatar Standard</a> for full band criteria and stakeholder implications.</p>
+<hr>
+<h2>Protocol Output</h2>
+<p>The protocol returns exactly:</p>
+<p>1. <strong>Strength Band</strong> — Ungoverned, Provisional, Governed, or Sovereign</p>
+<p>2. <strong>Dominant Weakness Class</strong> — the highest-severity active class, using priority order W-01 > W-02 > W-03 > W-04 > W-07 > W-08 > W-09 > W-05 > W-06 > W-10</p>
+<p>3. <strong>All Active Weakness Classes</strong> — full list of active and partial W-classes</p>
+<p>4. <strong>Ranked Remediating Components</strong> — C-components addressing active weaknesses, ordered by impact on band elevation</p>
+<p>5. <strong>Band Elevation Path</strong> — the minimum set of C-components whose full implementation would raise the band by one level</p>
+<p>The output does not include a numeric score (that is the Avatar Trust Score API, Phase 3), subjective commentary on realism, or recommendations outside the C-01…C-08 set.</p>
+<p><strong>Output link rule:</strong> Every band links to the Strong Avatar Standard. Every weakness class in the output links to its reference page. Every component links to its reference page. An output element that points nowhere is a protocol violation.</p>
+<hr>
+<h2>Reproducibility</h2>
+<p>The mapping from any input combination to a band output is fully determined by this document. No operator discretion, model inference, or external data source enters the assessment. An implementation that produces different results for the same inputs is defective.</p>
+<hr>
+<h2>Return</h2>
+<p><a href="/">StrongAvatar.com</a></p>
+<hr>
+<h2>Source Note</h2>
+<p>This protocol is internal doctrine under the Sovereign Asset System, governed by the <a href="/ontology/">Avatar Integrity Ontology</a> and the <a href="/standard/">Strong Avatar Standard</a>. Technical and regulatory claims require external source documentation before publication. Protocol inputs map to weakness classes as documented in the Avatar Integrity Ontology; any deviation requires a DECISION_LOG entry.</p>
+      </div>
+    </main>
+    <aside class="site-shell__trust" aria-label="Source and methodology context">
+      <p class="trust-note">StrongAvatar.com is a governance reference layer. Content reflects internal doctrine and methodology. External claims require documented sources before publication.</p>
+    </aside>
+    <footer class="site-shell__footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">StrongAvatar.com</a>
+        <a href="/ontology/">Ontology</a>
+        <a href="/standard/">Standard</a>
+        <a href="/protocol/">Protocol</a>
+      </nav>
+      <p class="footer-legal">&#169; 2026 StrongAvatar.com. Avatar governance reference layer.</p>
+    </footer>
+  </div>
+</body>
+</html>

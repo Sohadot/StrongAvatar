@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C-03: Disclosure Layer — Avatar Governance Component</title>
+  <meta name="description" content="C-03 Disclosure Layer is the governance component that communicates the synthetic nature of an avatar in all deployment contexts where a viewer or counterparty would reasonably need to know.">
+  <link rel="canonical" href="https://strongavatar.com/component/disclosure-layer/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="C-03: Disclosure Layer — Avatar Governance Component">
+  <meta property="og:description" content="C-03 Disclosure Layer is the governance component that communicates the synthetic nature of an avatar in all deployment contexts where a viewer or counterparty would reasonably need to know.">
+  <meta property="og:url" content="https://strongavatar.com/component/disclosure-layer/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="C-03: Disclosure Layer — Avatar Governance Component">
+  <meta name="twitter:description" content="C-03 Disclosure Layer is the governance component that communicates the synthetic nature of an avatar in all deployment contexts where a viewer or counterparty would reasonably need to know.">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="site-shell" data-interface="violet-gold-identity-field">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-shell__page">
+    <header class="site-shell__header" role="banner">
+      <nav class="site-nav" aria-label="Site navigation">
+        <a class="site-nav__brand" href="/">StrongAvatar.com</a>
+        <ul class="site-nav__list">
+          <li><a href="/ontology/">Ontology</a></li>
+          <li><a href="/standard/">Standard</a></li>
+          <li><a href="/protocol/">Protocol</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="site-shell__main page-shell" tabindex="-1">
+      <div class="page-shell__content protocol-card">
+        <h1>C-03: Disclosure Layer</h1>
+<h2>Definition</h2>
+<p>A mechanism for communicating the synthetic nature of the avatar in all deployment contexts where a viewer, user, or counterparty would reasonably need to know. Disclosure must be context-appropriate in form and placement.</p>
+<hr>
+<h2>Why This Matters</h2>
+<p>The disclosure layer is the interface between governance and the public. All of the consent, provenance, and scope governance that exists behind a deployment is invisible to viewers unless it is communicated. Disclosure is the governance mechanism that reaches the audience. As synthetic media becomes indistinguishable from real-person media, the disclosure requirement becomes more critical — not less. Audiences, users, and regulators are increasingly focused on whether synthetic origin is communicated, and regulatory frameworks in multiple jurisdictions are moving toward mandatory disclosure requirements.</p>
+<hr>
+<h2>Remediates</h2>
+<ul>
+<li><a href="/weakness/disclosure-failure/">W-03 Disclosure Failure</a> (primary)</li>
+</ul>
+<hr>
+<h2>Implementation Indicators</h2>
+<p>A deployment has implemented C-03: Disclosure Layer when:</p>
+<ul>
+<li>A disclosure mechanism (label, watermark, metadata, verbal disclosure) is present in every deployment context where synthetic origin is material</li>
+<li>Disclosure is not buried, minimized, or conditioned on user action</li>
+<li>Disclosure adapts to context: a video avatar discloses differently from a conversational AI interface</li>
+</ul>
+<hr>
+<h2>Full Implementation Requirements</h2>
+<p>Full implementation requires context-appropriate disclosure in all material deployment contexts. The disclosure mechanism must be prominent enough that a viewer would not reasonably miss it, and must adapt to the deployment medium. C1-Y in the assessment protocol confirms full disclosure layer implementation.</p>
+<hr>
+<h2>Integration with Other Components</h2>
+<p>C-03 integrates with <a href="/component/scope-usage-binding/">C-04 Scope and Usage Binding</a> — when the avatar moves to a new context, the disclosure layer must be reassessed and adapted for that context. The disclosure requirement is not satisfied by importing a prior disclosure into a new deployment without reviewing its appropriateness.</p>
+<hr>
+<h2>Band Contribution</h2>
+<p>C-03 implemented deactivates W-03. W-03 deactivated is required to exit <strong>Ungoverned</strong> band. Without C-03 in at least one material context, the deployment is unconditionally Ungoverned.</p>
+<p>See the <a href="/standard/">Strong Avatar Standard</a> for full band determination criteria.</p>
+<hr>
+<h2>Source Note</h2>
+<p>This governance component definition is internal doctrine under the Sovereign Asset System, governed by the <a href="/ontology/">Avatar Integrity Ontology</a>. The identifier C-03 is permanent. Legal and technical claims require external source documentation before publication.</p>
+<p>See also: <a href="/protocol/">Avatar Strength Assessment Protocol</a> · <a href="/standard/">Strong Avatar Standard</a></p>
+      </div>
+    </main>
+    <aside class="site-shell__trust" aria-label="Source and methodology context">
+      <p class="trust-note">StrongAvatar.com is a governance reference layer. Content reflects internal doctrine and methodology. External claims require documented sources before publication.</p>
+    </aside>
+    <footer class="site-shell__footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">StrongAvatar.com</a>
+        <a href="/ontology/">Ontology</a>
+        <a href="/standard/">Standard</a>
+        <a href="/protocol/">Protocol</a>
+      </nav>
+      <p class="footer-legal">&#169; 2026 StrongAvatar.com. Avatar governance reference layer.</p>
+    </footer>
+  </div>
+</body>
+</html>

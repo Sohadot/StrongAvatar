@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W-09: Attribution Loss — Avatar Governance Weakness Class</title>
+  <meta name="description" content="W-09 Attribution Loss classifies synthetic avatar deployments where no durable binding exists between the avatar and an accountable owner or responsible party.">
+  <link rel="canonical" href="https://strongavatar.com/weakness/attribution-loss/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="W-09: Attribution Loss — Avatar Governance Weakness Class">
+  <meta property="og:description" content="W-09 Attribution Loss classifies synthetic avatar deployments where no durable binding exists between the avatar and an accountable owner or responsible party.">
+  <meta property="og:url" content="https://strongavatar.com/weakness/attribution-loss/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="W-09: Attribution Loss — Avatar Governance Weakness Class">
+  <meta name="twitter:description" content="W-09 Attribution Loss classifies synthetic avatar deployments where no durable binding exists between the avatar and an accountable owner or responsible party.">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="site-shell" data-interface="violet-gold-identity-field">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-shell__page">
+    <header class="site-shell__header" role="banner">
+      <nav class="site-nav" aria-label="Site navigation">
+        <a class="site-nav__brand" href="/">StrongAvatar.com</a>
+        <ul class="site-nav__list">
+          <li><a href="/ontology/">Ontology</a></li>
+          <li><a href="/standard/">Standard</a></li>
+          <li><a href="/protocol/">Protocol</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="site-shell__main page-shell" tabindex="-1">
+      <div class="page-shell__content protocol-card">
+        <h1>W-09: Attribution Loss</h1>
+<h2>Definition</h2>
+<p>No durable binding exists between the avatar and an accountable owner, creator, or responsible party. The avatar cannot be traced to a person or entity that bears accountability for its deployment.</p>
+<hr>
+<h2>Why This Matters</h2>
+<p>Attribution loss is the accountability failure of governance. Every deployed avatar should have an identifiable responsible party — someone who can be contacted if the avatar is misused, who has accepted documented responsibility for its governance, and who can be held accountable for violations. Without this binding, governance enforcement is impossible: there is no party against whom enforcement action can be directed. Attribution loss also undermines trust in the governance system itself — a governed avatar without a named accountable owner offers documentation but no accountability.</p>
+<hr>
+<h2>Observable Signals</h2>
+<p>A deployment exhibits W-09: Attribution Loss when one or more of the following is present:</p>
+<ul>
+<li>No owner, creator, or responsible entity is identified in or associated with the avatar</li>
+<li>Attribution metadata is absent, stripped, or detached from the avatar in at least one deployment context</li>
+<li>The avatar exists in deployment with no contactable accountable party</li>
+</ul>
+<hr>
+<h2>Compounding Relationships</h2>
+<p>W-09: Attribution Loss compounds with:</p>
+<ul>
+<li><a href="/weakness/provenance-void/">W-02 Provenance Void</a></li>
+<li><a href="/weakness/rights-ambiguity/">W-06 Rights Ambiguity</a></li>
+</ul>
+<p>Attribution loss compounds with provenance void (W-02) because provenance chain documentation is the mechanism through which attribution is constructed. Without a traceable origin chain, attribution cannot be established. It compounds with rights ambiguity (W-06) because an avatar with unclear rights ownership also has unclear accountability — the person or entity responsible for the deployment cannot be identified from the rights chain alone.</p>
+<hr>
+<h2>Remediation Path</h2>
+<p>The primary remediation is <a href="/component/attribution-binding/">C-08 Attribution and Accountable-Owner Binding</a>: a durable binding between the deployed avatar and a named accountable party. The binding must persist through distribution — attribution metadata that is detachable provides no durable accountability guarantee.</p>
+<hr>
+<h2>Band Implication</h2>
+<p>W-09 active → at minimum <strong>Provisional</strong> (assuming W-01, W-02, W-03 are mitigated). Attribution loss prevents <strong>Governed</strong> classification.</p>
+<p>See the <a href="/standard/">Strong Avatar Standard</a> for full band determination rules.</p>
+<hr>
+<h2>Protocol Assessment</h2>
+<p><strong>Questions mapping to this class:</strong> D2 (Accountable Owner)</p>
+<p>Protocol input D2 determines W-09 status. D2-N (no accountable owner identified) activates W-09 as active. D2-P (owner identified but accountability binding incomplete) activates W-09 as partial. D2-Y deactivates W-09.</p>
+<p><strong>Assessment dimension mapping:</strong> Identity Integrity (primary), Synthetic Trust (secondary)</p>
+<hr>
+<h2>Source Note</h2>
+<p>This weakness class definition is internal doctrine under the Sovereign Asset System, governed by the <a href="/ontology/">Avatar Integrity Ontology</a>. The identifier W-09 is permanent. Legal and regulatory claims require external source documentation before publication.</p>
+<p>See also: <a href="/protocol/">Avatar Strength Assessment Protocol</a> · <a href="/standard/">Strong Avatar Standard</a></p>
+      </div>
+    </main>
+    <aside class="site-shell__trust" aria-label="Source and methodology context">
+      <p class="trust-note">StrongAvatar.com is a governance reference layer. Content reflects internal doctrine and methodology. External claims require documented sources before publication.</p>
+    </aside>
+    <footer class="site-shell__footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">StrongAvatar.com</a>
+        <a href="/ontology/">Ontology</a>
+        <a href="/standard/">Standard</a>
+        <a href="/protocol/">Protocol</a>
+      </nav>
+      <p class="footer-legal">&#169; 2026 StrongAvatar.com. Avatar governance reference layer.</p>
+    </footer>
+  </div>
+</body>
+</html>

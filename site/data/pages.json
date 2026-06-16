@@ -8,9 +8,9 @@
     {
       "slug": "/",
       "title": "StrongAvatar.com",
-      "status": "reserved",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "homepage",
       "strategic_purpose": "Introduce StrongAvatar.com as the reference layer for avatar strength, synthetic likeness governance, and digital identity trust.",
       "seo_cluster": "avatar strength",
@@ -22,7 +22,7 @@
         "/strategic-asset/"
       ],
       "source_requirement": "methodology and market claims require sources before publication",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved homepage record only; no content file or public page exists.",
       "content_contract": "site/content-contracts/home.md",
       "content_contract_status": "created"
@@ -30,9 +30,9 @@
     {
       "slug": "/protocol/",
       "title": "The Avatar Strength Protocol",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "protocol_overview",
       "strategic_purpose": "Define the future protocol frame for evaluating governed avatar strength.",
       "seo_cluster": "avatar governance",
@@ -44,7 +44,7 @@
         "/methodology/"
       ],
       "source_requirement": "protocol claims require internal methodology and external sources where factual",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "No public protocol page is authorized.",
       "content_contract": "site/content-contracts/protocol.md",
       "content_contract_status": "created"
@@ -204,9 +204,9 @@
     {
       "slug": "/ontology/",
       "title": "Avatar Integrity Ontology",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Publish the Avatar Integrity Ontology — the governed classification of avatar weakness classes (W-01…W-10) and governance components (C-01…C-08) — as the canonical reference anchor for the entire reference layer.",
       "seo_cluster": "avatar governance",
@@ -235,7 +235,7 @@
         "/component/attribution-binding/"
       ],
       "source_requirement": "ontology definitions are internal doctrine; no external source required for the classification framework",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists. Governed by AVATAR_INTEGRITY_ONTOLOGY.md.",
       "content_contract": "site/content-contracts/ontology.md",
       "content_contract_status": "created"
@@ -243,9 +243,9 @@
     {
       "slug": "/standard/",
       "title": "Strong Avatar Standard",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Publish the Strong Avatar Standard — four strength bands (Ungoverned, Provisional, Governed, Sovereign) with precise criteria — as the published definition any practitioner can apply without the author present.",
       "seo_cluster": "avatar governance",
@@ -263,7 +263,7 @@
         "/weakness/attribution-loss/"
       ],
       "source_requirement": "standard criteria are internal doctrine; no external source required for band definitions",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists. Governed by STRONG_AVATAR_STANDARD.md.",
       "content_contract": "site/content-contracts/standard.md",
       "content_contract_status": "created"
@@ -271,9 +271,9 @@
     {
       "slug": "/weakness/consent-absence/",
       "title": "Consent Absence — W-01",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Consent Absence weakness class (W-01) with observable signals and remediating components.",
       "seo_cluster": "avatar governance",
@@ -288,7 +288,7 @@
         "/weakness/revocation-gap/"
       ],
       "source_requirement": "class definition is internal doctrine; external sources required for real-world examples or regulatory claims",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/w-01-consent-absence.md",
       "content_contract_status": "created"
@@ -296,9 +296,9 @@
     {
       "slug": "/weakness/provenance-void/",
       "title": "Provenance Void — W-02",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Provenance Void weakness class (W-02) with observable signals and remediating components.",
       "seo_cluster": "avatar governance",
@@ -313,7 +313,7 @@
         "/weakness/attribution-loss/"
       ],
       "source_requirement": "class definition is internal doctrine; external sources required for real-world examples or technical claims",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/w-02-provenance-void.md",
       "content_contract_status": "created"
@@ -321,9 +321,9 @@
     {
       "slug": "/weakness/disclosure-failure/",
       "title": "Disclosure Failure — W-03",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Disclosure Failure weakness class (W-03) with observable signals and remediating components.",
       "seo_cluster": "avatar governance",
@@ -338,7 +338,7 @@
         "/weakness/context-collapse/"
       ],
       "source_requirement": "class definition is internal doctrine; regulatory and platform claims require external sources",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/w-03-disclosure-failure.md",
       "content_contract_status": "created"
@@ -346,9 +346,9 @@
     {
       "slug": "/weakness/identity-drift/",
       "title": "Identity Drift — W-04",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Identity Drift weakness class (W-04) with observable signals and remediating components.",
       "seo_cluster": "avatar governance",
@@ -363,7 +363,7 @@
         "/weakness/context-collapse/"
       ],
       "source_requirement": "class definition is internal doctrine; external sources required for platform or behavioral examples",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/w-04-identity-drift.md",
       "content_contract_status": "created"
@@ -371,9 +371,9 @@
     {
       "slug": "/weakness/impersonation-exposure/",
       "title": "Impersonation Exposure — W-05",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Impersonation Exposure weakness class (W-05) with observable signals and remediating components.",
       "seo_cluster": "avatar governance",
@@ -388,7 +388,7 @@
         "/weakness/robustness-weakness/"
       ],
       "source_requirement": "class definition is internal doctrine; security and technical claims require external sources",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/w-05-impersonation-exposure.md",
       "content_contract_status": "created"
@@ -396,9 +396,9 @@
     {
       "slug": "/weakness/rights-ambiguity/",
       "title": "Rights Ambiguity — W-06",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Rights Ambiguity weakness class (W-06) with observable signals and remediating components.",
       "seo_cluster": "avatar governance",
@@ -414,7 +414,7 @@
         "/weakness/revocation-gap/"
       ],
       "source_requirement": "class definition is internal doctrine; legal and rights claims require external sources",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/w-06-rights-ambiguity.md",
       "content_contract_status": "created"
@@ -422,9 +422,9 @@
     {
       "slug": "/weakness/revocation-gap/",
       "title": "Revocation Gap — W-07",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Revocation Gap weakness class (W-07) with observable signals and remediating components.",
       "seo_cluster": "avatar governance",
@@ -440,7 +440,7 @@
         "/weakness/rights-ambiguity/"
       ],
       "source_requirement": "class definition is internal doctrine; legal and platform claims require external sources",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/w-07-revocation-gap.md",
       "content_contract_status": "created"
@@ -448,9 +448,9 @@
     {
       "slug": "/weakness/context-collapse/",
       "title": "Context Collapse — W-08",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Context Collapse weakness class (W-08) with observable signals and remediating components.",
       "seo_cluster": "avatar governance",
@@ -465,7 +465,7 @@
         "/weakness/identity-drift/"
       ],
       "source_requirement": "class definition is internal doctrine; platform and distribution claims require external sources",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/w-08-context-collapse.md",
       "content_contract_status": "created"
@@ -473,9 +473,9 @@
     {
       "slug": "/weakness/attribution-loss/",
       "title": "Attribution Loss — W-09",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Attribution Loss weakness class (W-09) with observable signals and remediating components.",
       "seo_cluster": "avatar governance",
@@ -490,7 +490,7 @@
         "/weakness/rights-ambiguity/"
       ],
       "source_requirement": "class definition is internal doctrine; attribution and accountability claims require external sources",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/w-09-attribution-loss.md",
       "content_contract_status": "created"
@@ -498,9 +498,9 @@
     {
       "slug": "/weakness/robustness-weakness/",
       "title": "Robustness Weakness — W-10",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Robustness Weakness class (W-10) with observable signals and remediating components.",
       "seo_cluster": "avatar governance",
@@ -516,7 +516,7 @@
         "/weakness/impersonation-exposure/"
       ],
       "source_requirement": "class definition is internal doctrine; security and technical claims require external sources",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/w-10-robustness-weakness.md",
       "content_contract_status": "created"
@@ -524,9 +524,9 @@
     {
       "slug": "/component/consent-infrastructure/",
       "title": "Consent Infrastructure — C-01",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Consent Infrastructure governance component (C-01) with implementation indicators and remediated weakness classes.",
       "seo_cluster": "avatar governance",
@@ -540,7 +540,7 @@
         "/weakness/rights-ambiguity/"
       ],
       "source_requirement": "component definition is internal doctrine; legal and compliance claims require external sources",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/c-01-consent-infrastructure.md",
       "content_contract_status": "created"
@@ -548,9 +548,9 @@
     {
       "slug": "/component/provenance-credentials/",
       "title": "Provenance and Content Credentials Layer — C-02",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Provenance and Content Credentials Layer governance component (C-02) with implementation indicators and remediated weakness classes.",
       "seo_cluster": "avatar governance",
@@ -564,7 +564,7 @@
         "/weakness/robustness-weakness/"
       ],
       "source_requirement": "component definition is internal doctrine; C2PA and technical provenance claims require external sources",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/c-02-provenance-credentials.md",
       "content_contract_status": "created"
@@ -572,9 +572,9 @@
     {
       "slug": "/component/disclosure-layer/",
       "title": "Disclosure Layer — C-03",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Disclosure Layer governance component (C-03) with implementation indicators and remediated weakness classes.",
       "seo_cluster": "avatar governance",
@@ -587,7 +587,7 @@
         "/weakness/disclosure-failure/"
       ],
       "source_requirement": "component definition is internal doctrine; regulatory and platform disclosure requirements need external sources",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/c-03-disclosure-layer.md",
       "content_contract_status": "created"
@@ -595,9 +595,9 @@
     {
       "slug": "/component/scope-usage-binding/",
       "title": "Scope and Usage Binding — C-04",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Scope and Usage Binding governance component (C-04) with implementation indicators and remediated weakness classes.",
       "seo_cluster": "avatar governance",
@@ -611,7 +611,7 @@
         "/weakness/context-collapse/"
       ],
       "source_requirement": "component definition is internal doctrine; platform and contract claims require external sources",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/c-04-scope-usage-binding.md",
       "content_contract_status": "created"
@@ -619,9 +619,9 @@
     {
       "slug": "/component/anti-impersonation-controls/",
       "title": "Anti-Impersonation Controls — C-05",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Anti-Impersonation Controls governance component (C-05) with implementation indicators and remediated weakness classes.",
       "seo_cluster": "avatar governance",
@@ -635,7 +635,7 @@
         "/weakness/robustness-weakness/"
       ],
       "source_requirement": "component definition is internal doctrine; security and technical claims require external sources",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/c-05-anti-impersonation-controls.md",
       "content_contract_status": "created"
@@ -643,9 +643,9 @@
     {
       "slug": "/component/rights-chain-documentation/",
       "title": "Rights Chain Documentation — C-06",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Rights Chain Documentation governance component (C-06) with implementation indicators and remediated weakness classes.",
       "seo_cluster": "avatar governance",
@@ -658,7 +658,7 @@
         "/weakness/rights-ambiguity/"
       ],
       "source_requirement": "component definition is internal doctrine; legal and rights claims require external sources",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/c-06-rights-chain-documentation.md",
       "content_contract_status": "created"
@@ -666,9 +666,9 @@
     {
       "slug": "/component/revocation-mechanism/",
       "title": "Revocation and Kill-Switch Mechanism — C-07",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Revocation and Kill-Switch Mechanism governance component (C-07) with implementation indicators and remediated weakness classes.",
       "seo_cluster": "avatar governance",
@@ -681,7 +681,7 @@
         "/weakness/revocation-gap/"
       ],
       "source_requirement": "component definition is internal doctrine; legal, platform, and compliance claims require external sources",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/c-07-revocation-mechanism.md",
       "content_contract_status": "created"
@@ -689,9 +689,9 @@
     {
       "slug": "/component/attribution-binding/",
       "title": "Attribution and Accountable-Owner Binding — C-08",
-      "status": "planned",
-      "indexable": false,
-      "publication_allowed": false,
+      "status": "generated_foundation",
+      "indexable": true,
+      "publication_allowed": true,
       "template_planned": "reference_page",
       "strategic_purpose": "Define the Attribution and Accountable-Owner Binding governance component (C-08) with implementation indicators and remediated weakness classes.",
       "seo_cluster": "avatar governance",
@@ -704,7 +704,7 @@
         "/weakness/attribution-loss/"
       ],
       "source_requirement": "component definition is internal doctrine; accountability and legal claims require external sources",
-      "quality_status": "not_reviewed",
+      "quality_status": "source_backed_foundation",
       "notes": "Reserved only; no content file exists.",
       "content_contract": "site/content-contracts/c-08-attribution-binding.md",
       "content_contract_status": "created"

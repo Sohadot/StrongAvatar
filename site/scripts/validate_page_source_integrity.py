@@ -86,9 +86,9 @@ def main() -> None:
     except json.JSONDecodeError as exc:
         fail(f"site/data/launch_set.json is not valid JSON: {exc}")
 
-    # Check 2: output_generation_enabled must be false
-    if launch_set.get("output_generation_enabled") is not False:
-        errors.append("launch_set.json output_generation_enabled must be false in prebuild alignment phase")
+    # Check 2: output_generation_enabled must be a boolean
+    if launch_set.get("output_generation_enabled") not in (True, False):
+        errors.append("launch_set.json output_generation_enabled must be a boolean")
 
     allowed_routes: set[str] = set(launch_set.get("allowed_routes", []))
 

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avatar Integrity Ontology — Weakness Classes and Governance Components</title>
+  <meta name="description" content="The Avatar Integrity Ontology defines ten weakness classes (W-01–W-10) and eight governance components (C-01–C-08) that classify and remediate governance failures in synthetic avatar deployments.">
+  <link rel="canonical" href="https://strongavatar.com/ontology/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Avatar Integrity Ontology — Weakness Classes and Governance Components">
+  <meta property="og:description" content="The Avatar Integrity Ontology defines ten weakness classes (W-01–W-10) and eight governance components (C-01–C-08) that classify and remediate governance failures in synthetic avatar deployments.">
+  <meta property="og:url" content="https://strongavatar.com/ontology/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Avatar Integrity Ontology — Weakness Classes and Governance Components">
+  <meta name="twitter:description" content="The Avatar Integrity Ontology defines ten weakness classes (W-01–W-10) and eight governance components (C-01–C-08) that classify and remediate governance failures in synthetic avatar deployments.">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="site-shell" data-interface="violet-gold-identity-field">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-shell__page">
+    <header class="site-shell__header" role="banner">
+      <nav class="site-nav" aria-label="Site navigation">
+        <a class="site-nav__brand" href="/">StrongAvatar.com</a>
+        <ul class="site-nav__list">
+          <li><a href="/ontology/">Ontology</a></li>
+          <li><a href="/standard/">Standard</a></li>
+          <li><a href="/protocol/">Protocol</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="site-shell__main page-shell" tabindex="-1">
+      <div class="page-shell__content protocol-card">
+        <h1>Avatar Integrity Ontology</h1>
+<p>The Avatar Integrity Ontology is the classification framework that underlies the Strong Avatar Standard and the Avatar Strength Assessment Protocol. It defines what governance failure looks like for a deployed synthetic avatar, and what structural mechanisms remediate each failure.</p>
+<p>The ontology is not an aesthetic standard. It does not classify whether an avatar looks good, sounds convincing, or performs well on a platform. It classifies whether the avatar's identity, consent, provenance, disclosure, scope, revocability, and accountability are governed and verifiable.</p>
+<hr>
+<h2>What the Ontology Classifies</h2>
+<p>The ontology consists of two tables:</p>
+<p><strong>Weakness classes (W-01–W-10)</strong> name observable governance failures. A weakness class is active when a specific governance gap exists in a deployed avatar — when a protocol assessment produces an answer that indicates the gap is present. Weakness classes are not subjective; they are determined by structured protocol inputs.</p>
+<p><strong>Governance components (C-01–C-08)</strong> name structural mechanisms that eliminate or reduce weakness classes. A component is a remediating action or system — something the deploying party can build or document to close a governance gap.</p>
+<p>The relationship between weakness classes and governance components is deterministic: each weakness class maps to a primary remediating component (and sometimes a secondary one). Implementing the primary component for a given weakness class is the direct path to resolving it.</p>
+<hr>
+<h2>Weakness Classes</h2>
+<p>Ten weakness classes classify the observable governance failures of synthetic avatar deployments. Each class has a stable identifier (W-01 through W-10) that is permanent once assigned.</p>
+<h3>W-01 — Consent Absence</h3>
+<p>No documented authority exists for the use of the likeness or identity represented by the avatar. The deployment proceeds without an explicit, reviewable consent basis. Remediates via <a href="/component/consent-infrastructure/">C-01 Consent Infrastructure</a>.</p>
+<h3>W-02 — Provenance Void</h3>
+<p>No traceable chain exists from the source identity to the deployed avatar. The avatar's origin cannot be established or verified. Remediates via <a href="/component/provenance-credentials/">C-02 Provenance and Content Credentials Layer</a>.</p>
+<h3>W-03 — Disclosure Failure</h3>
+<p>The synthetic nature of the avatar is not communicated in contexts where a viewer or user would reasonably need to know. Remediates via <a href="/component/disclosure-layer/">C-03 Disclosure Layer</a>.</p>
+<h3>W-04 — Identity Drift</h3>
+<p>The avatar acts, appears, or is used in ways that diverge from its authorized identity scope. Remediates via <a href="/component/scope-usage-binding/">C-04 Scope and Usage Binding</a>.</p>
+<h3>W-05 — Impersonation Exposure</h3>
+<p>The avatar can be cloned or repurposed to impersonate a real person without detection. Remediates via <a href="/component/anti-impersonation-controls/">C-05 Anti-Impersonation Controls</a>.</p>
+<h3>W-06 — Rights Ambiguity</h3>
+<p>The chain of title for the identity or likeness is unclear, incomplete, or contested. Remediates via <a href="/component/rights-chain-documentation/">C-06 Rights Chain Documentation</a>.</p>
+<h3>W-07 — Revocation Gap</h3>
+<p>No mechanism exists to withdraw consent or decommission the avatar. Remediates via <a href="/component/revocation-mechanism/">C-07 Revocation and Kill-Switch Mechanism</a>.</p>
+<h3>W-08 — Context Collapse</h3>
+<p>The avatar is reused outside its authorized context, platform, or audience without re-authorization. Remediates via <a href="/component/scope-usage-binding/">C-04 Scope and Usage Binding</a>.</p>
+<h3>W-09 — Attribution Loss</h3>
+<p>No durable binding exists between the avatar and an accountable owner or responsible party. Remediates via <a href="/component/attribution-binding/">C-08 Attribution and Accountable-Owner Binding</a>.</p>
+<h3>W-10 — Robustness Weakness</h3>
+<p>The avatar or its governance infrastructure is vulnerable to adversarial tampering or spoofing. Remediates via <a href="/component/provenance-credentials/">C-02 Provenance and Content Credentials Layer</a>.</p>
+<p>Full definitions, observable signals, compounding relationships, and assessment mappings for each class are on the individual weakness class reference pages linked above.</p>
+<hr>
+<h2>Governance Components</h2>
+<p>Eight governance components define the structural mechanisms that close governance gaps.</p>
+<table><thead><tr>
+<th>Component</th>
+<th>Remediates</th>
+</tr></thead><tbody>
+<tr>
+<td><a href="/component/consent-infrastructure/">C-01 Consent Infrastructure</a></td>
+<td>W-01, W-06 (secondary), W-07 (secondary)</td>
+</tr>
+<tr>
+<td><a href="/component/provenance-credentials/">C-02 Provenance and Content Credentials Layer</a></td>
+<td>W-02, W-10</td>
+</tr>
+<tr>
+<td><a href="/component/disclosure-layer/">C-03 Disclosure Layer</a></td>
+<td>W-03</td>
+</tr>
+<tr>
+<td><a href="/component/scope-usage-binding/">C-04 Scope and Usage Binding</a></td>
+<td>W-04, W-08</td>
+</tr>
+<tr>
+<td><a href="/component/anti-impersonation-controls/">C-05 Anti-Impersonation Controls</a></td>
+<td>W-05, W-10 (secondary)</td>
+</tr>
+<tr>
+<td><a href="/component/rights-chain-documentation/">C-06 Rights Chain Documentation</a></td>
+<td>W-06</td>
+</tr>
+<tr>
+<td><a href="/component/revocation-mechanism/">C-07 Revocation and Kill-Switch Mechanism</a></td>
+<td>W-07</td>
+</tr>
+<tr>
+<td><a href="/component/attribution-binding/">C-08 Attribution and Accountable-Owner Binding</a></td>
+<td>W-09</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Compounding Relationships</h2>
+<p>Weakness classes do not exist in isolation. Some classes compound: when one is present, it increases the severity or probability of another. The compounding relationships documented in this ontology are:</p>
+<ul>
+<li>W-01 compounds with W-06 and W-07: consent absence creates rights ambiguity and makes revocation undefined</li>
+<li>W-02 compounds with W-01 and W-09: provenance void makes consent verification impossible and breaks attribution</li>
+<li>W-03 compounds with W-04 and W-08: disclosure failure enables identity drift and context collapse</li>
+<li>W-04 compounds with W-01 and W-08: identity drift indicates scope violation and accelerates context collapse</li>
+<li>W-05 compounds with W-02 and W-10: impersonation exposure is enabled by provenance gaps and robustness failures</li>
+<li>W-06 compounds with W-01 and W-07: rights ambiguity undermines consent validity and revocability</li>
+<li>W-09 compounds with W-02 and W-06: attribution loss compounds provenance void and rights ambiguity</li>
+</ul>
+<p>Compounding relationships are identified in the protocol output when multiple weakness classes are active simultaneously.</p>
+<hr>
+<h2>Entry Criteria</h2>
+<p>A weakness class or governance component may not be added to this ontology without meeting documented entry criteria. For weakness classes: the failure must be distinct, observable, detectable through structured protocol inputs, and deterministically assessable. For governance components: the mechanism must be distinct, demonstrably remediating, and independently implementable.</p>
+<p>The identifiers W-01 through W-10 and C-01 through C-08 are permanent. No identifier may be reassigned or deleted; deprecated classes carry a superseding note.</p>
+<hr>
+<h2>Relationship to the Standard and Protocol</h2>
+<p>The ontology defines *what is wrong* and *what remediates it*. The <a href="/standard/">Strong Avatar Standard</a> uses these classes to define four strength bands (Ungoverned, Provisional, Governed, Sovereign). The <a href="/protocol/">Avatar Strength Assessment Protocol</a> uses structured inputs to determine which weakness classes are active for a given deployment.</p>
+<p>These three documents form a complete, deterministic assessment system: protocol inputs → weakness class activations → band determination → component remediation path.</p>
+<hr>
+<h2>Return</h2>
+<p><a href="/">StrongAvatar.com</a></p>
+<hr>
+<h2>Source Note</h2>
+<p>This ontology is internal doctrine under the Sovereign Asset System. Legal, regulatory, and technical claims require external source documentation before publication. No external sources are currently active. Methodology claims are governed by the Avatar Strength Assessment Protocol and the Decision Log.</p>
+      </div>
+    </main>
+    <aside class="site-shell__trust" aria-label="Source and methodology context">
+      <p class="trust-note">StrongAvatar.com is a governance reference layer. Content reflects internal doctrine and methodology. External claims require documented sources before publication.</p>
+    </aside>
+    <footer class="site-shell__footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">StrongAvatar.com</a>
+        <a href="/ontology/">Ontology</a>
+        <a href="/standard/">Standard</a>
+        <a href="/protocol/">Protocol</a>
+      </nav>
+      <p class="footer-legal">&#169; 2026 StrongAvatar.com. Avatar governance reference layer.</p>
+    </footer>
+  </div>
+</body>
+</html>

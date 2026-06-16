@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C-02: Provenance and Content Credentials Layer — Avatar Governance Component</title>
+  <meta name="description" content="C-02 Provenance and Content Credentials Layer establishes the traceable chain from source identity to deployed avatar, including generation method, transformations, and authoring entity. Aligned with C2PA provenance standards.">
+  <link rel="canonical" href="https://strongavatar.com/component/provenance-credentials/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="C-02: Provenance and Content Credentials Layer — Avatar Governance Component">
+  <meta property="og:description" content="C-02 Provenance and Content Credentials Layer establishes the traceable chain from source identity to deployed avatar, including generation method, transformations, and authoring entity. Aligned with C2PA provenance standards.">
+  <meta property="og:url" content="https://strongavatar.com/component/provenance-credentials/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="C-02: Provenance and Content Credentials Layer — Avatar Governance Component">
+  <meta name="twitter:description" content="C-02 Provenance and Content Credentials Layer establishes the traceable chain from source identity to deployed avatar, including generation method, transformations, and authoring entity. Aligned with C2PA provenance standards.">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="site-shell" data-interface="violet-gold-identity-field">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-shell__page">
+    <header class="site-shell__header" role="banner">
+      <nav class="site-nav" aria-label="Site navigation">
+        <a class="site-nav__brand" href="/">StrongAvatar.com</a>
+        <ul class="site-nav__list">
+          <li><a href="/ontology/">Ontology</a></li>
+          <li><a href="/standard/">Standard</a></li>
+          <li><a href="/protocol/">Protocol</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="site-shell__main page-shell" tabindex="-1">
+      <div class="page-shell__content protocol-card">
+        <h1>C-02: Provenance and Content Credentials Layer</h1>
+<h2>Definition</h2>
+<p>A mechanism that establishes and preserves the traceable chain from source identity to deployed avatar, including generation method, transformations applied, and authoring entity. Aligned with C2PA or equivalent provenance standards where applicable.</p>
+<hr>
+<h2>Why This Matters</h2>
+<p>Provenance chain documentation is the technical foundation on which all other governance claims rest. Consent documentation is only meaningful if the consented-to identity can be traced to the deployed avatar. Disclosure requirements depend on knowing what synthetic origin the avatar has. Attribution requires a chain from the deployed avatar to a named party. Without provenance, each of these governance claims floats on an unverifiable assertion. The content credentials layer makes that chain technical, tamper-evident, and auditable.</p>
+<hr>
+<h2>Remediates</h2>
+<ul>
+<li><a href="/weakness/provenance-void/">W-02 Provenance Void</a> (primary)</li>
+<li><a href="/weakness/robustness-weakness/">W-10 Robustness Weakness</a> (primary)</li>
+</ul>
+<hr>
+<h2>Implementation Indicators</h2>
+<p>A deployment has implemented C-02: Provenance and Content Credentials Layer when:</p>
+<ul>
+<li>Content credentials or provenance metadata are attached to or associated with the avatar</li>
+<li>The origin chain (capture, generation, transformation) is documented and verifiable</li>
+<li>Provenance signals are tamper-evident and persist through distribution</li>
+</ul>
+<hr>
+<h2>Full Implementation Requirements</h2>
+<p>Full implementation of C-02 requires tamper-evident provenance signals that persist through distribution — not just the existence of metadata at the point of creation. C2PA-aligned content credentials represent one compliant approach. Full implementation satisfies B1-Y and B2-Y in the assessment protocol and deactivates both W-02 and W-10.</p>
+<hr>
+<h2>Integration with Other Components</h2>
+<p>C-02 integrates with <a href="/component/attribution-binding/">C-08 Attribution and Accountable-Owner Binding</a> to bind the provenance chain to an identified accountable owner. C-02 also integrates with <a href="/component/anti-impersonation-controls/">C-05 Anti-Impersonation Controls</a> — tamper-evident provenance is a component of impersonation resistance, as it allows authorized avatars to be distinguished from clones.</p>
+<hr>
+<h2>Band Contribution</h2>
+<p>C-02 implemented deactivates W-02. W-02 deactivated is required to exit <strong>Ungoverned</strong> band. Full implementation (tamper-evident, persisting through distribution) is also required for <strong>Sovereign</strong> classification.</p>
+<p>See the <a href="/standard/">Strong Avatar Standard</a> for full band determination criteria.</p>
+<hr>
+<h2>Source Note</h2>
+<p>This governance component definition is internal doctrine under the Sovereign Asset System, governed by the <a href="/ontology/">Avatar Integrity Ontology</a>. The identifier C-02 is permanent. Legal and technical claims require external source documentation before publication.</p>
+<p>See also: <a href="/protocol/">Avatar Strength Assessment Protocol</a> · <a href="/standard/">Strong Avatar Standard</a></p>
+      </div>
+    </main>
+    <aside class="site-shell__trust" aria-label="Source and methodology context">
+      <p class="trust-note">StrongAvatar.com is a governance reference layer. Content reflects internal doctrine and methodology. External claims require documented sources before publication.</p>
+    </aside>
+    <footer class="site-shell__footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">StrongAvatar.com</a>
+        <a href="/ontology/">Ontology</a>
+        <a href="/standard/">Standard</a>
+        <a href="/protocol/">Protocol</a>
+      </nav>
+      <p class="footer-legal">&#169; 2026 StrongAvatar.com. Avatar governance reference layer.</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -19,6 +19,7 @@ VALIDATORS = [
     "validate_no_thin_pages.py",
     "validate_no_dead_routes.py",
     "validate_page_source_integrity.py",
+    "validate_output_integrity.py",
 ]
 
 

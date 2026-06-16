@@ -1,9 +1,25 @@
 from __future__ import annotations
 
+import json
 import re
 from pathlib import Path
 
 from validation_utils import fail, load_pages, pass_message, repo_root
+
+
+def _load_launch_set(root: Path) -> tuple[bool, set[str]]:
+    ls = root / "site" / "data" / "launch_set.json"
+    if not ls.exists():
+        return False, set()
+    try:
+        data = json.loads(ls.read_text(encoding="utf-8"))
+    except Exception:
+        return False, set()
+    gen_auth = (
+        data.get("output_generation_enabled") is True
+        and data.get("public_generation_enabled") is True
+    )
+    return gen_auth, set(data.get("allowed_routes", []))
 
 
 REQUIRED_HEADINGS = [
@@ -85,24 +101,28 @@ def main() -> None:
     root = repo_root()
     contract_root = (root / "site" / "content-contracts").resolve()
     registered_routes = {page.get("slug") for page in load_pages()}
+    gen_auth, ls_routes = _load_launch_set(root)
     errors: list[str] = []
 
     for page in load_pages():
         slug = page.get("slug", "<missing slug>")
         context = f"page {slug}"
         contract_value = page.get("content_contract")
+        is_launch_set = slug in ls_routes
 
         if not contract_value:
             errors.append(f"{context} missing content_contract")
             continue
         if page.get("content_contract_status") != "created":
             errors.append(f"{context} content_contract_status must be created")
-        if page.get("publication_allowed") is not False:
-            errors.append(f"{context} publication_allowed must remain false")
-        if page.get("indexable") is not False:
-            errors.append(f"{context} indexable must remain false")
-        if page.get("status") not in {"reserved", "planned"}:
-            errors.append(f"{context} status must remain reserved or planned")
+
+        if not (gen_auth and is_launch_set):
+            if page.get("publication_allowed") is not False:
+                errors.append(f"{context} publication_allowed must remain false")
+            if page.get("indexable") is not False:
+                errors.append(f"{context} indexable must remain false")
+            if page.get("status") not in {"reserved", "planned"}:
+                errors.append(f"{context} status must remain reserved or planned")
 
         contract_path = (root / str(contract_value)).resolve()
         try:

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W-01: Consent Absence — Avatar Governance Weakness Class</title>
+  <meta name="description" content="W-01 Consent Absence classifies deployments where no documented authority exists for using a likeness in a synthetic avatar. Primary weakness in the Avatar Integrity Ontology.">
+  <link rel="canonical" href="https://strongavatar.com/weakness/consent-absence/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="W-01: Consent Absence — Avatar Governance Weakness Class">
+  <meta property="og:description" content="W-01 Consent Absence classifies deployments where no documented authority exists for using a likeness in a synthetic avatar. Primary weakness in the Avatar Integrity Ontology.">
+  <meta property="og:url" content="https://strongavatar.com/weakness/consent-absence/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="W-01: Consent Absence — Avatar Governance Weakness Class">
+  <meta name="twitter:description" content="W-01 Consent Absence classifies deployments where no documented authority exists for using a likeness in a synthetic avatar. Primary weakness in the Avatar Integrity Ontology.">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="site-shell" data-interface="violet-gold-identity-field">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-shell__page">
+    <header class="site-shell__header" role="banner">
+      <nav class="site-nav" aria-label="Site navigation">
+        <a class="site-nav__brand" href="/">StrongAvatar.com</a>
+        <ul class="site-nav__list">
+          <li><a href="/ontology/">Ontology</a></li>
+          <li><a href="/standard/">Standard</a></li>
+          <li><a href="/protocol/">Protocol</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="site-shell__main page-shell" tabindex="-1">
+      <div class="page-shell__content protocol-card">
+        <h1>W-01: Consent Absence</h1>
+<h2>Definition</h2>
+<p>No documented authority exists for the use of the likeness or identity represented by the avatar. The deployment proceeds without an explicit, reviewable consent basis that specifies who authorized what, for what purpose, in what scope, and for what duration.</p>
+<hr>
+<h2>Why This Matters</h2>
+<p>Consent is the foundational authorization claim for any likeness deployment. Without it, no governance framework can be said to exist — there is no authority to audit, no scope to enforce, and no accountability chain to trace. Legal and regulatory scrutiny of synthetic media focuses first on consent status because it is the precondition for every other governance claim.</p>
+<hr>
+<h2>Observable Signals</h2>
+<p>A deployment exhibits W-01: Consent Absence when one or more of the following is present:</p>
+<ul>
+<li>No consent agreement, license, or authorization record is producible on request</li>
+<li>The avatar replicates a real person's appearance, voice, or manner without traceable permission</li>
+<li>Synthetic likeness is derived from a source whose consent status is undocumented or ambiguous</li>
+</ul>
+<hr>
+<h2>Compounding Relationships</h2>
+<p>W-01: Consent Absence compounds with:</p>
+<ul>
+<li><a href="/weakness/rights-ambiguity/">W-06 Rights Ambiguity</a></li>
+<li><a href="/weakness/revocation-gap/">W-07 Revocation Gap</a></li>
+</ul>
+<p>Consent absence creates rights ambiguity (W-06) because the basis for any rights claim is undefined. It also makes revocation undefined (W-07) because a withdrawal mechanism presupposes that consent was established in the first place.</p>
+<hr>
+<h2>Remediation Path</h2>
+<p>The primary remediation is <a href="/component/consent-infrastructure/">C-01 Consent Infrastructure</a>: a documented system for recording who authorized what, under what scope, and for how long. Secondary remediation paths include <a href="/component/rights-chain-documentation/">C-06 Rights Chain Documentation</a> to establish the chain of title that underlies any consent claim.</p>
+<hr>
+<h2>Band Implication</h2>
+<p>W-01 active → <strong>Ungoverned</strong> (unconditional). No other governance component compensates for absent consent.</p>
+<p>See the <a href="/standard/">Strong Avatar Standard</a> for full band determination rules.</p>
+<hr>
+<h2>Protocol Assessment</h2>
+<p><strong>Questions mapping to this class:</strong> A1 (Consent Documentation), A2 (Consent Scope)</p>
+<p>Protocol inputs A1 and A2 determine W-01 status. A1-N (no consent record) activates W-01 as active. A1-P (consent record exists but lacks scope, dating, or required elements) activates W-01 as partial. A1-Y and A2-Y together deactivate W-01.</p>
+<p><strong>Assessment dimension mapping:</strong> Consent Clarity (primary), Likeness Control (secondary)</p>
+<hr>
+<h2>Source Note</h2>
+<p>This weakness class definition is internal doctrine under the Sovereign Asset System, governed by the <a href="/ontology/">Avatar Integrity Ontology</a>. The identifier W-01 is permanent. Legal and regulatory claims require external source documentation before publication.</p>
+<p>See also: <a href="/protocol/">Avatar Strength Assessment Protocol</a> · <a href="/standard/">Strong Avatar Standard</a></p>
+      </div>
+    </main>
+    <aside class="site-shell__trust" aria-label="Source and methodology context">
+      <p class="trust-note">StrongAvatar.com is a governance reference layer. Content reflects internal doctrine and methodology. External claims require documented sources before publication.</p>
+    </aside>
+    <footer class="site-shell__footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">StrongAvatar.com</a>
+        <a href="/ontology/">Ontology</a>
+        <a href="/standard/">Standard</a>
+        <a href="/protocol/">Protocol</a>
+      </nav>
+      <p class="footer-legal">&#169; 2026 StrongAvatar.com. Avatar governance reference layer.</p>
+    </footer>
+  </div>
+</body>
+</html>

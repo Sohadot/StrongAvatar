@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W-05: Impersonation Exposure — Avatar Governance Weakness Class</title>
+  <meta name="description" content="W-05 Impersonation Exposure classifies synthetic avatar deployments that can be cloned, replicated, or repurposed to impersonate a real person without detection or prevention.">
+  <link rel="canonical" href="https://strongavatar.com/weakness/impersonation-exposure/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="W-05: Impersonation Exposure — Avatar Governance Weakness Class">
+  <meta property="og:description" content="W-05 Impersonation Exposure classifies synthetic avatar deployments that can be cloned, replicated, or repurposed to impersonate a real person without detection or prevention.">
+  <meta property="og:url" content="https://strongavatar.com/weakness/impersonation-exposure/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="W-05: Impersonation Exposure — Avatar Governance Weakness Class">
+  <meta name="twitter:description" content="W-05 Impersonation Exposure classifies synthetic avatar deployments that can be cloned, replicated, or repurposed to impersonate a real person without detection or prevention.">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="site-shell" data-interface="violet-gold-identity-field">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-shell__page">
+    <header class="site-shell__header" role="banner">
+      <nav class="site-nav" aria-label="Site navigation">
+        <a class="site-nav__brand" href="/">StrongAvatar.com</a>
+        <ul class="site-nav__list">
+          <li><a href="/ontology/">Ontology</a></li>
+          <li><a href="/standard/">Standard</a></li>
+          <li><a href="/protocol/">Protocol</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="site-shell__main page-shell" tabindex="-1">
+      <div class="page-shell__content protocol-card">
+        <h1>W-05: Impersonation Exposure</h1>
+<h2>Definition</h2>
+<p>The avatar can be cloned, replicated, or repurposed to impersonate a real person, another avatar, or a protected identity without detection or prevention. The deployment creates an exploitable surface for identity fraud.</p>
+<hr>
+<h2>Why This Matters</h2>
+<p>Impersonation exposure is the interface between identity governance and adversarial threat modeling. An avatar that can be trivially cloned undermines all upstream governance claims — an impersonation clone can carry the original's identity signals while acting outside its authorized scope. As synthetic media technology becomes more accessible, the barrier to cloning authorized avatars decreases, making anti-impersonation controls a progressively more important governance component.</p>
+<hr>
+<h2>Observable Signals</h2>
+<p>A deployment exhibits W-05: Impersonation Exposure when one or more of the following is present:</p>
+<ul>
+<li>No technical or procedural barrier prevents reproduction of the avatar for impersonation purposes</li>
+<li>The avatar's source assets (model, voice, appearance parameters) are accessible in ways that enable replication</li>
+<li>No detection or authentication mechanism distinguishes the authorized avatar from a clone</li>
+</ul>
+<hr>
+<h2>Compounding Relationships</h2>
+<p>W-05: Impersonation Exposure compounds with:</p>
+<ul>
+<li><a href="/weakness/provenance-void/">W-02 Provenance Void</a></li>
+<li><a href="/weakness/robustness-weakness/">W-10 Robustness Weakness</a></li>
+</ul>
+<p>Impersonation exposure compounds with provenance void (W-02) because an avatar with no traceable origin cannot demonstrate that a given deployment is authorized rather than a clone. It compounds with robustness weakness (W-10) because technical vulnerabilities that allow governance metadata to be stripped also enable impersonation — the clone can appear to have the same provenance as the original.</p>
+<hr>
+<h2>Remediation Path</h2>
+<p>The primary remediation is <a href="/component/anti-impersonation-controls/">C-05 Anti-Impersonation Controls</a>: technical and procedural mechanisms that prevent cloning, enable authentication, and detect unauthorized copies in distribution. Secondary remediation includes <a href="/component/provenance-credentials/">C-02 Provenance and Content Credentials Layer</a> to make provenance signals tamper-evident and thereby distinguishable from impersonation attempts.</p>
+<hr>
+<h2>Band Implication</h2>
+<p>W-05 active prevents <strong>Sovereign</strong> classification. A Governed avatar may have W-05 partial. W-05 does not cause Provisional or Ungoverned by itself — those require W-01, W-02, W-03, W-04, W-07, W-08, or W-09.</p>
+<p>See the <a href="/standard/">Strong Avatar Standard</a> for full band determination rules.</p>
+<hr>
+<h2>Protocol Assessment</h2>
+<p><strong>Questions mapping to this class:</strong> E2 (Anti-Impersonation Controls)</p>
+<p>Protocol input E2 determines W-05 status. E2-N (no anti-impersonation controls) activates W-05 as active. E2-P (some barriers but not covering all impersonation vectors) activates W-05 as partial. E2-Y deactivates W-05.</p>
+<p><strong>Assessment dimension mapping:</strong> Abuse Resistance (primary), Identity Integrity (secondary)</p>
+<hr>
+<h2>Source Note</h2>
+<p>This weakness class definition is internal doctrine under the Sovereign Asset System, governed by the <a href="/ontology/">Avatar Integrity Ontology</a>. The identifier W-05 is permanent. Legal and regulatory claims require external source documentation before publication.</p>
+<p>See also: <a href="/protocol/">Avatar Strength Assessment Protocol</a> · <a href="/standard/">Strong Avatar Standard</a></p>
+      </div>
+    </main>
+    <aside class="site-shell__trust" aria-label="Source and methodology context">
+      <p class="trust-note">StrongAvatar.com is a governance reference layer. Content reflects internal doctrine and methodology. External claims require documented sources before publication.</p>
+    </aside>
+    <footer class="site-shell__footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">StrongAvatar.com</a>
+        <a href="/ontology/">Ontology</a>
+        <a href="/standard/">Standard</a>
+        <a href="/protocol/">Protocol</a>
+      </nav>
+      <p class="footer-legal">&#169; 2026 StrongAvatar.com. Avatar governance reference layer.</p>
+    </footer>
+  </div>
+</body>
+</html>

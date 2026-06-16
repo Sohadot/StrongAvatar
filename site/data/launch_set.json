@@ -1,13 +1,13 @@
 {
-  "launch_set_status": "prebuild_alignment",
-  "public_generation_enabled": false,
-  "output_generation_enabled": false,
-  "indexing_enabled": false,
+  "launch_set_status": "foundation_output_authorized",
+  "public_generation_enabled": true,
+  "output_generation_enabled": true,
+  "indexing_enabled": true,
   "monetization_enabled": false,
   "diagnostic_engine_enabled": false,
   "javascript_enabled": false,
   "external_assets_enabled": false,
-  "notes": "Pre-build alignment phase. Routes are confirmed; HTML generation is not yet authorized. Activate output_generation_enabled only via a DECISION_LOG entry in Sprint 16B.",
+  "notes": "Sprint 16B: Controlled Foundation HTML Generation authorized. 22 routes approved for static HTML output. No monetization, no JavaScript, no external assets.",
   "allowed_routes": [
     "/",
     "/ontology/",

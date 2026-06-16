@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W-02: Provenance Void — Avatar Governance Weakness Class</title>
+  <meta name="description" content="W-02 Provenance Void classifies synthetic avatar deployments where no traceable chain exists from source identity to deployed avatar. The origin of the likeness cannot be verified.">
+  <link rel="canonical" href="https://strongavatar.com/weakness/provenance-void/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="W-02: Provenance Void — Avatar Governance Weakness Class">
+  <meta property="og:description" content="W-02 Provenance Void classifies synthetic avatar deployments where no traceable chain exists from source identity to deployed avatar. The origin of the likeness cannot be verified.">
+  <meta property="og:url" content="https://strongavatar.com/weakness/provenance-void/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="W-02: Provenance Void — Avatar Governance Weakness Class">
+  <meta name="twitter:description" content="W-02 Provenance Void classifies synthetic avatar deployments where no traceable chain exists from source identity to deployed avatar. The origin of the likeness cannot be verified.">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="site-shell" data-interface="violet-gold-identity-field">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-shell__page">
+    <header class="site-shell__header" role="banner">
+      <nav class="site-nav" aria-label="Site navigation">
+        <a class="site-nav__brand" href="/">StrongAvatar.com</a>
+        <ul class="site-nav__list">
+          <li><a href="/ontology/">Ontology</a></li>
+          <li><a href="/standard/">Standard</a></li>
+          <li><a href="/protocol/">Protocol</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="site-shell__main page-shell" tabindex="-1">
+      <div class="page-shell__content protocol-card">
+        <h1>W-02: Provenance Void</h1>
+<h2>Definition</h2>
+<p>No traceable chain exists from the source identity (real or synthetic) to the deployed avatar. The avatar's origin — who it was derived from, what training data or capture process created it, and what transformations were applied — cannot be established or verified.</p>
+<hr>
+<h2>Why This Matters</h2>
+<p>Provenance is the technical and documentary foundation for all downstream governance claims. A consent record is only meaningful if the identity being consented to can be traced to the deployed avatar. Disclosure requirements depend on knowing what synthetic origin the avatar has. Rights documentation requires knowing what source material was used. Provenance void undermines every other governance claim because it eliminates the factual basis on which those claims rest.</p>
+<hr>
+<h2>Observable Signals</h2>
+<p>A deployment exhibits W-02: Provenance Void when one or more of the following is present:</p>
+<ul>
+<li>No content credentials, provenance metadata, or origin documentation is attached to or associated with the avatar</li>
+<li>The generation or capture process is undocumented</li>
+<li>No binding exists between the deployed avatar and a verifiable source identity</li>
+</ul>
+<hr>
+<h2>Compounding Relationships</h2>
+<p>W-02: Provenance Void compounds with:</p>
+<ul>
+<li><a href="/weakness/consent-absence/">W-01 Consent Absence</a></li>
+<li><a href="/weakness/attribution-loss/">W-09 Attribution Loss</a></li>
+</ul>
+<p>Provenance void compounds with consent absence (W-01) because without a traceable origin, the consent basis cannot be verified. It compounds with attribution loss (W-09) because provenance is the mechanism through which attribution chains are constructed and maintained.</p>
+<hr>
+<h2>Remediation Path</h2>
+<p>The primary remediation is <a href="/component/provenance-credentials/">C-02 Provenance and Content Credentials Layer</a>: a mechanism for establishing and preserving the traceable origin chain, including content credentials aligned with provenance standards such as C2PA where applicable. The provenance layer must persist through distribution — not just exist at creation — to satisfy the full requirement.</p>
+<hr>
+<h2>Band Implication</h2>
+<p>W-02 active → <strong>Ungoverned</strong> (unconditional). An avatar with no traceable origin cannot be governed regardless of what other documentation exists.</p>
+<p>See the <a href="/standard/">Strong Avatar Standard</a> for full band determination rules.</p>
+<hr>
+<h2>Protocol Assessment</h2>
+<p><strong>Questions mapping to this class:</strong> B1 (Origin Documentation), B2 (Content Credentials)</p>
+<p>Protocol inputs B1 and B2 determine W-02 status. B1-N (no origin documentation) activates W-02 as active. B2-N (no content credentials) is a secondary activation signal. Full deactivation requires both B1-Y and B2-Y.</p>
+<p><strong>Assessment dimension mapping:</strong> Identity Integrity (primary), Synthetic Trust (secondary)</p>
+<hr>
+<h2>Source Note</h2>
+<p>This weakness class definition is internal doctrine under the Sovereign Asset System, governed by the <a href="/ontology/">Avatar Integrity Ontology</a>. The identifier W-02 is permanent. Legal and regulatory claims require external source documentation before publication.</p>
+<p>See also: <a href="/protocol/">Avatar Strength Assessment Protocol</a> · <a href="/standard/">Strong Avatar Standard</a></p>
+      </div>
+    </main>
+    <aside class="site-shell__trust" aria-label="Source and methodology context">
+      <p class="trust-note">StrongAvatar.com is a governance reference layer. Content reflects internal doctrine and methodology. External claims require documented sources before publication.</p>
+    </aside>
+    <footer class="site-shell__footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">StrongAvatar.com</a>
+        <a href="/ontology/">Ontology</a>
+        <a href="/standard/">Standard</a>
+        <a href="/protocol/">Protocol</a>
+      </nav>
+      <p class="footer-legal">&#169; 2026 StrongAvatar.com. Avatar governance reference layer.</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://strongavatar.com/</loc></url>
+  <url><loc>https://strongavatar.com/ontology/</loc></url>
+  <url><loc>https://strongavatar.com/standard/</loc></url>
+  <url><loc>https://strongavatar.com/protocol/</loc></url>
+  <url><loc>https://strongavatar.com/weakness/consent-absence/</loc></url>
+  <url><loc>https://strongavatar.com/weakness/provenance-void/</loc></url>
+  <url><loc>https://strongavatar.com/weakness/disclosure-failure/</loc></url>
+  <url><loc>https://strongavatar.com/weakness/identity-drift/</loc></url>
+  <url><loc>https://strongavatar.com/weakness/impersonation-exposure/</loc></url>
+  <url><loc>https://strongavatar.com/weakness/rights-ambiguity/</loc></url>
+  <url><loc>https://strongavatar.com/weakness/revocation-gap/</loc></url>
+  <url><loc>https://strongavatar.com/weakness/context-collapse/</loc></url>
+  <url><loc>https://strongavatar.com/weakness/attribution-loss/</loc></url>
+  <url><loc>https://strongavatar.com/weakness/robustness-weakness/</loc></url>
+  <url><loc>https://strongavatar.com/component/consent-infrastructure/</loc></url>
+  <url><loc>https://strongavatar.com/component/provenance-credentials/</loc></url>
+  <url><loc>https://strongavatar.com/component/disclosure-layer/</loc></url>
+  <url><loc>https://strongavatar.com/component/scope-usage-binding/</loc></url>
+  <url><loc>https://strongavatar.com/component/anti-impersonation-controls/</loc></url>
+  <url><loc>https://strongavatar.com/component/rights-chain-documentation/</loc></url>
+  <url><loc>https://strongavatar.com/component/revocation-mechanism/</loc></url>
+  <url><loc>https://strongavatar.com/component/attribution-binding/</loc></url>
+</urlset>

@@ -2,8 +2,8 @@
   "asset_name": "StrongAvatar.com",
   "domain": "https://strongavatar.com",
   "market_language": "en",
-  "public_publishing_enabled": false,
-  "asset_stage": "sovereign_foundation",
+  "public_publishing_enabled": true,
+  "asset_stage": "foundation_output",
   "core_concept": "The Avatar Strength Protocol",
   "foundational_line": "A weak avatar is generated. A strong avatar is governed.",
   "thesis": "StrongAvatar.com is the global reference layer for avatar strength, synthetic likeness governance, and digital identity trust.",
@@ -29,5 +29,5 @@
     "trend-chasing avatar design blog"
   ],
   "monetization_status": "principle_only_non_active",
-  "indexing_status": "disabled_until_quality_gate_exists"
+  "indexing_status": "foundation_launch_set_only"
 }

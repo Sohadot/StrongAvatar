@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W-03: Disclosure Failure — Avatar Governance Weakness Class</title>
+  <meta name="description" content="W-03 Disclosure Failure classifies synthetic avatar deployments where the synthetic nature of the avatar is not communicated in contexts where a viewer would reasonably need to know.">
+  <link rel="canonical" href="https://strongavatar.com/weakness/disclosure-failure/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="W-03: Disclosure Failure — Avatar Governance Weakness Class">
+  <meta property="og:description" content="W-03 Disclosure Failure classifies synthetic avatar deployments where the synthetic nature of the avatar is not communicated in contexts where a viewer would reasonably need to know.">
+  <meta property="og:url" content="https://strongavatar.com/weakness/disclosure-failure/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="W-03: Disclosure Failure — Avatar Governance Weakness Class">
+  <meta name="twitter:description" content="W-03 Disclosure Failure classifies synthetic avatar deployments where the synthetic nature of the avatar is not communicated in contexts where a viewer would reasonably need to know.">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="site-shell" data-interface="violet-gold-identity-field">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-shell__page">
+    <header class="site-shell__header" role="banner">
+      <nav class="site-nav" aria-label="Site navigation">
+        <a class="site-nav__brand" href="/">StrongAvatar.com</a>
+        <ul class="site-nav__list">
+          <li><a href="/ontology/">Ontology</a></li>
+          <li><a href="/standard/">Standard</a></li>
+          <li><a href="/protocol/">Protocol</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="site-shell__main page-shell" tabindex="-1">
+      <div class="page-shell__content protocol-card">
+        <h1>W-03: Disclosure Failure</h1>
+<h2>Definition</h2>
+<p>The synthetic nature of the avatar is not communicated in contexts where a viewer, user, or counterparty would reasonably need to know they are interacting with a synthetic representation rather than a real person.</p>
+<hr>
+<h2>Why This Matters</h2>
+<p>Disclosure is the transparency claim that grounds every other governance assertion. Audiences, users, regulators, and counterparties have an interest in knowing whether they are interacting with a synthetic representation. Regulatory frameworks for synthetic media — including those emerging under AI governance and deepfake legislation — consistently require disclosure as a baseline obligation. An avatar that is undisclosed as synthetic cannot participate in any legitimate governance framework.</p>
+<hr>
+<h2>Observable Signals</h2>
+<p>A deployment exhibits W-03: Disclosure Failure when one or more of the following is present:</p>
+<ul>
+<li>No disclosure label, indicator, or watermark is present in deployments where synthetic origin is material to the interaction</li>
+<li>Synthetic origin is actively concealed or implied to be human</li>
+<li>Disclosure is present in one channel but absent in others where the same avatar is deployed</li>
+</ul>
+<hr>
+<h2>Compounding Relationships</h2>
+<p>W-03: Disclosure Failure compounds with:</p>
+<ul>
+<li><a href="/weakness/identity-drift/">W-04 Identity Drift</a></li>
+<li><a href="/weakness/context-collapse/">W-08 Context Collapse</a></li>
+</ul>
+<p>Disclosure failure compounds with identity drift (W-04) because an undisclosed avatar has no enforced scope boundary — there is nothing preventing it from being used in roles or statements beyond its authorized identity. It compounds with context collapse (W-08) because an avatar without disclosure requirements can be redeployed in new contexts without the additional transparency obligations that would otherwise accompany context change.</p>
+<hr>
+<h2>Remediation Path</h2>
+<p>The primary remediation is <a href="/component/disclosure-layer/">C-03 Disclosure Layer</a>: a mechanism for communicating synthetic origin in all deployment contexts where it is material. Disclosure must be context-appropriate — a video avatar requires different disclosure from a conversational AI interface — and cannot be buried, minimized, or conditioned on user action.</p>
+<hr>
+<h2>Band Implication</h2>
+<p>W-03 active → <strong>Ungoverned</strong> (unconditional). Disclosure in at least one material deployment context is a minimum foundation requirement.</p>
+<p>See the <a href="/standard/">Strong Avatar Standard</a> for full band determination rules.</p>
+<hr>
+<h2>Protocol Assessment</h2>
+<p><strong>Questions mapping to this class:</strong> C1 (Synthetic Disclosure)</p>
+<p>Protocol input C1 determines W-03 status. C1-N (no disclosure in material deployment contexts) activates W-03 as active. C1-P (disclosure present in some but not all material contexts) activates W-03 as partial. C1-Y deactivates W-03.</p>
+<p><strong>Assessment dimension mapping:</strong> Synthetic Trust (primary), Identity Integrity (secondary)</p>
+<hr>
+<h2>Source Note</h2>
+<p>This weakness class definition is internal doctrine under the Sovereign Asset System, governed by the <a href="/ontology/">Avatar Integrity Ontology</a>. The identifier W-03 is permanent. Legal and regulatory claims require external source documentation before publication.</p>
+<p>See also: <a href="/protocol/">Avatar Strength Assessment Protocol</a> · <a href="/standard/">Strong Avatar Standard</a></p>
+      </div>
+    </main>
+    <aside class="site-shell__trust" aria-label="Source and methodology context">
+      <p class="trust-note">StrongAvatar.com is a governance reference layer. Content reflects internal doctrine and methodology. External claims require documented sources before publication.</p>
+    </aside>
+    <footer class="site-shell__footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">StrongAvatar.com</a>
+        <a href="/ontology/">Ontology</a>
+        <a href="/standard/">Standard</a>
+        <a href="/protocol/">Protocol</a>
+      </nav>
+      <p class="footer-legal">&#169; 2026 StrongAvatar.com. Avatar governance reference layer.</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C-05: Anti-Impersonation Controls — Avatar Governance Component</title>
+  <meta name="description" content="C-05 Anti-Impersonation Controls are technical and procedural mechanisms that prevent a synthetic avatar from being cloned, replicated, or repurposed for impersonation, including authentication and detection controls.">
+  <link rel="canonical" href="https://strongavatar.com/component/anti-impersonation-controls/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="C-05: Anti-Impersonation Controls — Avatar Governance Component">
+  <meta property="og:description" content="C-05 Anti-Impersonation Controls are technical and procedural mechanisms that prevent a synthetic avatar from being cloned, replicated, or repurposed for impersonation, including authentication and detection controls.">
+  <meta property="og:url" content="https://strongavatar.com/component/anti-impersonation-controls/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="C-05: Anti-Impersonation Controls — Avatar Governance Component">
+  <meta name="twitter:description" content="C-05 Anti-Impersonation Controls are technical and procedural mechanisms that prevent a synthetic avatar from being cloned, replicated, or repurposed for impersonation, including authentication and detection controls.">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="site-shell" data-interface="violet-gold-identity-field">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-shell__page">
+    <header class="site-shell__header" role="banner">
+      <nav class="site-nav" aria-label="Site navigation">
+        <a class="site-nav__brand" href="/">StrongAvatar.com</a>
+        <ul class="site-nav__list">
+          <li><a href="/ontology/">Ontology</a></li>
+          <li><a href="/standard/">Standard</a></li>
+          <li><a href="/protocol/">Protocol</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="site-shell__main page-shell" tabindex="-1">
+      <div class="page-shell__content protocol-card">
+        <h1>C-05: Anti-Impersonation Controls</h1>
+<h2>Definition</h2>
+<p>Technical and procedural mechanisms that prevent the avatar from being cloned, replicated, or repurposed for impersonation. Includes detection, authentication, and barrier controls.</p>
+<hr>
+<h2>Why This Matters</h2>
+<p>Anti-impersonation controls are the security layer of avatar governance. As synthetic media generation becomes more accessible, the ability to create convincing unauthorized clones of authorized avatars increases. Without anti-impersonation controls, a governance framework can be defeated by cloning — an adversary creates a copy of the authorized avatar, removes governance metadata, and deploys the impersonation without any of the original's constraints. Anti-impersonation controls make this attack harder or detectable, protecting the integrity of the governance framework itself.</p>
+<hr>
+<h2>Remediates</h2>
+<ul>
+<li><a href="/weakness/impersonation-exposure/">W-05 Impersonation Exposure</a> (primary)</li>
+<li><a href="/weakness/robustness-weakness/">W-10 Robustness Weakness</a> (secondary)</li>
+</ul>
+<hr>
+<h2>Implementation Indicators</h2>
+<p>A deployment has implemented C-05: Anti-Impersonation Controls when:</p>
+<ul>
+<li>Avatar assets are not distributed in forms that enable uncontrolled replication</li>
+<li>An authentication mechanism distinguishes the authorized avatar from unauthorized copies</li>
+<li>Detection procedures are in place to identify unauthorized clones in distribution</li>
+</ul>
+<hr>
+<h2>Full Implementation Requirements</h2>
+<p>Full implementation requires E2-Y in the assessment protocol: both an authentication mechanism and replication barriers are in place. The controls must cover all known impersonation vectors, not just the most obvious one. E2-Y also contributes to W-10 deactivation by providing authentication mechanisms that can distinguish authentic from tampered avatars.</p>
+<hr>
+<h2>Integration with Other Components</h2>
+<p>C-05 integrates with <a href="/component/provenance-credentials/">C-02 Provenance and Content Credentials Layer</a> — tamper-evident provenance is a component of impersonation resistance. C-05 also integrates with <a href="/component/scope-usage-binding/">C-04 Scope and Usage Binding</a> — an avatar with defined scope is easier to authenticate against a defined authorized deployment state.</p>
+<hr>
+<h2>Band Contribution</h2>
+<p>C-05 implemented deactivates W-05. W-05 deactivated is required for <strong>Sovereign</strong> classification. Governed classification allows W-05 partial.</p>
+<p>See the <a href="/standard/">Strong Avatar Standard</a> for full band determination criteria.</p>
+<hr>
+<h2>Source Note</h2>
+<p>This governance component definition is internal doctrine under the Sovereign Asset System, governed by the <a href="/ontology/">Avatar Integrity Ontology</a>. The identifier C-05 is permanent. Legal and technical claims require external source documentation before publication.</p>
+<p>See also: <a href="/protocol/">Avatar Strength Assessment Protocol</a> · <a href="/standard/">Strong Avatar Standard</a></p>
+      </div>
+    </main>
+    <aside class="site-shell__trust" aria-label="Source and methodology context">
+      <p class="trust-note">StrongAvatar.com is a governance reference layer. Content reflects internal doctrine and methodology. External claims require documented sources before publication.</p>
+    </aside>
+    <footer class="site-shell__footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">StrongAvatar.com</a>
+        <a href="/ontology/">Ontology</a>
+        <a href="/standard/">Standard</a>
+        <a href="/protocol/">Protocol</a>
+      </nav>
+      <p class="footer-legal">&#169; 2026 StrongAvatar.com. Avatar governance reference layer.</p>
+    </footer>
+  </div>
+</body>
+</html>

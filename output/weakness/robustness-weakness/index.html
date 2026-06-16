@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W-10: Robustness Weakness — Avatar Governance Weakness Class</title>
+  <meta name="description" content="W-10 Robustness Weakness classifies synthetic avatar deployments where the avatar or its governance infrastructure is vulnerable to adversarial tampering, spoofing, or manipulation.">
+  <link rel="canonical" href="https://strongavatar.com/weakness/robustness-weakness/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="W-10: Robustness Weakness — Avatar Governance Weakness Class">
+  <meta property="og:description" content="W-10 Robustness Weakness classifies synthetic avatar deployments where the avatar or its governance infrastructure is vulnerable to adversarial tampering, spoofing, or manipulation.">
+  <meta property="og:url" content="https://strongavatar.com/weakness/robustness-weakness/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="W-10: Robustness Weakness — Avatar Governance Weakness Class">
+  <meta name="twitter:description" content="W-10 Robustness Weakness classifies synthetic avatar deployments where the avatar or its governance infrastructure is vulnerable to adversarial tampering, spoofing, or manipulation.">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="site-shell" data-interface="violet-gold-identity-field">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-shell__page">
+    <header class="site-shell__header" role="banner">
+      <nav class="site-nav" aria-label="Site navigation">
+        <a class="site-nav__brand" href="/">StrongAvatar.com</a>
+        <ul class="site-nav__list">
+          <li><a href="/ontology/">Ontology</a></li>
+          <li><a href="/standard/">Standard</a></li>
+          <li><a href="/protocol/">Protocol</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="site-shell__main page-shell" tabindex="-1">
+      <div class="page-shell__content protocol-card">
+        <h1>W-10: Robustness Weakness</h1>
+<h2>Definition</h2>
+<p>The avatar or its governance infrastructure is vulnerable to adversarial tampering, spoofing, or manipulation. Provenance signals can be stripped or forged, the avatar can be cloned with governance metadata removed, or authentication mechanisms can be bypassed.</p>
+<hr>
+<h2>Why This Matters</h2>
+<p>Robustness weakness is the adversarial resilience failure of governance. A governance framework that can be defeated by stripping metadata or cloning assets provides governance in name only — it is visible to compliant actors but transparent to adversarial ones. As synthetic media governance becomes a compliance and regulatory requirement, the robustness of the governance infrastructure becomes as important as its existence. Tamper-evident provenance, authenticated avatars, and clone-resistant asset distribution are the technical foundation of credible governance.</p>
+<hr>
+<h2>Observable Signals</h2>
+<p>A deployment exhibits W-10: Robustness Weakness when one or more of the following is present:</p>
+<ul>
+<li>Provenance or content credential signals are not tamper-evident</li>
+<li>Avatar assets can be re-exported without governance metadata attached</li>
+<li>No integrity verification mechanism exists to distinguish the authenticated avatar from a tampered version</li>
+</ul>
+<hr>
+<h2>Compounding Relationships</h2>
+<p>W-10: Robustness Weakness compounds with:</p>
+<ul>
+<li><a href="/weakness/provenance-void/">W-02 Provenance Void</a></li>
+<li><a href="/weakness/impersonation-exposure/">W-05 Impersonation Exposure</a></li>
+</ul>
+<p>Robustness weakness compounds with provenance void (W-02) because a provenance system that is not tamper-evident is functionally equivalent to no provenance system — an adversary can strip or forge the signals that provenance relies on. It compounds with impersonation exposure (W-05) because technical vulnerabilities in the governance layer are the primary enabler of impersonation: a clone that inherits or forges governance metadata is harder to detect as unauthorized.</p>
+<hr>
+<h2>Remediation Path</h2>
+<p>Primary remediation is <a href="/component/provenance-credentials/">C-02 Provenance and Content Credentials Layer</a> at full implementation: provenance signals must be tamper-evident and persist through distribution. Secondary remediation is <a href="/component/anti-impersonation-controls/">C-05 Anti-Impersonation Controls</a> to provide authentication mechanisms that distinguish authorized from tampered avatars.</p>
+<hr>
+<h2>Band Implication</h2>
+<p>W-10 active → prevents <strong>Sovereign</strong> classification. W-10 partial allows <strong>Governed</strong> classification if W-01–W-04, W-08, W-09 are deactivated. Sovereign requires tamper-evident provenance (full C-02 implementation).</p>
+<p>See the <a href="/standard/">Strong Avatar Standard</a> for full band determination rules.</p>
+<hr>
+<h2>Protocol Assessment</h2>
+<p><strong>Questions mapping to this class:</strong> B2 (Content Credentials), E2 (Anti-Impersonation Controls)</p>
+<p>Protocol inputs B2 and E2 both map to W-10. W-10 is active if B2 is N, or if E2 is N. W-10 is partial if either is P with the other at Y or P.</p>
+<p><strong>Assessment dimension mapping:</strong> Abuse Resistance (primary), Synthetic Trust (secondary)</p>
+<hr>
+<h2>Source Note</h2>
+<p>This weakness class definition is internal doctrine under the Sovereign Asset System, governed by the <a href="/ontology/">Avatar Integrity Ontology</a>. The identifier W-10 is permanent. Legal and regulatory claims require external source documentation before publication.</p>
+<p>See also: <a href="/protocol/">Avatar Strength Assessment Protocol</a> · <a href="/standard/">Strong Avatar Standard</a></p>
+      </div>
+    </main>
+    <aside class="site-shell__trust" aria-label="Source and methodology context">
+      <p class="trust-note">StrongAvatar.com is a governance reference layer. Content reflects internal doctrine and methodology. External claims require documented sources before publication.</p>
+    </aside>
+    <footer class="site-shell__footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">StrongAvatar.com</a>
+        <a href="/ontology/">Ontology</a>
+        <a href="/standard/">Standard</a>
+        <a href="/protocol/">Protocol</a>
+      </nav>
+      <p class="footer-legal">&#169; 2026 StrongAvatar.com. Avatar governance reference layer.</p>
+    </footer>
+  </div>
+</body>
+</html>

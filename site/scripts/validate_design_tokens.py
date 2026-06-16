@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json as _json
 from pathlib import Path
 from typing import Any
 
@@ -169,15 +170,32 @@ def tracked_files(root: Path, pattern: str) -> list[Path]:
     return sorted(path for path in root.rglob(pattern) if ".git" not in path.parts and path.is_file())
 
 
+def _load_gen_auth(root: Path) -> tuple[bool, set[str]]:
+    ls = root / "site" / "data" / "launch_set.json"
+    if not ls.exists():
+        return False, set()
+    try:
+        d = _json.loads(ls.read_text(encoding="utf-8"))
+        auth = d.get("output_generation_enabled") is True and d.get("public_generation_enabled") is True
+        return auth, set(d.get("allowed_routes", []))
+    except Exception:
+        return False, set()
+
+
 def main() -> None:
     root = repo_root()
+    _gen_auth, _ls_routes = _load_gen_auth(root)
     errors: list[str] = []
     design_doc = root / "architecture" / "DESIGN_TOKENS.md"
     registry = load_json("site/data/design_tokens.json")
     site = load_json("site/data/site.json")
 
-    if site.get("public_publishing_enabled") is not False:
-        errors.append("public_publishing_enabled must remain false during sovereign foundation mode")
+    if _gen_auth:
+        if site.get("public_publishing_enabled") is not True:
+            errors.append("public_publishing_enabled must be true when generation is authorized")
+    else:
+        if site.get("public_publishing_enabled") is not False:
+            errors.append("public_publishing_enabled must remain false during sovereign foundation mode")
 
     if not design_doc.exists():
         errors.append("architecture/DESIGN_TOKENS.md must exist")
@@ -208,19 +226,34 @@ def main() -> None:
     if not gitkeep_or_authorized_css_only(css_dir, authorized_css):
         errors.append("site/static/css/ must contain only .gitkeep and main.css")
     css_files = [path for path in root.rglob("*.css") if ".git" not in path.parts]
-    if sorted(path.relative_to(root).as_posix() for path in css_files) != ["site/static/css/main.css"]:
-        errors.append("site/static/css/main.css must be the only CSS file in the repository")
+    if _gen_auth:
+        allowed_css = {"site/static/css/main.css", "output/static/css/main.css"}
+        actual_css = set(path.relative_to(root).as_posix() for path in css_files)
+        if not actual_css.issubset(allowed_css):
+            unexpected = actual_css - allowed_css
+            errors.append(f"unauthorized CSS files exist: {', '.join(sorted(unexpected))}")
+    else:
+        if sorted(path.relative_to(root).as_posix() for path in css_files) != ["site/static/css/main.css"]:
+            errors.append("site/static/css/main.css must be the only CSS file in the repository")
     if not authorized_css.exists():
         errors.append("site/static/css/main.css must exist when css_exists is true")
 
     output_dir = root / "output"
-    if not gitkeep_only(output_dir):
-        errors.append("output/ must remain .gitkeep-only")
+    if not _gen_auth and not gitkeep_only(output_dir):
+        errors.append("output/ must remain .gitkeep-only during non-generated mode")
 
     authorized_html_files = {root / html_file for html_file in AUTHORIZED_HTML_FILES}
     html_files = tracked_files(root, "*.html")
     allowed_html = {path.resolve() for path in authorized_html_files}
-    unauthorized_html = [path for path in html_files if path.resolve() not in allowed_html]
+    if _gen_auth:
+        # When generation is authorized, output/*.html files are allowed
+        unauthorized_html = [
+            path for path in html_files
+            if path.resolve() not in allowed_html
+            and "output" not in path.parts
+        ]
+    else:
+        unauthorized_html = [path for path in html_files if path.resolve() not in allowed_html]
     if unauthorized_html:
         unauthorized = ", ".join(path.relative_to(root).as_posix() for path in unauthorized_html)
         errors.append(f"unauthorized HTML files exist: {unauthorized}")
@@ -242,22 +275,23 @@ def main() -> None:
         unauthorized = ", ".join(path.relative_to(root).as_posix() for path in content_html)
         errors.append(f"site/content/ contains unauthorized HTML: {unauthorized}")
     output_html = tracked_files(output_dir, "*.html")
-    if output_html:
+    if output_html and not _gen_auth:
         unauthorized = ", ".join(path.relative_to(root).as_posix() for path in output_html)
         errors.append(f"output/ contains generated HTML: {unauthorized}")
     for planned_template in PLANNED_TEMPLATE_FILES:
         if (templates_dir / planned_template).exists():
             errors.append(f"unauthorized planned template exists: site/templates/{planned_template}")
-    index_files = [path for path in tracked_files(root, "index.html") if path.resolve() not in allowed_html]
-    if index_files:
-        found = ", ".join(path.relative_to(root).as_posix() for path in index_files)
-        errors.append(f"index.html must not exist as generated output: {found}")
+    if not _gen_auth:
+        index_files = [path for path in tracked_files(root, "index.html") if path.resolve() not in allowed_html]
+        if index_files:
+            found = ", ".join(path.relative_to(root).as_posix() for path in index_files)
+            errors.append(f"index.html must not exist as generated output: {found}")
     sitemap_files = tracked_files(root, "sitemap.xml")
-    if sitemap_files:
+    if sitemap_files and not _gen_auth:
         found = ", ".join(path.relative_to(root).as_posix() for path in sitemap_files)
         errors.append(f"sitemap.xml must not exist: {found}")
     robots_files = tracked_files(root, "robots.txt")
-    if robots_files:
+    if robots_files and not _gen_auth:
         found = ", ".join(path.relative_to(root).as_posix() for path in robots_files)
         errors.append(f"robots.txt must not exist: {found}")
     javascript_files = [

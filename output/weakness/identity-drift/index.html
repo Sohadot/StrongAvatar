@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W-04: Identity Drift — Avatar Governance Weakness Class</title>
+  <meta name="description" content="W-04 Identity Drift classifies synthetic avatar deployments where the avatar acts, appears, or is used in ways that diverge from its authorized identity scope.">
+  <link rel="canonical" href="https://strongavatar.com/weakness/identity-drift/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="W-04: Identity Drift — Avatar Governance Weakness Class">
+  <meta property="og:description" content="W-04 Identity Drift classifies synthetic avatar deployments where the avatar acts, appears, or is used in ways that diverge from its authorized identity scope.">
+  <meta property="og:url" content="https://strongavatar.com/weakness/identity-drift/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="W-04: Identity Drift — Avatar Governance Weakness Class">
+  <meta name="twitter:description" content="W-04 Identity Drift classifies synthetic avatar deployments where the avatar acts, appears, or is used in ways that diverge from its authorized identity scope.">
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="site-shell" data-interface="violet-gold-identity-field">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-shell__page">
+    <header class="site-shell__header" role="banner">
+      <nav class="site-nav" aria-label="Site navigation">
+        <a class="site-nav__brand" href="/">StrongAvatar.com</a>
+        <ul class="site-nav__list">
+          <li><a href="/ontology/">Ontology</a></li>
+          <li><a href="/standard/">Standard</a></li>
+          <li><a href="/protocol/">Protocol</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="site-shell__main page-shell" tabindex="-1">
+      <div class="page-shell__content protocol-card">
+        <h1>W-04: Identity Drift</h1>
+<h2>Definition</h2>
+<p>The avatar acts, appears, or is used in ways that diverge from its authorized identity scope. The deployed behavior, appearance, or statements differ materially from what consent, provenance, and scope documentation authorize.</p>
+<hr>
+<h2>Why This Matters</h2>
+<p>Identity drift represents the failure of scope governance after the foundational consent and provenance questions are resolved. An avatar may have documented consent and clear provenance but still drift because nobody enforced the authorized boundary. Over time, identity drift erodes trust in the governance system: if the avatar behaves in ways the documented scope doesn't authorize, the documentation becomes meaningless. Drift is also a leading indicator of impersonation risk — an avatar that already exceeds its authorized scope is more easily repurposed for impersonation.</p>
+<hr>
+<h2>Observable Signals</h2>
+<p>A deployment exhibits W-04: Identity Drift when one or more of the following is present:</p>
+<ul>
+<li>Avatar is used in contexts, roles, or statements beyond those covered by its consent basis</li>
+<li>Appearance has been modified beyond authorized parameters</li>
+<li>Avatar is attributed to a real person in situations the person did not authorize</li>
+</ul>
+<hr>
+<h2>Compounding Relationships</h2>
+<p>W-04: Identity Drift compounds with:</p>
+<ul>
+<li><a href="/weakness/consent-absence/">W-01 Consent Absence</a></li>
+<li><a href="/weakness/context-collapse/">W-08 Context Collapse</a></li>
+</ul>
+<p>Identity drift compounds with consent absence (W-01) because drift is only detectable when a consent basis exists to compare against — without consent, every use is potentially unauthorized, making drift assessment impossible. It compounds with context collapse (W-08) because an avatar that has drifted from its authorized scope is likely operating in unauthorized contexts, and each new context further expands the scope of the drift.</p>
+<hr>
+<h2>Remediation Path</h2>
+<p>The primary remediation is <a href="/component/scope-usage-binding/">C-04 Scope and Usage Binding</a>: a documented boundary that constrains the avatar's authorized use across contexts, platforms, audiences, behaviors, and statements. Any use outside the binding requires explicit re-authorization.</p>
+<hr>
+<h2>Band Implication</h2>
+<p>W-04 active → at minimum <strong>Provisional</strong> (assuming W-01, W-02, W-03 are mitigated). Identity drift with no W-01/W-02/W-03 indicates a baseline-compliant but insufficiently bounded deployment.</p>
+<p>See the <a href="/standard/">Strong Avatar Standard</a> for full band determination rules.</p>
+<hr>
+<h2>Protocol Assessment</h2>
+<p><strong>Questions mapping to this class:</strong> A2 (Consent Scope), D1 (Usage Scope Binding)</p>
+<p>Protocol inputs A2 and D1 both map to W-04. W-04 is active if either A2 or D1 is N. W-04 is partial if both are P, or one is P and the other is Y.</p>
+<p><strong>Assessment dimension mapping:</strong> Long-Term Narrative Coherence (primary), Identity Integrity (secondary), Likeness Control (secondary)</p>
+<hr>
+<h2>Source Note</h2>
+<p>This weakness class definition is internal doctrine under the Sovereign Asset System, governed by the <a href="/ontology/">Avatar Integrity Ontology</a>. The identifier W-04 is permanent. Legal and regulatory claims require external source documentation before publication.</p>
+<p>See also: <a href="/protocol/">Avatar Strength Assessment Protocol</a> · <a href="/standard/">Strong Avatar Standard</a></p>
+      </div>
+    </main>
+    <aside class="site-shell__trust" aria-label="Source and methodology context">
+      <p class="trust-note">StrongAvatar.com is a governance reference layer. Content reflects internal doctrine and methodology. External claims require documented sources before publication.</p>
+    </aside>
+    <footer class="site-shell__footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">StrongAvatar.com</a>
+        <a href="/ontology/">Ontology</a>
+        <a href="/standard/">Standard</a>
+        <a href="/protocol/">Protocol</a>
+      </nav>
+      <p class="footer-legal">&#169; 2026 StrongAvatar.com. Avatar governance reference layer.</p>
+    </footer>
+  </div>
+</body>
+</html>
