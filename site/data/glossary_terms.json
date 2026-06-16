@@ -81,6 +81,116 @@
       "definition_status": "reserved",
       "related_cluster": "likeness governance",
       "source_requirement": "legal, compliance, and governance claims require sources"
+    },
+    {
+      "term": "Weak Avatar",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "avatar integrity",
+      "ontology_ref": "conceptual opposite of Governed band",
+      "origin": "original",
+      "source_requirement": "internal doctrine; originates from AVATAR_INTEGRITY_ONTOLOGY.md",
+      "notes": "An avatar deployed without governed consent, provenance, or disclosure — realistic but ungoverned."
+    },
+    {
+      "term": "Likeness Provenance",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "avatar integrity",
+      "ontology_ref": "W-02",
+      "origin": "original",
+      "source_requirement": "internal doctrine; originates from AVATAR_INTEGRITY_ONTOLOGY.md",
+      "notes": "The traceable chain from a source identity to the deployed avatar."
+    },
+    {
+      "term": "Consent Basis",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "avatar integrity",
+      "ontology_ref": "W-01",
+      "origin": "original",
+      "source_requirement": "internal doctrine; originates from AVATAR_INTEGRITY_ONTOLOGY.md",
+      "notes": "The documented authority under which a likeness is used, including its scope and expiry."
+    },
+    {
+      "term": "Identity Drift",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "avatar integrity",
+      "ontology_ref": "W-04",
+      "origin": "original",
+      "source_requirement": "internal doctrine; originates from AVATAR_INTEGRITY_ONTOLOGY.md",
+      "notes": "Divergence between an avatar's deployed behavior or appearance and its authorized identity scope."
+    },
+    {
+      "term": "Impersonation Surface",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "avatar integrity",
+      "ontology_ref": "W-05",
+      "origin": "original",
+      "source_requirement": "internal doctrine; originates from AVATAR_INTEGRITY_ONTOLOGY.md",
+      "notes": "The exploitable space that allows an avatar to be cloned or repurposed to impersonate a real person."
+    },
+    {
+      "term": "Disclosure Integrity",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "avatar integrity",
+      "ontology_ref": "W-03",
+      "origin": "original",
+      "source_requirement": "internal doctrine; originates from AVATAR_INTEGRITY_ONTOLOGY.md",
+      "notes": "Whether synthetic origin is communicated wherever a viewer would reasonably need to know."
+    },
+    {
+      "term": "Revocation Gap",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "avatar integrity",
+      "ontology_ref": "W-07",
+      "origin": "original",
+      "source_requirement": "internal doctrine; originates from AVATAR_INTEGRITY_ONTOLOGY.md",
+      "notes": "The absence of a mechanism to withdraw consent or decommission a deployed avatar."
+    },
+    {
+      "term": "Avatar Trust Score",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "avatar integrity",
+      "ontology_ref": "protocol-Phase3-output",
+      "origin": "original",
+      "source_requirement": "internal doctrine; originates from AVATAR_INTEGRITY_ONTOLOGY.md",
+      "notes": "The composite governed score produced by the Avatar Trust Score API (Phase 3). Distinct from the free Avatar Strength Diagnostic (Phase 1 engine)."
+    },
+    {
+      "term": "Likeness Rights Chain",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "avatar integrity",
+      "ontology_ref": "W-06",
+      "origin": "field-inherited-governed",
+      "source_requirement": "legal claims require external sources; definitional content is internal doctrine",
+      "notes": "Chain-of-title for an identity used in a synthetic avatar. Field-inherited term given explicit entry and documentation criteria by this asset."
+    },
+    {
+      "term": "Content Credentials",
+      "status": "planned",
+      "indexable": false,
+      "definition_status": "reserved",
+      "related_cluster": "avatar integrity",
+      "ontology_ref": "C-02",
+      "origin": "field-inherited-governed",
+      "source_requirement": "technical and provenance claims require external sources where factual; C2PA alignment requires source documentation",
+      "notes": "Provenance metadata (C2PA-aligned); positioned as one governance component within C-02, not the whole of provenance governance."
     }
   ]
 }

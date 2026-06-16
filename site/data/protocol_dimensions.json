@@ -9,7 +9,9 @@
       "public_enabled": false,
       "purpose": "Assess whether the avatar's identity relationship is coherent, attributable, and not misleading.",
       "scoring_status": "reserved",
-      "source_requirement": "identity and verification claims require sources"
+      "source_requirement": "identity and verification claims require sources",
+      "maps_to_weakness_classes": ["W-02", "W-09", "W-04", "W-03"],
+      "mapping_note": "Surfaces provenance void (W-02) and attribution loss (W-09) as primary classes; identity drift (W-04) and disclosure failure (W-03) as secondary."
     },
     {
       "name": "Likeness Control",
@@ -17,7 +19,9 @@
       "public_enabled": false,
       "purpose": "Assess whether likeness use is governed by clear rights, boundaries, and representation controls.",
       "scoring_status": "reserved",
-      "source_requirement": "likeness, legal, and platform claims require sources"
+      "source_requirement": "likeness, legal, and platform claims require sources",
+      "maps_to_weakness_classes": ["W-06", "W-01", "W-04"],
+      "mapping_note": "Surfaces rights ambiguity (W-06) and consent absence (W-01) as primary classes; identity drift (W-04) as secondary."
     },
     {
       "name": "Consent Clarity",
@@ -25,7 +29,9 @@
       "public_enabled": false,
       "purpose": "Assess whether consent for creation, use, modification, and distribution is explicit and reviewable.",
       "scoring_status": "reserved",
-      "source_requirement": "consent and compliance claims require sources"
+      "source_requirement": "consent and compliance claims require sources",
+      "maps_to_weakness_classes": ["W-01", "W-07", "W-06"],
+      "mapping_note": "Surfaces consent absence (W-01) and revocation gap (W-07) as primary classes; rights ambiguity (W-06) as secondary."
     },
     {
       "name": "Platform Portability",
@@ -33,7 +39,9 @@
       "public_enabled": false,
       "purpose": "Assess whether avatar identity and governance signals can move across platforms without losing trust.",
       "scoring_status": "reserved",
-      "source_requirement": "technical and platform claims require sources"
+      "source_requirement": "technical and platform claims require sources",
+      "maps_to_weakness_classes": ["W-08", "W-04", "W-07"],
+      "mapping_note": "Surfaces context collapse (W-08) as the primary class; identity drift (W-04) and revocation gap (W-07) as secondary."
     },
     {
       "name": "Visual Authority",
@@ -41,7 +49,9 @@
       "public_enabled": false,
       "purpose": "Assess whether the avatar's visual presentation communicates legitimacy, context, and intended role.",
       "scoring_status": "reserved",
-      "source_requirement": "design and brand representation claims require sources where factual"
+      "source_requirement": "design and brand representation claims require sources where factual",
+      "maps_to_weakness_classes": ["W-04", "W-03"],
+      "mapping_note": "Surfaces identity drift (W-04) as the primary class; disclosure failure (W-03) as secondary when visual presentation conceals synthetic origin."
     },
     {
       "name": "Synthetic Trust",
@@ -49,7 +59,9 @@
       "public_enabled": false,
       "purpose": "Assess whether synthetic generation, modification, and disclosure practices support trust.",
       "scoring_status": "reserved",
-      "source_requirement": "synthetic media and disclosure claims require sources"
+      "source_requirement": "synthetic media and disclosure claims require sources",
+      "maps_to_weakness_classes": ["W-03", "W-02", "W-09", "W-10"],
+      "mapping_note": "Surfaces disclosure failure (W-03) and provenance void (W-02) as primary classes; attribution loss (W-09) and robustness weakness (W-10) as secondary."
     },
     {
       "name": "Commercial Readiness",
@@ -57,7 +69,9 @@
       "public_enabled": false,
       "purpose": "Assess whether the avatar can support professional, brand, platform, or creator use without governance gaps.",
       "scoring_status": "reserved",
-      "source_requirement": "commercial and buyer claims require sources"
+      "source_requirement": "commercial and buyer claims require sources",
+      "maps_to_weakness_classes": ["W-06", "W-07", "W-01"],
+      "mapping_note": "Surfaces rights ambiguity (W-06) and revocation gap (W-07) as primary classes; consent absence (W-01) as secondary."
     },
     {
       "name": "Abuse Resistance",
@@ -65,7 +79,9 @@
       "public_enabled": false,
       "purpose": "Assess whether the avatar system anticipates impersonation, misuse, deepfake risk, and unauthorized replication.",
       "scoring_status": "reserved",
-      "source_requirement": "security, abuse, and risk claims require sources"
+      "source_requirement": "security, abuse, and risk claims require sources",
+      "maps_to_weakness_classes": ["W-05", "W-10", "W-02"],
+      "mapping_note": "Surfaces impersonation exposure (W-05) and robustness weakness (W-10) as primary classes; provenance void (W-02) as secondary."
     },
     {
       "name": "Long-Term Narrative Coherence",
@@ -73,7 +89,9 @@
       "public_enabled": false,
       "purpose": "Assess whether the avatar remains consistent with identity, context, and representation over time.",
       "scoring_status": "reserved",
-      "source_requirement": "methodology claims require internal documentation before publication"
+      "source_requirement": "methodology claims require internal documentation before publication",
+      "maps_to_weakness_classes": ["W-04", "W-08", "W-09"],
+      "mapping_note": "Surfaces identity drift (W-04) and context collapse (W-08) as primary classes; attribution loss (W-09) as secondary."
     }
   ]
 }
