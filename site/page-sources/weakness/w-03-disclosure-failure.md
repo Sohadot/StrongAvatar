@@ -48,7 +48,7 @@ Disclosure failure compounds with identity drift (W-04) because an undisclosed a
 
 ## Remediation Path
 
-The primary remediation is [C-03 Disclosure Layer](/component/disclosure-protocol/): a mechanism for communicating synthetic origin in all deployment contexts where it is material. Disclosure must be context-appropriate — a video avatar requires different disclosure from a conversational AI interface — and cannot be buried, minimized, or conditioned on user action.
+The primary remediation is [C-03 Disclosure Layer](/component/disclosure-layer/): a mechanism for communicating synthetic origin in all deployment contexts where it is material. Disclosure must be context-appropriate — a video avatar requires different disclosure from a conversational AI interface — and cannot be buried, minimized, or conditioned on user action.
 
 ---
 

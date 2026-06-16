@@ -48,7 +48,7 @@ Impersonation exposure compounds with provenance void (W-02) because an avatar w
 
 ## Remediation Path
 
-The primary remediation is [C-05 Anti-Impersonation Controls](/component/anti-impersonation-layer/): technical and procedural mechanisms that prevent cloning, enable authentication, and detect unauthorized copies in distribution. Secondary remediation includes [C-02 Provenance and Content Credentials Layer](/component/provenance-chain/) to make provenance signals tamper-evident and thereby distinguishable from impersonation attempts.
+The primary remediation is [C-05 Anti-Impersonation Controls](/component/anti-impersonation-controls/): technical and procedural mechanisms that prevent cloning, enable authentication, and detect unauthorized copies in distribution. Secondary remediation includes [C-02 Provenance and Content Credentials Layer](/component/provenance-credentials/) to make provenance signals tamper-evident and thereby distinguishable from impersonation attempts.
 
 ---
 

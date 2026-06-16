@@ -347,3 +347,39 @@ Implications:
 - All pages remain non-indexable and unpublished.
 - No HTML files were created, no templates were modified, no output was generated, and no CSS was changed.
 - Next phase: to serve these pages, the build pipeline must be authorized via a future DECISION_LOG entry that enables the reference-page template and the content build stage. That authorization requires: a reference_page.html template implementation, a build script that renders page-sources/ to output/, and explicit quality-gate authorization for output generation.
+
+## 2026-06-16
+
+Decision: Sprint 16A — Source Route Alignment + Launch Set Gate completed. Pre-build alignment achieved across all 22 page sources. New validator added to quality gate.
+
+Rationale: Before activating the HTML build pipeline, the route registry (pages.json), the page source files (site/page-sources/), and the internal link graph must be fully aligned. Sprint 15 introduced page-source files using non-canonical slug aliases for five C-component routes. These aliases would produce broken internal links in generated HTML. Sprint 16A resolves this before any HTML is generated.
+
+Additionally, a launch governance layer (site/data/launch_set.json) and a source integrity validator (validate_page_source_integrity.py) are introduced to close the gap between what the quality gate verified (registry-level compliance) and what must be verified before build (content-level link integrity).
+
+Implications:
+
+- **Route alias corrections (34 fixes across 18 files):** Five C-component routes used in Sprint 15 page-sources were aliases inconsistent with pages.json. All have been corrected to the registered canonical slugs:
+  - `/component/provenance-chain/` → `/component/provenance-credentials/`
+  - `/component/disclosure-protocol/` → `/component/disclosure-layer/`
+  - `/component/scope-binding/` → `/component/scope-usage-binding/`
+  - `/component/anti-impersonation-layer/` → `/component/anti-impersonation-controls/`
+  - `/component/rights-registry/` → `/component/rights-chain-documentation/`
+- **C-component source files renamed** to match registered slugs (5 renames in site/page-sources/component/).
+- **`site/page-sources/home.md`** created: thesis-grade homepage source linking to /ontology/, /standard/, /protocol/, all 10 weakness class pages, and all 8 governance component pages. Non-placeholder, non-thin, no phantom content.
+- **`site/data/launch_set.json`** created: the launch governance file defining the 22 authorized routes for the initial build phase. `output_generation_enabled: false` — HTML generation is not yet authorized. This file is the gate between route alignment and Sprint 16B build activation.
+- **`site/scripts/validate_page_source_integrity.py`** created: a new 17-check validator that:
+  - Confirms launch_set.json exists and output_generation_enabled is false
+  - Confirms every launch-set route exists in pages.json and has a source file
+  - Confirms every source file's frontmatter route is registered
+  - Validates every internal Markdown link in every source file against the registered route set
+  - Confirms launch-set source files only link to launch-set routes
+  - Confirms homepage links to /ontology/, /standard/, /protocol/
+  - Confirms hub pages link back to /
+  - Confirms W-class pages link to their primary C-component using registered slugs
+  - Confirms C-component pages link to their remediated W-class pages
+  - Rejects prohibited terms (TODO, TBD, lorem ipsum, coming soon, placeholder) in all sources
+  - Rejects monetization language, JavaScript references, tracking pixels, external CDNs
+- **quality_gate.py** updated: 13 validators now run (previously 12). The new validator is wired at the end of the deterministic sequence.
+- Quality gate: all 13 validators pass. 22 sources confirmed, 22 launch-set routes confirmed, all links registered and closed.
+- Publication remains disabled. `public_publishing_enabled` remains false. output/ remains .gitkeep-only. No HTML generated.
+- Next phase: Sprint 16B — Controlled Foundation HTML Generation. Authorization requires updating site/data/launch_set.json (`output_generation_enabled: true`), implementing site/templates/reference-page.html, and enabling the build pipeline in build.py. That authorization must be recorded in DECISION_LOG.md before any HTML is generated.

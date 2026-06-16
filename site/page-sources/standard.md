@@ -55,9 +55,9 @@ Provisional deployments have cleared the foundational threshold but have unresol
 An avatar is Governed when all of the following are documented and verifiable:
 
 - [C-01 Consent Infrastructure](/component/consent-infrastructure/): consent record is producible, scoped, and dated
-- [C-02 Provenance and Content Credentials Layer](/component/provenance-chain/): origin chain is established and verifiable
-- [C-03 Disclosure Layer](/component/disclosure-protocol/): synthetic origin is communicated in all material deployment contexts
-- [C-04 Scope and Usage Binding](/component/scope-binding/): authorized contexts and behaviors are specified
+- [C-02 Provenance and Content Credentials Layer](/component/provenance-credentials/): origin chain is established and verifiable
+- [C-03 Disclosure Layer](/component/disclosure-layer/): synthetic origin is communicated in all material deployment contexts
+- [C-04 Scope and Usage Binding](/component/scope-usage-binding/): authorized contexts and behaviors are specified
 - [C-08 Attribution and Accountable-Owner Binding](/component/attribution-binding/): an accountable owner is identified and bound to the deployment
 
 W-01, W-02, W-03, W-04, and W-09 are all mitigated. Residual weakness classes, if any, are limited to W-05, W-06, W-07, W-08, or W-10 in non-critical dimensions.
@@ -71,8 +71,8 @@ W-01, W-02, W-03, W-04, and W-09 are all mitigated. Residual weakness classes, i
 A Governed avatar reaches Sovereign when it also implements:
 
 - [C-07 Revocation and Kill-Switch Mechanism](/component/revocation-mechanism/): a documented revocation process with a defined response time that has been tested
-- [C-05 Anti-Impersonation Controls](/component/anti-impersonation-layer/): technical and procedural barriers prevent unauthorized replication
-- [C-06 Rights Chain Documentation](/component/rights-registry/): chain of title is complete, current, and producible
+- [C-05 Anti-Impersonation Controls](/component/anti-impersonation-controls/): technical and procedural barriers prevent unauthorized replication
+- [C-06 Rights Chain Documentation](/component/rights-chain-documentation/): chain of title is complete, current, and producible
 - Tamper-evident provenance signals (full C-02 implementation)
 
 No active weakness class W-01 through W-09. W-10 may be present only if a documented mitigation plan is in place and being executed.
@@ -104,6 +104,12 @@ These exclusions are not omissions — they are the thesis. The standard's posit
 ## Relationship to the Ontology and Protocol
 
 The standard uses the weakness classes defined in the [Avatar Integrity Ontology](/ontology/) as its classification input. The [Avatar Strength Assessment Protocol](/protocol/) provides the deterministic procedure for determining which weakness classes are active for a given deployment. The three documents form a complete, self-contained assessment system.
+
+---
+
+## Return
+
+[StrongAvatar.com](/)
 
 ---
 

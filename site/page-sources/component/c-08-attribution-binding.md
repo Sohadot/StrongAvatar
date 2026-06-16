@@ -49,7 +49,7 @@ Full implementation requires D2-Y in the assessment protocol: the accountable ow
 
 ## Integration with Other Components
 
-C-08 integrates with [C-02 Provenance and Content Credentials Layer](/component/provenance-chain/) — provenance chain documentation provides the technical substrate through which attribution is established and maintained. C-08 also integrates with [C-01 Consent Infrastructure](/component/consent-infrastructure/) — the consenting party and the accountable owner may be the same person, and both must be identifiable.
+C-08 integrates with [C-02 Provenance and Content Credentials Layer](/component/provenance-credentials/) — provenance chain documentation provides the technical substrate through which attribution is established and maintained. C-08 also integrates with [C-01 Consent Infrastructure](/component/consent-infrastructure/) — the consenting party and the accountable owner may be the same person, and both must be identifiable.
 
 ---
 

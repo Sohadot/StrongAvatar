@@ -48,7 +48,7 @@ Consent absence creates rights ambiguity (W-06) because the basis for any rights
 
 ## Remediation Path
 
-The primary remediation is [C-01 Consent Infrastructure](/component/consent-infrastructure/): a documented system for recording who authorized what, under what scope, and for how long. Secondary remediation paths include [C-06 Rights Chain Documentation](/component/rights-registry/) to establish the chain of title that underlies any consent claim.
+The primary remediation is [C-01 Consent Infrastructure](/component/consent-infrastructure/): a documented system for recording who authorized what, under what scope, and for how long. Secondary remediation paths include [C-06 Rights Chain Documentation](/component/rights-chain-documentation/) to establish the chain of title that underlies any consent claim.
 
 ---
 

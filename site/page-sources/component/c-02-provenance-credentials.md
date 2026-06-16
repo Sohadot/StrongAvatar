@@ -1,8 +1,8 @@
 ---
-route: /component/provenance-chain/
+route: /component/provenance-credentials/
 title: C-02: Provenance and Content Credentials Layer — Avatar Governance Component
 meta_description: C-02 Provenance and Content Credentials Layer establishes the traceable chain from source identity to deployed avatar, including generation method, transformations, and authoring entity. Aligned with C2PA provenance standards.
-canonical: https://strongavatar.com/component/provenance-chain/
+canonical: https://strongavatar.com/component/provenance-credentials/
 seo_cluster: avatar provenance, content credentials C2PA, synthetic media traceability
 template: reference_page
 publication_state: reserved, non-public, non-indexable
@@ -50,7 +50,7 @@ Full implementation of C-02 requires tamper-evident provenance signals that pers
 
 ## Integration with Other Components
 
-C-02 integrates with [C-08 Attribution and Accountable-Owner Binding](/component/attribution-binding/) to bind the provenance chain to an identified accountable owner. C-02 also integrates with [C-05 Anti-Impersonation Controls](/component/anti-impersonation-layer/) — tamper-evident provenance is a component of impersonation resistance, as it allows authorized avatars to be distinguished from clones.
+C-02 integrates with [C-08 Attribution and Accountable-Owner Binding](/component/attribution-binding/) to bind the provenance chain to an identified accountable owner. C-02 also integrates with [C-05 Anti-Impersonation Controls](/component/anti-impersonation-controls/) — tamper-evident provenance is a component of impersonation resistance, as it allows authorized avatars to be distinguished from clones.
 
 ---
 

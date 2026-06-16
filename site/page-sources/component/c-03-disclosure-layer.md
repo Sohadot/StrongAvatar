@@ -1,8 +1,8 @@
 ---
-route: /component/disclosure-protocol/
+route: /component/disclosure-layer/
 title: C-03: Disclosure Layer — Avatar Governance Component
 meta_description: C-03 Disclosure Layer is the governance component that communicates the synthetic nature of an avatar in all deployment contexts where a viewer or counterparty would reasonably need to know.
-canonical: https://strongavatar.com/component/disclosure-protocol/
+canonical: https://strongavatar.com/component/disclosure-layer/
 seo_cluster: synthetic media disclosure, avatar transparency, AI avatar disclosure requirement
 template: reference_page
 publication_state: reserved, non-public, non-indexable
@@ -49,7 +49,7 @@ Full implementation requires context-appropriate disclosure in all material depl
 
 ## Integration with Other Components
 
-C-03 integrates with [C-04 Scope and Usage Binding](/component/scope-binding/) — when the avatar moves to a new context, the disclosure layer must be reassessed and adapted for that context. The disclosure requirement is not satisfied by importing a prior disclosure into a new deployment without reviewing its appropriateness.
+C-03 integrates with [C-04 Scope and Usage Binding](/component/scope-usage-binding/) — when the avatar moves to a new context, the disclosure layer must be reassessed and adapted for that context. The disclosure requirement is not satisfied by importing a prior disclosure into a new deployment without reviewing its appropriateness.
 
 ---
 

@@ -101,6 +101,12 @@ The mapping from any input combination to a band output is fully determined by t
 
 ---
 
+## Return
+
+[StrongAvatar.com](/)
+
+---
+
 ## Source Note
 
 This protocol is internal doctrine under the Sovereign Asset System, governed by the [Avatar Integrity Ontology](/ontology/) and the [Strong Avatar Standard](/standard/). Technical and regulatory claims require external source documentation before publication. Protocol inputs map to weakness classes as documented in the Avatar Integrity Ontology; any deviation requires a DECISION_LOG entry.

@@ -49,7 +49,7 @@ Full implementation requires A3-Y in the assessment protocol: a revocation proce
 
 ## Integration with Other Components
 
-C-07 integrates with [C-01 Consent Infrastructure](/component/consent-infrastructure/) — the consent infrastructure must include withdrawal terms that C-07 can enforce. C-07 also integrates with [C-06 Rights Chain Documentation](/component/rights-registry/) — rights clarity determines who holds the authority to initiate revocation.
+C-07 integrates with [C-01 Consent Infrastructure](/component/consent-infrastructure/) — the consent infrastructure must include withdrawal terms that C-07 can enforce. C-07 also integrates with [C-06 Rights Chain Documentation](/component/rights-chain-documentation/) — rights clarity determines who holds the authority to initiate revocation.
 
 ---
 

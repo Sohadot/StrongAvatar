@@ -1,8 +1,8 @@
 ---
-route: /component/anti-impersonation-layer/
+route: /component/anti-impersonation-controls/
 title: C-05: Anti-Impersonation Controls — Avatar Governance Component
 meta_description: C-05 Anti-Impersonation Controls are technical and procedural mechanisms that prevent a synthetic avatar from being cloned, replicated, or repurposed for impersonation, including authentication and detection controls.
-canonical: https://strongavatar.com/component/anti-impersonation-layer/
+canonical: https://strongavatar.com/component/anti-impersonation-controls/
 seo_cluster: deepfake prevention, avatar authentication, synthetic media anti-impersonation
 template: reference_page
 publication_state: reserved, non-public, non-indexable
@@ -50,7 +50,7 @@ Full implementation requires E2-Y in the assessment protocol: both an authentica
 
 ## Integration with Other Components
 
-C-05 integrates with [C-02 Provenance and Content Credentials Layer](/component/provenance-chain/) — tamper-evident provenance is a component of impersonation resistance. C-05 also integrates with [C-04 Scope and Usage Binding](/component/scope-binding/) — an avatar with defined scope is easier to authenticate against a defined authorized deployment state.
+C-05 integrates with [C-02 Provenance and Content Credentials Layer](/component/provenance-credentials/) — tamper-evident provenance is a component of impersonation resistance. C-05 also integrates with [C-04 Scope and Usage Binding](/component/scope-usage-binding/) — an avatar with defined scope is easier to authenticate against a defined authorized deployment state.
 
 ---
 

@@ -48,7 +48,7 @@ Rights ambiguity compounds with consent absence (W-01) because a consent basis w
 
 ## Remediation Path
 
-The primary remediation is [C-06 Rights Chain Documentation](/component/rights-registry/): a documented chain of title establishing who holds rights over the likeness, what those rights permit, and how they have been assigned or licensed to the deploying party. Secondary remediation includes [C-01 Consent Infrastructure](/component/consent-infrastructure/) to ensure the consent basis aligns with the documented rights chain.
+The primary remediation is [C-06 Rights Chain Documentation](/component/rights-chain-documentation/): a documented chain of title establishing who holds rights over the likeness, what those rights permit, and how they have been assigned or licensed to the deploying party. Secondary remediation includes [C-01 Consent Infrastructure](/component/consent-infrastructure/) to ensure the consent basis aligns with the documented rights chain.
 
 ---
 

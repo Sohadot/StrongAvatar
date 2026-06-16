@@ -39,31 +39,31 @@ Ten weakness classes classify the observable governance failures of synthetic av
 No documented authority exists for the use of the likeness or identity represented by the avatar. The deployment proceeds without an explicit, reviewable consent basis. Remediates via [C-01 Consent Infrastructure](/component/consent-infrastructure/).
 
 ### W-02 — Provenance Void
-No traceable chain exists from the source identity to the deployed avatar. The avatar's origin cannot be established or verified. Remediates via [C-02 Provenance and Content Credentials Layer](/component/provenance-chain/).
+No traceable chain exists from the source identity to the deployed avatar. The avatar's origin cannot be established or verified. Remediates via [C-02 Provenance and Content Credentials Layer](/component/provenance-credentials/).
 
 ### W-03 — Disclosure Failure
-The synthetic nature of the avatar is not communicated in contexts where a viewer or user would reasonably need to know. Remediates via [C-03 Disclosure Layer](/component/disclosure-protocol/).
+The synthetic nature of the avatar is not communicated in contexts where a viewer or user would reasonably need to know. Remediates via [C-03 Disclosure Layer](/component/disclosure-layer/).
 
 ### W-04 — Identity Drift
-The avatar acts, appears, or is used in ways that diverge from its authorized identity scope. Remediates via [C-04 Scope and Usage Binding](/component/scope-binding/).
+The avatar acts, appears, or is used in ways that diverge from its authorized identity scope. Remediates via [C-04 Scope and Usage Binding](/component/scope-usage-binding/).
 
 ### W-05 — Impersonation Exposure
-The avatar can be cloned or repurposed to impersonate a real person without detection. Remediates via [C-05 Anti-Impersonation Controls](/component/anti-impersonation-layer/).
+The avatar can be cloned or repurposed to impersonate a real person without detection. Remediates via [C-05 Anti-Impersonation Controls](/component/anti-impersonation-controls/).
 
 ### W-06 — Rights Ambiguity
-The chain of title for the identity or likeness is unclear, incomplete, or contested. Remediates via [C-06 Rights Chain Documentation](/component/rights-registry/).
+The chain of title for the identity or likeness is unclear, incomplete, or contested. Remediates via [C-06 Rights Chain Documentation](/component/rights-chain-documentation/).
 
 ### W-07 — Revocation Gap
 No mechanism exists to withdraw consent or decommission the avatar. Remediates via [C-07 Revocation and Kill-Switch Mechanism](/component/revocation-mechanism/).
 
 ### W-08 — Context Collapse
-The avatar is reused outside its authorized context, platform, or audience without re-authorization. Remediates via [C-04 Scope and Usage Binding](/component/scope-binding/).
+The avatar is reused outside its authorized context, platform, or audience without re-authorization. Remediates via [C-04 Scope and Usage Binding](/component/scope-usage-binding/).
 
 ### W-09 — Attribution Loss
 No durable binding exists between the avatar and an accountable owner or responsible party. Remediates via [C-08 Attribution and Accountable-Owner Binding](/component/attribution-binding/).
 
 ### W-10 — Robustness Weakness
-The avatar or its governance infrastructure is vulnerable to adversarial tampering or spoofing. Remediates via [C-02 Provenance and Content Credentials Layer](/component/provenance-chain/).
+The avatar or its governance infrastructure is vulnerable to adversarial tampering or spoofing. Remediates via [C-02 Provenance and Content Credentials Layer](/component/provenance-credentials/).
 
 Full definitions, observable signals, compounding relationships, and assessment mappings for each class are on the individual weakness class reference pages linked above.
 
@@ -76,11 +76,11 @@ Eight governance components define the structural mechanisms that close governan
 | Component | Remediates |
 |---|---|
 | [C-01 Consent Infrastructure](/component/consent-infrastructure/) | W-01, W-06 (secondary), W-07 (secondary) |
-| [C-02 Provenance and Content Credentials Layer](/component/provenance-chain/) | W-02, W-10 |
-| [C-03 Disclosure Layer](/component/disclosure-protocol/) | W-03 |
-| [C-04 Scope and Usage Binding](/component/scope-binding/) | W-04, W-08 |
-| [C-05 Anti-Impersonation Controls](/component/anti-impersonation-layer/) | W-05, W-10 (secondary) |
-| [C-06 Rights Chain Documentation](/component/rights-registry/) | W-06 |
+| [C-02 Provenance and Content Credentials Layer](/component/provenance-credentials/) | W-02, W-10 |
+| [C-03 Disclosure Layer](/component/disclosure-layer/) | W-03 |
+| [C-04 Scope and Usage Binding](/component/scope-usage-binding/) | W-04, W-08 |
+| [C-05 Anti-Impersonation Controls](/component/anti-impersonation-controls/) | W-05, W-10 (secondary) |
+| [C-06 Rights Chain Documentation](/component/rights-chain-documentation/) | W-06 |
 | [C-07 Revocation and Kill-Switch Mechanism](/component/revocation-mechanism/) | W-07 |
 | [C-08 Attribution and Accountable-Owner Binding](/component/attribution-binding/) | W-09 |
 
@@ -115,6 +115,12 @@ The identifiers W-01 through W-10 and C-01 through C-08 are permanent. No identi
 The ontology defines *what is wrong* and *what remediates it*. The [Strong Avatar Standard](/standard/) uses these classes to define four strength bands (Ungoverned, Provisional, Governed, Sovereign). The [Avatar Strength Assessment Protocol](/protocol/) uses structured inputs to determine which weakness classes are active for a given deployment.
 
 These three documents form a complete, deterministic assessment system: protocol inputs → weakness class activations → band determination → component remediation path.
+
+---
+
+## Return
+
+[StrongAvatar.com](/)
 
 ---
 

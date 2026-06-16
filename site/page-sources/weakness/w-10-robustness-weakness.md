@@ -48,7 +48,7 @@ Robustness weakness compounds with provenance void (W-02) because a provenance s
 
 ## Remediation Path
 
-Primary remediation is [C-02 Provenance and Content Credentials Layer](/component/provenance-chain/) at full implementation: provenance signals must be tamper-evident and persist through distribution. Secondary remediation is [C-05 Anti-Impersonation Controls](/component/anti-impersonation-layer/) to provide authentication mechanisms that distinguish authorized from tampered avatars.
+Primary remediation is [C-02 Provenance and Content Credentials Layer](/component/provenance-credentials/) at full implementation: provenance signals must be tamper-evident and persist through distribution. Secondary remediation is [C-05 Anti-Impersonation Controls](/component/anti-impersonation-controls/) to provide authentication mechanisms that distinguish authorized from tampered avatars.
 
 ---
 

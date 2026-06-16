@@ -51,7 +51,7 @@ Full implementation of C-01 satisfies A1-Y and A2-Y in the assessment protocol: 
 
 ## Integration with Other Components
 
-C-01 integrates with [C-06 Rights Chain Documentation](/component/rights-registry/) to ensure that the person granting consent holds or has been assigned the rights to do so. C-01 also integrates with [C-07 Revocation and Kill-Switch Mechanism](/component/revocation-mechanism/) — the consent infrastructure must include withdrawal terms that the revocation mechanism can enforce.
+C-01 integrates with [C-06 Rights Chain Documentation](/component/rights-chain-documentation/) to ensure that the person granting consent holds or has been assigned the rights to do so. C-01 also integrates with [C-07 Revocation and Kill-Switch Mechanism](/component/revocation-mechanism/) — the consent infrastructure must include withdrawal terms that the revocation mechanism can enforce.
 
 ---
 

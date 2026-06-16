@@ -48,7 +48,7 @@ Identity drift compounds with consent absence (W-01) because drift is only detec
 
 ## Remediation Path
 
-The primary remediation is [C-04 Scope and Usage Binding](/component/scope-binding/): a documented boundary that constrains the avatar's authorized use across contexts, platforms, audiences, behaviors, and statements. Any use outside the binding requires explicit re-authorization.
+The primary remediation is [C-04 Scope and Usage Binding](/component/scope-usage-binding/): a documented boundary that constrains the avatar's authorized use across contexts, platforms, audiences, behaviors, and statements. Any use outside the binding requires explicit re-authorization.
 
 ---
 

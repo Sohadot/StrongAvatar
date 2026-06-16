@@ -1,8 +1,8 @@
 ---
-route: /component/scope-binding/
+route: /component/scope-usage-binding/
 title: C-04: Scope and Usage Binding — Avatar Governance Component
 meta_description: C-04 Scope and Usage Binding documents the boundary constraining an avatar's authorized use — permitted contexts, platforms, audiences, behaviors, and statements — requiring explicit re-authorization for any use outside the binding.
-canonical: https://strongavatar.com/component/scope-binding/
+canonical: https://strongavatar.com/component/scope-usage-binding/
 seo_cluster: avatar scope governance, digital identity usage control, synthetic avatar boundary
 template: reference_page
 publication_state: reserved, non-public, non-indexable
@@ -50,7 +50,7 @@ Full implementation requires both documented scope boundaries (D1-Y in the asses
 
 ## Integration with Other Components
 
-C-04 integrates with [C-01 Consent Infrastructure](/component/consent-infrastructure/) — scope binding without a documented consent basis has no authority to reference. C-04 also integrates with [C-03 Disclosure Layer](/component/disclosure-protocol/) — disclosure requirements must be context-specific, and scope binding defines what contexts exist and what disclosure is required for each.
+C-04 integrates with [C-01 Consent Infrastructure](/component/consent-infrastructure/) — scope binding without a documented consent basis has no authority to reference. C-04 also integrates with [C-03 Disclosure Layer](/component/disclosure-layer/) — disclosure requirements must be context-specific, and scope binding defines what contexts exist and what disclosure is required for each.
 
 ---
 

@@ -1,8 +1,8 @@
 ---
-route: /component/rights-registry/
+route: /component/rights-chain-documentation/
 title: C-06: Rights Chain Documentation — Avatar Governance Component
 meta_description: C-06 Rights Chain Documentation establishes the chain of title for a synthetic avatar's likeness — documenting who holds rights, what those rights permit, and how they have been assigned or licensed.
-canonical: https://strongavatar.com/component/rights-registry/
+canonical: https://strongavatar.com/component/rights-chain-documentation/
 seo_cluster: avatar rights documentation, likeness rights chain, digital identity licensing
 template: reference_page
 publication_state: reserved, non-public, non-indexable

@@ -18,6 +18,7 @@ VALIDATORS = [
     "validate_buyer_logic.py",
     "validate_no_thin_pages.py",
     "validate_no_dead_routes.py",
+    "validate_page_source_integrity.py",
 ]
 
 

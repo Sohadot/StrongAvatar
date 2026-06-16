@@ -48,7 +48,7 @@ Provenance void compounds with consent absence (W-01) because without a traceabl
 
 ## Remediation Path
 
-The primary remediation is [C-02 Provenance and Content Credentials Layer](/component/provenance-chain/): a mechanism for establishing and preserving the traceable origin chain, including content credentials aligned with provenance standards such as C2PA where applicable. The provenance layer must persist through distribution — not just exist at creation — to satisfy the full requirement.
+The primary remediation is [C-02 Provenance and Content Credentials Layer](/component/provenance-credentials/): a mechanism for establishing and preserving the traceable origin chain, including content credentials aligned with provenance standards such as C2PA where applicable. The provenance layer must persist through distribution — not just exist at creation — to satisfy the full requirement.
 
 ---
 

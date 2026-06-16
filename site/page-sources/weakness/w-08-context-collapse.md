@@ -48,7 +48,7 @@ Context collapse compounds with disclosure failure (W-03) because an avatar rede
 
 ## Remediation Path
 
-The primary remediation is [C-04 Scope and Usage Binding](/component/scope-binding/): a documented boundary specifying permitted contexts, platforms, and audiences. Any use outside the binding requires explicit re-authorization. Secondary remediation includes [C-03 Disclosure Layer](/component/disclosure-protocol/) to ensure disclosure obligations are context-adapted when the avatar moves to a new deployment.
+The primary remediation is [C-04 Scope and Usage Binding](/component/scope-usage-binding/): a documented boundary specifying permitted contexts, platforms, and audiences. Any use outside the binding requires explicit re-authorization. Secondary remediation includes [C-03 Disclosure Layer](/component/disclosure-layer/) to ensure disclosure obligations are context-adapted when the avatar moves to a new deployment.
 
 ---
 
