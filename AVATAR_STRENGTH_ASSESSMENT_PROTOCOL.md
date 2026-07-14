@@ -1,9 +1,11 @@
 # Avatar Strength Assessment Protocol
 
-**Version:** 0.1
-**Status:** Draft — requires DECISION_LOG.md approval entry before versioning beyond 0.1
+**Version:** 0.2
+**Status:** Draft — version 0.2 authorized by DECISION_LOG.md entry dated 2026-07-14 (determinism closure)
 **Governed by:** `AVATAR_INTEGRITY_ONTOLOGY.md`, `STRONG_AVATAR_STANDARD.md`
-**Implemented by:** Avatar Strength Diagnostic (engine, Phase 1)
+**Implemented by:** `spec/reference_implementation.py` (normative reference implementation)
+**Machine-readable form:** `spec/avatar-strength-protocol.schema.json`
+**Verification:** `tests/test_protocol_determinism.py` (exhaustive, all 59,049 input combinations)
 
 ---
 
@@ -144,34 +146,36 @@ Where multiple inputs map to the same weakness class, the class is active if any
 | Input | `-N` activates | `-P` activates |
 |---|---|---|
 | A1 | W-01 (active) | W-01 (partial) |
-| A2 | W-04 (partial), W-08 (partial) | W-04 (partial), W-08 (partial) |
+| A2 | W-04 (per W-04 rule), W-08 (per W-08 rule) | W-04 (per W-04 rule), W-08 (per W-08 rule) |
 | A3 | W-07 (active) | W-07 (partial) |
 | B1 | W-02 (active) | W-02 (partial) |
-| B2 | W-10 (active) | W-10 (partial) |
+| B2 | W-10 (per W-10 rule) | W-10 (per W-10 rule) |
 | C1 | W-03 (active) | W-03 (partial) |
-| D1 | W-04 (active if A2 also -N), W-08 (active) | W-04 (partial), W-08 (partial) |
+| D1 | W-04 (per W-04 rule), W-08 (per W-08 rule) | W-04 (per W-04 rule), W-08 (per W-08 rule) |
 | D2 | W-09 (active) | W-09 (partial) |
 | E1 | W-06 (active) | W-06 (partial) |
-| E2 | W-05 (active), W-10 (active if B2 also -N) | W-05 (partial) |
+| E2 | W-05 (active), W-10 (per W-10 rule) | W-05 (partial), W-10 (per W-10 rule) |
 
-**W-04 activation rule:** Active if either A2 or D1 is `-N`. Partial if both are `-P`, or one is `-P` and the other is `-Y`.
+For W-04, W-08, and W-10 — the classes fed by two inputs — the named activation rules below are the sole authority. (v0.2 correction: v0.1 table annotations for the D1/W-04 and E2/W-10 cells conflicted with the named rules; the named rules govern.)
 
-**W-08 activation rule:** Active if D1 is `-N`. Partial if A2 is `-P` or `-N` while D1 is `-P`.
+**W-04 activation rule:** Active if either A2 or D1 is `-N`. Partial if at least one is `-P` and neither is `-N`. Inactive if both are `-Y`.
 
-**W-10 activation rule:** Active if B2 is `-N`, or if E2 is `-N`. Partial if either is `-P` with the other at `-Y` or `-P`.
+**W-08 activation rule:** Active if D1 is `-N`. Partial if D1 is `-P`, or if A2 is `-P` or `-N` while D1 is `-Y`. Inactive if both are `-Y`.
+
+**W-10 activation rule:** Active if B2 is `-N`, or if E2 is `-N`. Partial if either is `-P` and neither is `-N`. Inactive if both are `-Y`.
 
 ---
 
 ## Band Determination
 
-After applying the rule table, determine the strength band:
+After applying the rule table, determine the strength band. Band determination is **total**: the four rules below partition the entire state space, so every input combination resolves to exactly one band. (v0.2 closure: v0.1 left combinations such as an active W-05/W-06/W-10 with no other trigger, or a partial W-04/W-09, without an assigned band. The closure assigns every previously undefined combination the more conservative band; no combination that resolved under v0.1 changes band.)
 
 1. If W-01 is active **or** W-02 is active **or** W-03 is active → **Ungoverned** (unconditional)
-2. Else if any of W-04, W-07, W-08, W-09 is active **or** any of W-01, W-02, W-03 is partial → **Provisional**
-3. Else if W-05, W-06, W-07, W-08, W-10 are partial but W-01–W-04, W-09 are deactivated → **Governed**
-4. If all inputs are `-Y` (all weakness classes fully deactivated) → **Sovereign**
+2. Else if any weakness class is active, **or** any of W-01, W-02, W-03, W-04, W-09 is partial → **Provisional**
+3. Else if any of W-05, W-06, W-07, W-08, W-10 is partial → **Governed**
+4. Else (all weakness classes fully deactivated, which occurs only when all inputs are `-Y`) → **Sovereign**
 
-Rule 1 is unconditional and evaluated first.
+Rule 1 is unconditional and evaluated first. Rules are evaluated in order; the first rule whose condition holds determines the band.
 
 ---
 
@@ -200,6 +204,14 @@ The output does not include:
 
 The mapping from any input combination to a band output is fully determined by this document. No operator discretion, model inference, or external data source enters the assessment. Given the same 10 input values, the protocol must produce the same band, dominant weakness class, and component list on every run. If it does not, the discrepancy is a defect in the protocol or its implementation, not an operator judgment call.
 
+As of v0.2 this guarantee is machine-verified, not merely declared: `tests/test_protocol_determinism.py` enumerates all 59,049 possible input combinations against `spec/reference_implementation.py` and proves totality (every combination resolves to exactly one band), determinism (repeated runs are identical), the unconditional Ungoverned rule, the all-`-Y` Sovereign rule, elevation-path validity, and the output link rule. A protocol revision that fails exhaustive verification may not be versioned forward.
+
 ---
 
-*Protocol maintained under Sovereign Asset System. Version history tracked in `DECISION_LOG.md`. Engine implementation must conform to this rule table exactly and without exception.*
+## Machine-Readable Specification
+
+The protocol's interchange format is defined in `spec/avatar-strength-protocol.schema.json` (JSON Schema, draft 2020-12). Canonical input/output vectors are published in `spec/test_vectors.json`. An implementation conforms if and only if it matches the reference implementation across the full input space; the canonical vectors are necessary but not sufficient. See `spec/README.md`.
+
+---
+
+*Protocol maintained under Sovereign Asset System. Version history tracked in `DECISION_LOG.md`. Engine implementation must conform to this rule table exactly and without exception; `spec/reference_implementation.py` is the normative reference.*
