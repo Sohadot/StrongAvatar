@@ -464,3 +464,17 @@ Implications:
 - **Observation escalated to owner (no action taken):** Cloudflare prepends a managed content-signals block to live robots.txt (search=yes, ai-train=no, use=reference; Disallow for GPTBot, ClaudeBot, CCBot, Google-Extended, and other AI crawlers). Classic search indexing is unaffected. The trade-off between training protection and AI-answer citation reach is an owner-level policy decision, managed in Cloudflare, and should be recorded here once decided.
 - No content changes, no route changes, no output/ changes, no monetization, no engine exposure. Quality gate remains 14/14.
 - Next phase candidates: GSC indexing-coverage follow-up once Google processes the discovered pages; first external validation work (spec citation surface) per ACQUISITION_POSTURE.md value signals.
+
+## 2026-07-14
+
+Decision: Maintain the current Cloudflare AI-crawler protection posture during the initial reference-authority phase.
+
+Rationale: StrongAvatar.com is still establishing source authority for the Avatar Integrity Ontology, Strong Avatar Standard, and Avatar Strength Assessment Protocol. During this phase, training protection is prioritized over broad AI-answer ingestion so the original source accumulates search, citation, and reference authority before wider agent-discovery exposure is considered. The strategic value of the asset is not traffic alone; it is that StrongAvatar.com remains the original source of the avatar-strength language. Opening all AI crawlers early would raise the chance of appearing inside AI-generated answers, but at the risk of the conceptual system being absorbed before the market associates it with its source. Source authority comes first; agent reach comes later.
+
+Implications:
+
+- Classic search indexing remains allowed (`search=yes`; Googlebot and Bingbot unaffected).
+- AI training crawlers remain restricted (`ai-train=no`; GPTBot, ClaudeBot, CCBot, Google-Extended, Bytespider, Amazonbot, Applebot-Extended, meta-externalagent blocked via the Cloudflare-managed robots.txt block).
+- This posture is explicitly phased, not permanent: Phase 1 protects the asset while the category is established; Phase 2 considers selective relaxation for agent visibility once Google indexing, query visibility, and the reference footprint (backlinks, citations) stabilize.
+- The posture is CDN-managed (Cloudflare dashboard), not repository-governed; this entry is the governance record. Any future change to the posture requires a new DECISION_LOG.md entry before it is applied.
+- Review trigger: after initial indexing coverage and first citation signals are observed, this decision must be re-evaluated.
