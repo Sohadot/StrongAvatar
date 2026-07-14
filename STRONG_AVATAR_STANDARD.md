@@ -89,7 +89,7 @@ No active W-01, W-02, W-03, W-04, or W-09. Residual weaknesses, if any, are limi
 - Rights chain documentation (C-06): chain of title is complete, current, and producible
 - Provenance signals are tamper-evident (C-02 at full implementation)
 
-No active weakness classes W-01 through W-09. W-10 may be present only if a documented mitigation plan is in place and being executed.
+No active or partial weakness classes W-01 through W-10 may remain. A documented W-10 mitigation plan may support improvement toward Sovereign, but does not itself satisfy Sovereign classification unless W-10 is deactivated under the protocol.
 
 **What this means:** The avatar is defensible under adversarial scrutiny — by a regulator, a platform's trust-and-safety review, or a rights holder asserting a claim. This is the highest band the standard defines. Sovereign is not a permanent designation; governance infrastructure must be maintained to retain it.
 
