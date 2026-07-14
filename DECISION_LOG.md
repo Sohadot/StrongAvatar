@@ -449,3 +449,18 @@ Implications:
 - **governance/REGULATORY_ALIGNMENT.md** created: internal analysis mapping C-components and W-classes to C2PA/Content Credentials, EU AI Act transparency obligations, GDPR consent and withdrawal, US likeness legislation, and the NIST AI RMF. Framed strictly under SOURCE_AND_CLAIM_DISCIPLINE.md: analysis only, not legal advice, primary-source verification required before any public use.
 - Public deployment posture unchanged: `diagnostic_engine_enabled` remains false, no new routes, nothing in spec/ or tests/ is copied into output/, no JavaScript, no monetization. Public exposure of the engine or a spec page requires a future DECISION_LOG.md authorization.
 - A future protocol revision that fails exhaustive verification may not be versioned forward.
+
+## 2026-07-14
+
+Decision: Sprint 19 — Post-Launch Indexing Readiness completed. The deployed 22-route foundation set is verified live and indexing-ready; the sitemap is submitted to and processed by Google Search Console.
+
+Rationale: Sprint 17 deployed the controlled foundation output and Sprint 18 hardened the protocol layer. The remaining launch obligation was proving that the published surface matches the governed registry exactly — live, on the production domain — and that search discovery is initiated under control.
+
+Implications:
+
+- **site/scripts/verify_live_routes.py** created: repeatable post-deployment verifier checking every launch-set route on https://strongavatar.com for HTTP 200, exact canonical URL, title, and robots meta; plus unregistered-route 404 behavior, live sitemap parity with output/sitemap.xml, and integrity of the repo-governed robots.txt section. Deliberately excluded from quality_gate.py, which must remain deterministic and offline.
+- **site/reports/INDEXING_READINESS_2026-07-14.md** created: dated verification report. Results: 22/22 routes pass all checks; http→https, www→apex, and trailing-slash 301 consolidation confirmed; unregistered routes hard-404; live sitemap byte-identical to output/sitemap.xml.
+- **Google Search Console**: sitemap.xml submitted by the owner on 2026-07-14, processed successfully, 22 pages discovered — exact parity with the registered launch set.
+- **Observation escalated to owner (no action taken):** Cloudflare prepends a managed content-signals block to live robots.txt (search=yes, ai-train=no, use=reference; Disallow for GPTBot, ClaudeBot, CCBot, Google-Extended, and other AI crawlers). Classic search indexing is unaffected. The trade-off between training protection and AI-answer citation reach is an owner-level policy decision, managed in Cloudflare, and should be recorded here once decided.
+- No content changes, no route changes, no output/ changes, no monetization, no engine exposure. Quality gate remains 14/14.
+- Next phase candidates: GSC indexing-coverage follow-up once Google processes the discovered pages; first external validation work (spec citation surface) per ACQUISITION_POSTURE.md value signals.
