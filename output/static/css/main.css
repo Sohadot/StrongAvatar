@@ -1,21 +1,48 @@
+/* ================================================================
+   StrongAvatar.com — Violet-Gold Identity Field Interface
+   Foundation CSS. Pure CSS: no scripts, no images, no external
+   assets, no font files. The interface is the protocol: every
+   surface encodes governance state, field position, and the
+   four-band strength spectrum defined by the Strong Avatar
+   Standard. Depth clarifies protocol relationships; it never
+   decorates.
+   ================================================================ */
+
 :root {
-  --color-background-primary: #efe2c3;
-  --color-background-secondary: #5f4169;
-  --color-surface-primary: #fff8e8;
-  --color-surface-elevated: #f6e8c8;
-  --color-surface-field: #6f4e78;
-  --color-text-primary: #241528;
-  --color-text-secondary: #59445f;
-  --color-text-muted: #7d6c80;
-  --color-accent-primary: #c79a3f;
-  --color-accent-secondary: #8d5aa2;
-  --color-accent-amber: #d6a84c;
-  --color-border-subtle: #d7c295;
-  --color-border-active: #b9862f;
-  --color-warning: #9a5b23;
-  --color-trust: #6f6d2f;
-  --color-source-note: #6e5670;
-  --color-disabled: #a89aa7;
+  /* Identity field — warm plum spatial foundation */
+  --color-background-primary: #2f1d3a;
+  --color-background-secondary: #221128;
+  --color-surface-primary: #3b2749;
+  --color-surface-elevated: #453056;
+  --color-surface-field: #34213f;
+  --color-surface-cream: #f3e9d2;
+
+  /* Typography — white, silver, muted slate on the field */
+  --color-text-primary: #f4eee4;
+  --color-text-secondary: #cfc2d8;
+  --color-text-muted: #a494b0;
+  --color-text-on-cream: #33203e;
+
+  /* Illumination — pale gold and amber */
+  --color-accent-primary: #e4c47d;
+  --color-accent-secondary: #b48ac6;
+  --color-accent-amber: #d9a84e;
+
+  /* Structure */
+  --color-border-subtle: #553f65;
+  --color-border-active: #c79a3f;
+
+  /* Governance state signals */
+  --color-warning: #e2a568;
+  --color-trust: #d8c98a;
+  --color-source-note: #b7a4c2;
+  --color-disabled: #7b6b86;
+
+  /* Strength band spectrum — Ungoverned, Provisional, Governed, Sovereign */
+  --band-ungoverned: #8a4a3f;
+  --band-provisional: #b9863f;
+  --band-governed: #d9b96a;
+  --band-sovereign: #f2e2ae;
 
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
@@ -29,13 +56,37 @@
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-registry: ui-monospace, "SFMono-Regular", Consolas, monospace;
 
-  --radius-sm: 0.5rem;
-  --radius-md: 0.875rem;
-  --radius-lg: 1.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.125rem;
   --max-content-width: 72rem;
-  --line-height-body: 1.65;
-  --shadow-field: 0 1.5rem 4rem rgba(95, 65, 105, 0.14);
-  --shadow-panel: 0 0.75rem 2rem rgba(82, 52, 90, 0.1);
+  --line-height-body: 1.7;
+
+  --shadow-field: 0 1.75rem 4.5rem rgba(14, 6, 18, 0.5);
+  --shadow-panel: 0 0.75rem 2.25rem rgba(14, 6, 18, 0.38);
+  --glow-gold: 0 0 0 1px rgba(228, 196, 125, 0.16), 0 0.5rem 2.5rem rgba(217, 168, 78, 0.08);
+
+  /* Realm accent — overridden per governance realm on <body> */
+  --realm-accent: var(--color-accent-primary);
+  --realm-glow: rgba(228, 196, 125, 0.1);
+}
+
+/* Realm encoding: depth and light clarify governance relationships.
+   Weakness classes carry the warning field; governance components
+   carry the trust field; reference hubs carry the violet field. */
+body[data-realm="weakness"] {
+  --realm-accent: var(--color-warning);
+  --realm-glow: rgba(226, 165, 104, 0.12);
+}
+
+body[data-realm="component"] {
+  --realm-accent: var(--color-trust);
+  --realm-glow: rgba(216, 201, 138, 0.12);
+}
+
+body[data-realm="hub"] {
+  --realm-accent: var(--color-accent-secondary);
+  --realm-glow: rgba(180, 138, 198, 0.12);
 }
 
 *,
@@ -45,7 +96,7 @@
 }
 
 html {
-  color-scheme: light;
+  color-scheme: dark;
   font-size: 100%;
 }
 
@@ -53,16 +104,35 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--color-text-primary);
-  background: var(--color-background-primary);
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: var(--line-height-body);
   text-rendering: optimizeLegibility;
+  /* The identity field: layered plum depth with a single soft gold
+     horizon. Informational atmosphere, not theatre. */
+  background-color: var(--color-background-secondary);
+  background-image:
+    radial-gradient(ellipse 120% 55% at 50% -12%, rgba(217, 168, 78, 0.13), transparent 62%),
+    radial-gradient(ellipse 90% 70% at 78% 108%, rgba(139, 92, 158, 0.16), transparent 66%),
+    linear-gradient(178deg, #33203e 0%, #2b1935 46%, #221128 100%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(228, 196, 125, 0.32);
+  color: #1d0f24;
 }
 
 a {
-  color: var(--color-accent-secondary);
-  text-underline-offset: 0.18em;
+  color: var(--color-accent-primary);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: rgba(228, 196, 125, 0.45);
+}
+
+a:hover {
+  color: #f0d9a2;
+  text-decoration-color: currentColor;
 }
 
 a:focus-visible,
@@ -70,6 +140,7 @@ button:focus-visible,
 [tabindex]:focus-visible {
   outline: 3px solid var(--color-border-active);
   outline-offset: 3px;
+  border-radius: 2px;
 }
 
 img,
@@ -77,6 +148,41 @@ svg {
   display: block;
   max-width: 100%;
 }
+
+/* ── Band spectrum — the protocol signature ─────────────────────
+   A four-stop strip encoding the strength bands of the Strong
+   Avatar Standard: Ungoverned, Provisional, Governed, Sovereign.
+   Present on every page as the asset's visual protocol mark. */
+
+.band-spectrum {
+  height: 3px;
+  border: 0;
+  margin: 0;
+  background: linear-gradient(
+    90deg,
+    var(--band-ungoverned) 0%,
+    var(--band-ungoverned) 25%,
+    var(--band-provisional) 25%,
+    var(--band-provisional) 50%,
+    var(--band-governed) 50%,
+    var(--band-governed) 75%,
+    var(--band-sovereign) 75%,
+    var(--band-sovereign) 100%
+  );
+}
+
+.band-spectrum--content {
+  margin-bottom: var(--space-xl);
+  width: 6.5rem;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.site-shell__header .band-spectrum {
+  margin: 0 calc(-1 * var(--space-page));
+}
+
+/* ── Foundation primitives ──────────────────────────────────── */
 
 .page-shell {
   min-height: 100vh;
@@ -127,7 +233,7 @@ svg {
 .identity-field {
   position: relative;
   padding: var(--space-xl);
-  background: var(--color-surface-primary);
+  background: var(--color-surface-field);
   overflow: hidden;
 }
 
@@ -194,13 +300,13 @@ svg {
   position: absolute;
   left: var(--space-md);
   top: var(--space-md);
-  z-index: 1;
+  z-index: 2;
   padding: var(--space-sm) var(--space-md);
-  background: var(--color-surface-primary);
+  background: var(--color-surface-elevated);
   color: var(--color-text-primary);
   border: 1px solid var(--color-border-active);
   border-radius: var(--radius-sm);
-  transform: translateY(-150%);
+  transform: translateY(-250%);
 }
 
 .skip-link:focus {
@@ -219,21 +325,12 @@ svg {
   border: 0;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto;
-  }
-}
-
-/* ── Site shell layout ──────────────────────────────────────────── */
+/* ── Site shell layout ──────────────────────────────────────── */
 
 .site-shell {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: var(--color-background-primary);
 }
 
 .site-shell__page {
@@ -243,31 +340,48 @@ svg {
 }
 
 .site-shell__header {
-  background: var(--color-background-secondary);
-  border-bottom: 2px solid var(--color-border-active);
-  padding: var(--space-sm) var(--space-page);
+  background: rgba(24, 12, 30, 0.66);
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding: var(--space-md) var(--space-page) 0;
+  backdrop-filter: blur(6px);
 }
 
 .site-nav {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  gap: var(--space-md);
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
   max-width: var(--max-content-width);
   margin-inline: auto;
   width: 100%;
+  padding-bottom: var(--space-md);
 }
 
 .site-nav__brand {
-  font-size: 1.125rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--color-accent-primary);
   text-decoration: none;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .site-nav__brand:hover {
-  color: var(--color-accent-amber);
+  color: #f0d9a2;
+}
+
+.site-nav__field {
+  order: 3;
+  flex-basis: 100%;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.06em;
+}
+
+.site-nav__field::before {
+  content: "field ";
+  color: var(--realm-accent);
 }
 
 .site-nav__list {
@@ -279,27 +393,174 @@ svg {
 }
 
 .site-nav__list a {
-  color: var(--color-surface-primary);
+  color: var(--color-text-secondary);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.35rem;
 }
 
 .site-nav__list a:hover {
   color: var(--color-accent-primary);
+  border-bottom-color: var(--color-accent-primary);
 }
 
 .site-shell__main {
   flex: 1;
-  padding: var(--space-xl) var(--space-page);
+  padding: var(--space-xl) var(--space-page) var(--space-section);
   max-width: var(--max-content-width);
   margin-inline: auto;
   width: 100%;
 }
 
+/* ── Content field panel ────────────────────────────────────── */
+
+.page-shell__content {
+  position: relative;
+  max-width: 62rem;
+  margin-inline: auto;
+  padding: clamp(var(--space-lg), 5vw, 3.25rem);
+  background:
+    radial-gradient(ellipse 85% 30% at 50% 0%, var(--realm-glow), transparent 70%),
+    linear-gradient(180deg, var(--color-surface-primary) 0%, var(--color-surface-field) 100%);
+  border: 1px solid var(--color-border-subtle);
+  border-top: 2px solid var(--realm-accent);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-field), var(--glow-gold);
+}
+
+.page-shell__content h1 {
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+  font-weight: 650;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  margin-top: 0;
+  margin-bottom: var(--space-lg);
+  text-wrap: balance;
+}
+
+body[data-realm="home"] .page-shell__content h1 {
+  font-size: clamp(2rem, 5.5vw, 3.3rem);
+  background: linear-gradient(115deg, var(--color-text-primary) 55%, var(--color-accent-primary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--color-accent-primary);
+}
+
+.page-shell__content h2 {
+  color: var(--color-accent-primary);
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.page-shell__content h2::before {
+  content: "";
+  display: block;
+  width: 2.25rem;
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: var(--space-sm);
+  background: linear-gradient(90deg, var(--realm-accent), transparent);
+}
+
+.page-shell__content h3 {
+  color: var(--color-text-secondary);
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xs);
+}
+
+.page-shell__content p {
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+  max-width: 68ch;
+  color: var(--color-text-secondary);
+}
+
+.page-shell__content p strong {
+  color: var(--color-text-primary);
+}
+
+.page-shell__content ul {
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-lg);
+  color: var(--color-text-secondary);
+}
+
+.page-shell__content li {
+  margin-bottom: var(--space-xs);
+}
+
+.page-shell__content li::marker {
+  color: var(--realm-accent);
+}
+
+.page-shell__content hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border-subtle) 18%, var(--color-border-subtle) 82%, transparent);
+  margin: var(--space-xl) 0;
+}
+
+.page-shell__content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: var(--space-lg);
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.page-shell__content th,
+.page-shell__content td {
+  border: 1px solid var(--color-border-subtle);
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  vertical-align: top;
+}
+
+.page-shell__content th {
+  background: rgba(24, 12, 30, 0.5);
+  font-weight: 600;
+  color: var(--color-accent-primary);
+  letter-spacing: 0.04em;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+.page-shell__content tr:nth-child(even) td {
+  background: rgba(24, 12, 30, 0.22);
+}
+
+.page-shell__content code {
+  font-family: var(--font-registry);
+  font-size: 0.875em;
+  background: rgba(24, 12, 30, 0.55);
+  border: 1px solid var(--color-border-subtle);
+  padding: 0.12em 0.4em;
+  border-radius: 0.3em;
+  color: var(--color-accent-primary);
+  letter-spacing: 0.01em;
+}
+
+.page-shell__content a {
+  transition: color 120ms ease;
+}
+
+/* ── Trust strip ────────────────────────────────────────────── */
+
 .site-shell__trust {
-  background: var(--color-surface-elevated);
+  background: rgba(24, 12, 30, 0.55);
   border-top: 1px solid var(--color-border-subtle);
   padding: var(--space-md) var(--space-page);
 }
@@ -311,14 +572,21 @@ svg {
   border: none;
   padding: 0;
   background: transparent;
+  color: var(--color-text-muted);
 }
+
+/* ── Footer ─────────────────────────────────────────────────── */
 
 .site-shell__footer {
   background: var(--color-background-secondary);
-  border-top: 2px solid var(--color-border-active);
-  padding: var(--space-md) var(--space-page);
-  color: var(--color-surface-primary);
+  padding: 0 var(--space-page) var(--space-lg);
+  color: var(--color-text-secondary);
   font-size: 0.875rem;
+}
+
+.site-shell__footer .band-spectrum {
+  margin: 0 calc(-1 * var(--space-page)) var(--space-lg);
+  opacity: 0.85;
 }
 
 .footer-nav {
@@ -333,10 +601,13 @@ svg {
 .footer-nav a {
   color: var(--color-accent-primary);
   text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
 }
 
 .footer-nav a:hover {
-  color: var(--color-accent-amber);
+  color: #f0d9a2;
+  text-decoration: underline;
 }
 
 .footer-legal {
@@ -347,88 +618,24 @@ svg {
   font-size: 0.8rem;
 }
 
-/* ── Page content ───────────────────────────────────────────────── */
+/* ── Motion discipline ──────────────────────────────────────── */
 
-.page-shell__content {
-  max-width: 60rem;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none;
+    scroll-behavior: auto;
+  }
 }
 
-.page-shell__content h1 {
-  color: var(--color-background-secondary);
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  line-height: 1.2;
-  margin-top: 0;
-  margin-bottom: var(--space-md);
-}
-
-.page-shell__content h2 {
-  color: var(--color-text-secondary);
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-  margin-top: var(--space-xl);
-  margin-bottom: var(--space-sm);
-  border-bottom: 1px solid var(--color-border-subtle);
-  padding-bottom: var(--space-xs);
-}
-
-.page-shell__content h3 {
-  color: var(--color-text-secondary);
-  font-size: 1rem;
-  font-weight: 600;
-  margin-top: var(--space-lg);
-  margin-bottom: var(--space-xs);
-}
-
-.page-shell__content p {
-  margin-top: 0;
-  margin-bottom: var(--space-md);
-  max-width: 68ch;
-}
-
-.page-shell__content ul {
-  margin-bottom: var(--space-md);
-  padding-left: var(--space-lg);
-}
-
-.page-shell__content li {
-  margin-bottom: var(--space-xs);
-}
-
-.page-shell__content hr {
-  border: none;
-  border-top: 1px solid var(--color-border-subtle);
-  margin: var(--space-xl) 0;
-}
-
-.page-shell__content table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: var(--space-lg);
-  font-size: 0.9rem;
-}
-
-.page-shell__content th,
-.page-shell__content td {
-  border: 1px solid var(--color-border-subtle);
-  padding: var(--space-sm) var(--space-md);
-  text-align: left;
-}
-
-.page-shell__content th {
-  background: var(--color-surface-elevated);
-  font-weight: 600;
-  color: var(--color-text-secondary);
-}
-
-.page-shell__content code {
-  font-family: var(--font-registry);
-  font-size: 0.875em;
-  background: var(--color-surface-elevated);
-  padding: 0.1em 0.35em;
-  border-radius: 0.25em;
-  color: var(--color-text-secondary);
-}
+/* ── Compact viewports ──────────────────────────────────────── */
 
 @media (max-width: 640px) {
+  body {
+    background-attachment: scroll;
+  }
+
   .site-nav {
     flex-direction: column;
     align-items: flex-start;
@@ -440,7 +647,10 @@ svg {
   }
 
   .site-shell__main {
+    padding: var(--space-lg) var(--space-md) var(--space-xl);
+  }
+
+  .page-shell__content {
     padding: var(--space-lg) var(--space-md);
   }
 }
-

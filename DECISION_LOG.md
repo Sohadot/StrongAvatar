@@ -478,3 +478,23 @@ Implications:
 - This posture is explicitly phased, not permanent: Phase 1 protects the asset while the category is established; Phase 2 considers selective relaxation for agent visibility once Google indexing, query visibility, and the reference footprint (backlinks, citations) stabilize.
 - The posture is CDN-managed (Cloudflare dashboard), not repository-governed; this entry is the governance record. Any future change to the posture requires a new DECISION_LOG.md entry before it is applied.
 - Review trigger: after initial indexing coverage and first citation signals are observed, this decision must be re-evaluated.
+
+## 2026-07-14
+
+Decision: Sprint 20 — Violet-Gold Identity Field Interface activation. The published foundation set is restyled from the light provisional shell to the doctrine-defined identity field interface, with governance state encoded visually on every page.
+
+Rationale: The design doctrine (DESIGN_SYSTEM.md, DESIGN_TOKENS.md) defines the Violet-Gold Identity Field Interface — warm plum spatial foundation, pale gold illumination, white/silver typography, spatial depth that clarifies governance relationships — as the preferred proprietary visual standard. The prior foundation CSS inverted this (cream-dominant, violet header) and read as a conventional template. This sprint implements the doctrine literally, under its own constraints: pure CSS, no JavaScript, no images, no font files, no external assets, no animation-dependent comprehension. The organizing concept is that the interface expresses the protocol itself rather than decorating it.
+
+Implications:
+
+- **site/static/css/main.css** rewritten as the Violet-Gold Identity Field foundation layer:
+  - Warm plum spatial background built from layered CSS gradients (single soft gold horizon, violet depth) — informational atmosphere, no images, no motion.
+  - **Band spectrum signature**: a four-stop strip encoding the Strong Avatar Standard's strength bands (Ungoverned, Provisional, Governed, Sovereign) rendered on every page — header edge, content mark, and footer edge. The standard's own classification is the asset's visual protocol mark.
+  - **Governance realm encoding**: body[data-realm] custom-property theming — weakness-class pages carry the amber warning field, governance-component pages the gold trust field, reference hubs the violet field, homepage the display treatment. Depth and light clarify governance state, per doctrine.
+  - Editorial hierarchy: pale-gold section headings with realm-accent ticks, registry monospace for identifiers, uppercase institutional navigation, restrained tables with dark banding, high-contrast warm-white body text.
+  - Accessibility preserved: strong contrast on all text roles, visible gold focus outlines, skip link, prefers-reduced-motion honored, no comprehension-dependent styling.
+  - Required foundation primitives (.page-shell, .protocol-card, and the component classes) retained.
+- **site/scripts/build.py** template updated: body carries data-realm derived from the route (home / hub / weakness / component); the header shows the current field path in registry type (e.g. /weakness/consent-absence/); band-spectrum strips added as aria-hidden structural elements. Page content, routes, meta, canonical URLs, and link structure are unchanged.
+- output/ regenerated: 22 pages, byte-for-byte governed by the same launch set. No new routes, no JavaScript, no images, no fonts, no external assets, no monetization, no engine exposure.
+- Quality gate: 14/14 validators pass, including design-token and output-integrity validation.
+- Visual verification: desktop and mobile screenshots captured for homepage, weakness page, component page, and standard hub prior to publication.

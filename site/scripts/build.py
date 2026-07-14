@@ -201,7 +201,7 @@ HTML_TEMPLATE = """\
   <meta name="twitter:description" content="{meta_description}">
   <link rel="stylesheet" href="/static/css/main.css">
 </head>
-<body class="site-shell" data-interface="violet-gold-identity-field">
+<body class="site-shell" data-interface="violet-gold-identity-field" data-realm="{realm}">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="site-shell__page">
     <header class="site-shell__header" role="banner">
@@ -212,10 +212,13 @@ HTML_TEMPLATE = """\
           <li><a href="/standard/">Standard</a></li>
           <li><a href="/protocol/">Protocol</a></li>
         </ul>
+        <span class="site-nav__field metadata">{route}</span>
       </nav>
+      <div class="band-spectrum" aria-hidden="true"></div>
     </header>
     <main id="main-content" class="site-shell__main page-shell" tabindex="-1">
       <div class="page-shell__content protocol-card">
+        <div class="band-spectrum band-spectrum--content" aria-hidden="true"></div>
         {body_html}
       </div>
     </main>
@@ -223,6 +226,7 @@ HTML_TEMPLATE = """\
       <p class="trust-note">StrongAvatar.com is a governance reference layer. Content reflects internal doctrine and methodology. External claims require documented sources before publication.</p>
     </aside>
     <footer class="site-shell__footer">
+      <div class="band-spectrum" aria-hidden="true"></div>
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="/">StrongAvatar.com</a>
         <a href="/ontology/">Ontology</a>
@@ -234,6 +238,20 @@ HTML_TEMPLATE = """\
   </div>
 </body>
 </html>"""
+
+
+def route_realm(route: str) -> str:
+    """Governance realm for a route, encoded on <body data-realm> so the
+    interface can express governance state: weakness pages carry the
+    warning field, component pages the trust field, reference hubs the
+    violet field."""
+    if route == "/":
+        return "home"
+    if route.startswith("/weakness/"):
+        return "weakness"
+    if route.startswith("/component/"):
+        return "component"
+    return "hub"
 
 
 def route_to_output_path(root: Path, route: str) -> Path:
@@ -311,6 +329,8 @@ def main() -> None:
             meta_description=meta_description,
             canonical=canonical,
             body_html=body_html,
+            realm=route_realm(route),
+            route=route,
         )
 
         output_path = route_to_output_path(root, route)
