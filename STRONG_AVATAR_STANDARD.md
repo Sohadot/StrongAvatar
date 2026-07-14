@@ -1,7 +1,7 @@
 # Strong Avatar Standard
 
-**Version:** 0.1
-**Status:** Draft — requires DECISION_LOG.md approval entry before versioning beyond 0.1
+**Version:** 0.2
+**Status:** Draft — version 0.2 authorized by DECISION_LOG.md entry dated 2026-07-14 (determinism closure)
 **Governed by:** `AVATAR_INTEGRITY_ONTOLOGY.md`, `ASSET_THESIS.md`
 **Applied by:** `AVATAR_STRENGTH_ASSESSMENT_PROTOCOL.md`
 
@@ -89,7 +89,7 @@ No active W-01, W-02, W-03, W-04, or W-09. Residual weaknesses, if any, are limi
 - Rights chain documentation (C-06): chain of title is complete, current, and producible
 - Provenance signals are tamper-evident (C-02 at full implementation)
 
-No active weakness classes W-01 through W-09. W-10 may be present only if a documented mitigation plan is in place and being executed.
+No active or partial weakness classes W-01 through W-10 may remain. A documented W-10 mitigation plan may support improvement toward Sovereign, but does not itself satisfy Sovereign classification unless W-10 is deactivated under the protocol.
 
 **What this means:** The avatar is defensible under adversarial scrutiny — by a regulator, a platform's trust-and-safety review, or a rights holder asserting a claim. This is the highest band the standard defines. Sovereign is not a permanent designation; governance infrastructure must be maintained to retain it.
 
@@ -106,9 +106,11 @@ No active weakness classes W-01 through W-09. W-10 may be present only if a docu
 
 1. Assess all weakness classes (W-01…W-10) using the Avatar Strength Assessment Protocol.
 2. **Rule 2 is unconditional:** If W-01 is active, or W-02 is active, or W-03 is active → **Ungoverned**. No combination of other governance components compensates for an active Ungoverned-class weakness.
-3. If W-01, W-02, and W-03 are all mitigated but any of W-04, W-07, W-08, or W-09 is active → **Provisional**.
-4. If W-01 through W-04, W-08, and W-09 are all mitigated, and W-05, W-06, W-07, W-10 are at most partial → **Governed**.
-5. If all Governed criteria are met and C-05, C-06, C-07 are fully implemented with tamper-evident provenance → **Sovereign**.
+3. If no Ungoverned-class weakness is active, but any weakness class is active, or any of W-01, W-02, W-03, W-04, or W-09 is partial → **Provisional**.
+4. If no weakness class is active, and residual partial weaknesses are limited to W-05, W-06, W-07, W-08, W-10 → **Governed**.
+5. If every weakness class is fully deactivated — consent, provenance, disclosure, scope, attribution, revocation, anti-impersonation, and rights chain all documented, verifiable, and tamper-evident → **Sovereign**.
+
+Band determination is total (v0.2): the rules above partition the entire weakness-state space, so every assessment resolves to exactly one band. The determination is machine-verified across all 59,049 protocol input combinations by `tests/test_protocol_determinism.py`.
 
 ---
 

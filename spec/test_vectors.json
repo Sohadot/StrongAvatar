@@ -1,0 +1,529 @@
+{
+  "$comment": "Canonical test vectors for the Avatar Strength Assessment Protocol. Generated from and verified against spec/reference_implementation.py. tests/test_protocol_determinism.py enforces conformance on every run.",
+  "protocol_version": "0.2.0",
+  "vectors": [
+    {
+      "id": "V-01",
+      "description": "Fully governed deployment: every input Y",
+      "input": {
+        "A1": "Y",
+        "A2": "Y",
+        "A3": "Y",
+        "B1": "Y",
+        "B2": "Y",
+        "C1": "Y",
+        "D1": "Y",
+        "D2": "Y",
+        "E1": "Y",
+        "E2": "Y"
+      },
+      "expected_output": {
+        "protocol_version": "0.2.0",
+        "strength_band": "Sovereign",
+        "dominant_weakness_class": null,
+        "active_weakness_classes": [],
+        "partial_weakness_classes": [],
+        "ranked_remediating_components": [],
+        "band_elevation_path": [],
+        "references": {
+          "strength_band": "/standard/",
+          "weakness_classes": {},
+          "components": {}
+        }
+      }
+    },
+    {
+      "id": "V-02",
+      "description": "Fully ungoverned deployment: every input N",
+      "input": {
+        "A1": "N",
+        "A2": "N",
+        "A3": "N",
+        "B1": "N",
+        "B2": "N",
+        "C1": "N",
+        "D1": "N",
+        "D2": "N",
+        "E1": "N",
+        "E2": "N"
+      },
+      "expected_output": {
+        "protocol_version": "0.2.0",
+        "strength_band": "Ungoverned",
+        "dominant_weakness_class": "W-01",
+        "active_weakness_classes": [
+          "W-01",
+          "W-02",
+          "W-03",
+          "W-04",
+          "W-05",
+          "W-06",
+          "W-07",
+          "W-08",
+          "W-09",
+          "W-10"
+        ],
+        "partial_weakness_classes": [],
+        "ranked_remediating_components": [
+          "C-01",
+          "C-02",
+          "C-03",
+          "C-04",
+          "C-07",
+          "C-08",
+          "C-05",
+          "C-06"
+        ],
+        "band_elevation_path": [
+          "C-01",
+          "C-02",
+          "C-03"
+        ],
+        "references": {
+          "strength_band": "/standard/",
+          "weakness_classes": {
+            "W-01": "/weakness/consent-absence/",
+            "W-02": "/weakness/provenance-void/",
+            "W-03": "/weakness/disclosure-failure/",
+            "W-04": "/weakness/identity-drift/",
+            "W-05": "/weakness/impersonation-exposure/",
+            "W-06": "/weakness/rights-ambiguity/",
+            "W-07": "/weakness/revocation-gap/",
+            "W-08": "/weakness/context-collapse/",
+            "W-09": "/weakness/attribution-loss/",
+            "W-10": "/weakness/robustness-weakness/"
+          },
+          "components": {
+            "C-01": "/component/consent-infrastructure/",
+            "C-02": "/component/provenance-credentials/",
+            "C-03": "/component/disclosure-layer/",
+            "C-04": "/component/scope-usage-binding/",
+            "C-05": "/component/anti-impersonation-controls/",
+            "C-06": "/component/rights-chain-documentation/",
+            "C-07": "/component/revocation-mechanism/",
+            "C-08": "/component/attribution-binding/"
+          }
+        }
+      }
+    },
+    {
+      "id": "V-03",
+      "description": "Consent absence alone forces Ungoverned (unconditional rule)",
+      "input": {
+        "A1": "N",
+        "A2": "Y",
+        "A3": "Y",
+        "B1": "Y",
+        "B2": "Y",
+        "C1": "Y",
+        "D1": "Y",
+        "D2": "Y",
+        "E1": "Y",
+        "E2": "Y"
+      },
+      "expected_output": {
+        "protocol_version": "0.2.0",
+        "strength_band": "Ungoverned",
+        "dominant_weakness_class": "W-01",
+        "active_weakness_classes": [
+          "W-01"
+        ],
+        "partial_weakness_classes": [],
+        "ranked_remediating_components": [
+          "C-01"
+        ],
+        "band_elevation_path": [
+          "C-01"
+        ],
+        "references": {
+          "strength_band": "/standard/",
+          "weakness_classes": {
+            "W-01": "/weakness/consent-absence/"
+          },
+          "components": {
+            "C-01": "/component/consent-infrastructure/"
+          }
+        }
+      }
+    },
+    {
+      "id": "V-04",
+      "description": "Provenance void alone forces Ungoverned (unconditional rule)",
+      "input": {
+        "A1": "Y",
+        "A2": "Y",
+        "A3": "Y",
+        "B1": "N",
+        "B2": "Y",
+        "C1": "Y",
+        "D1": "Y",
+        "D2": "Y",
+        "E1": "Y",
+        "E2": "Y"
+      },
+      "expected_output": {
+        "protocol_version": "0.2.0",
+        "strength_band": "Ungoverned",
+        "dominant_weakness_class": "W-02",
+        "active_weakness_classes": [
+          "W-02"
+        ],
+        "partial_weakness_classes": [],
+        "ranked_remediating_components": [
+          "C-02"
+        ],
+        "band_elevation_path": [
+          "C-02"
+        ],
+        "references": {
+          "strength_band": "/standard/",
+          "weakness_classes": {
+            "W-02": "/weakness/provenance-void/"
+          },
+          "components": {
+            "C-02": "/component/provenance-credentials/"
+          }
+        }
+      }
+    },
+    {
+      "id": "V-05",
+      "description": "Disclosure failure alone forces Ungoverned (unconditional rule)",
+      "input": {
+        "A1": "Y",
+        "A2": "Y",
+        "A3": "Y",
+        "B1": "Y",
+        "B2": "Y",
+        "C1": "N",
+        "D1": "Y",
+        "D2": "Y",
+        "E1": "Y",
+        "E2": "Y"
+      },
+      "expected_output": {
+        "protocol_version": "0.2.0",
+        "strength_band": "Ungoverned",
+        "dominant_weakness_class": "W-03",
+        "active_weakness_classes": [
+          "W-03"
+        ],
+        "partial_weakness_classes": [],
+        "ranked_remediating_components": [
+          "C-03"
+        ],
+        "band_elevation_path": [
+          "C-03"
+        ],
+        "references": {
+          "strength_band": "/standard/",
+          "weakness_classes": {
+            "W-03": "/weakness/disclosure-failure/"
+          },
+          "components": {
+            "C-03": "/component/disclosure-layer/"
+          }
+        }
+      }
+    },
+    {
+      "id": "V-06",
+      "description": "Partial consent documentation caps at Provisional",
+      "input": {
+        "A1": "P",
+        "A2": "Y",
+        "A3": "Y",
+        "B1": "Y",
+        "B2": "Y",
+        "C1": "Y",
+        "D1": "Y",
+        "D2": "Y",
+        "E1": "Y",
+        "E2": "Y"
+      },
+      "expected_output": {
+        "protocol_version": "0.2.0",
+        "strength_band": "Provisional",
+        "dominant_weakness_class": "W-01",
+        "active_weakness_classes": [],
+        "partial_weakness_classes": [
+          "W-01"
+        ],
+        "ranked_remediating_components": [
+          "C-01"
+        ],
+        "band_elevation_path": [
+          "C-01"
+        ],
+        "references": {
+          "strength_band": "/standard/",
+          "weakness_classes": {
+            "W-01": "/weakness/consent-absence/"
+          },
+          "components": {
+            "C-01": "/component/consent-infrastructure/"
+          }
+        }
+      }
+    },
+    {
+      "id": "V-07",
+      "description": "Missing revocation mechanism caps at Provisional (W-07 active)",
+      "input": {
+        "A1": "Y",
+        "A2": "Y",
+        "A3": "N",
+        "B1": "Y",
+        "B2": "Y",
+        "C1": "Y",
+        "D1": "Y",
+        "D2": "Y",
+        "E1": "Y",
+        "E2": "Y"
+      },
+      "expected_output": {
+        "protocol_version": "0.2.0",
+        "strength_band": "Provisional",
+        "dominant_weakness_class": "W-07",
+        "active_weakness_classes": [
+          "W-07"
+        ],
+        "partial_weakness_classes": [],
+        "ranked_remediating_components": [
+          "C-07"
+        ],
+        "band_elevation_path": [
+          "C-07"
+        ],
+        "references": {
+          "strength_band": "/standard/",
+          "weakness_classes": {
+            "W-07": "/weakness/revocation-gap/"
+          },
+          "components": {
+            "C-07": "/component/revocation-mechanism/"
+          }
+        }
+      }
+    },
+    {
+      "id": "V-08",
+      "description": "Unbounded usage scope caps at Provisional (W-04/W-08 active)",
+      "input": {
+        "A1": "Y",
+        "A2": "Y",
+        "A3": "Y",
+        "B1": "Y",
+        "B2": "Y",
+        "C1": "Y",
+        "D1": "N",
+        "D2": "Y",
+        "E1": "Y",
+        "E2": "Y"
+      },
+      "expected_output": {
+        "protocol_version": "0.2.0",
+        "strength_band": "Provisional",
+        "dominant_weakness_class": "W-04",
+        "active_weakness_classes": [
+          "W-04",
+          "W-08"
+        ],
+        "partial_weakness_classes": [],
+        "ranked_remediating_components": [
+          "C-04"
+        ],
+        "band_elevation_path": [
+          "C-04"
+        ],
+        "references": {
+          "strength_band": "/standard/",
+          "weakness_classes": {
+            "W-04": "/weakness/identity-drift/",
+            "W-08": "/weakness/context-collapse/"
+          },
+          "components": {
+            "C-04": "/component/scope-usage-binding/"
+          }
+        }
+      }
+    },
+    {
+      "id": "V-09",
+      "description": "Partial consent scope caps at Provisional (W-04 partial; v0.2 closure rule)",
+      "input": {
+        "A1": "Y",
+        "A2": "P",
+        "A3": "Y",
+        "B1": "Y",
+        "B2": "Y",
+        "C1": "Y",
+        "D1": "Y",
+        "D2": "Y",
+        "E1": "Y",
+        "E2": "Y"
+      },
+      "expected_output": {
+        "protocol_version": "0.2.0",
+        "strength_band": "Provisional",
+        "dominant_weakness_class": "W-04",
+        "active_weakness_classes": [],
+        "partial_weakness_classes": [
+          "W-04",
+          "W-08"
+        ],
+        "ranked_remediating_components": [
+          "C-04"
+        ],
+        "band_elevation_path": [
+          "C-04"
+        ],
+        "references": {
+          "strength_band": "/standard/",
+          "weakness_classes": {
+            "W-04": "/weakness/identity-drift/",
+            "W-08": "/weakness/context-collapse/"
+          },
+          "components": {
+            "C-04": "/component/scope-usage-binding/"
+          }
+        }
+      }
+    },
+    {
+      "id": "V-10",
+      "description": "No anti-impersonation controls caps at Provisional (W-05/W-10 active; v0.2 closure rule)",
+      "input": {
+        "A1": "Y",
+        "A2": "Y",
+        "A3": "Y",
+        "B1": "Y",
+        "B2": "Y",
+        "C1": "Y",
+        "D1": "Y",
+        "D2": "Y",
+        "E1": "Y",
+        "E2": "N"
+      },
+      "expected_output": {
+        "protocol_version": "0.2.0",
+        "strength_band": "Provisional",
+        "dominant_weakness_class": "W-05",
+        "active_weakness_classes": [
+          "W-05",
+          "W-10"
+        ],
+        "partial_weakness_classes": [],
+        "ranked_remediating_components": [
+          "C-05",
+          "C-02"
+        ],
+        "band_elevation_path": [
+          "C-02",
+          "C-05"
+        ],
+        "references": {
+          "strength_band": "/standard/",
+          "weakness_classes": {
+            "W-05": "/weakness/impersonation-exposure/",
+            "W-10": "/weakness/robustness-weakness/"
+          },
+          "components": {
+            "C-02": "/component/provenance-credentials/",
+            "C-05": "/component/anti-impersonation-controls/"
+          }
+        }
+      }
+    },
+    {
+      "id": "V-11",
+      "description": "Non-tamper-evident provenance metadata yields Governed (W-10 partial only)",
+      "input": {
+        "A1": "Y",
+        "A2": "Y",
+        "A3": "Y",
+        "B1": "Y",
+        "B2": "P",
+        "C1": "Y",
+        "D1": "Y",
+        "D2": "Y",
+        "E1": "Y",
+        "E2": "Y"
+      },
+      "expected_output": {
+        "protocol_version": "0.2.0",
+        "strength_band": "Governed",
+        "dominant_weakness_class": "W-10",
+        "active_weakness_classes": [],
+        "partial_weakness_classes": [
+          "W-10"
+        ],
+        "ranked_remediating_components": [
+          "C-02"
+        ],
+        "band_elevation_path": [
+          "C-02"
+        ],
+        "references": {
+          "strength_band": "/standard/",
+          "weakness_classes": {
+            "W-10": "/weakness/robustness-weakness/"
+          },
+          "components": {
+            "C-02": "/component/provenance-credentials/"
+          }
+        }
+      }
+    },
+    {
+      "id": "V-12",
+      "description": "Residual partials in non-critical dimensions yield Governed",
+      "input": {
+        "A1": "Y",
+        "A2": "Y",
+        "A3": "P",
+        "B1": "Y",
+        "B2": "P",
+        "C1": "Y",
+        "D1": "Y",
+        "D2": "Y",
+        "E1": "P",
+        "E2": "Y"
+      },
+      "expected_output": {
+        "protocol_version": "0.2.0",
+        "strength_band": "Governed",
+        "dominant_weakness_class": "W-07",
+        "active_weakness_classes": [],
+        "partial_weakness_classes": [
+          "W-06",
+          "W-07",
+          "W-10"
+        ],
+        "ranked_remediating_components": [
+          "C-07",
+          "C-06",
+          "C-02"
+        ],
+        "band_elevation_path": [
+          "C-02",
+          "C-06",
+          "C-07"
+        ],
+        "references": {
+          "strength_band": "/standard/",
+          "weakness_classes": {
+            "W-06": "/weakness/rights-ambiguity/",
+            "W-07": "/weakness/revocation-gap/",
+            "W-10": "/weakness/robustness-weakness/"
+          },
+          "components": {
+            "C-02": "/component/provenance-credentials/",
+            "C-06": "/component/rights-chain-documentation/",
+            "C-07": "/component/revocation-mechanism/"
+          }
+        }
+      }
+    }
+  ]
+}

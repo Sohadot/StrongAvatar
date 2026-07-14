@@ -424,3 +424,28 @@ Implications:
 - No diagnostic engine, Avatar Trust Score API, monetization, JavaScript, analytics, images, fonts, external assets, or forms are authorized.
 - Quality gate: all 14 validators pass. CNAME validates as `strongavatar.com`. Deploy workflow gates on full quality gate before publication.
 - Post-launch verification becomes Sprint 18.
+
+## 2026-07-14
+
+Decision: Sprint 18 — Determinism Proof Layer. The Avatar Strength Assessment Protocol and Strong Avatar Standard are versioned to 0.2, a machine-readable specification layer is created under spec/, exhaustive verification is added under tests/, and a regulatory alignment analysis is added to governance/.
+
+Rationale: The asset's authority must be inferred by external audiences from the asset itself, not declared by it. The protocol's strongest claim — determinism — was asserted in prose but never proven. Machine verification of the full input space converts the reproducibility guarantee from a statement into a falsifiable, continuously verified property, which is the substance an institutional reader, implementer, or acquirer inspects during diligence. Exhaustive enumeration during implementation surfaced genuine v0.1 defects, which by the protocol's own terms ("any input combination that does not resolve deterministically is a protocol defect") required correction before any implementation could exist.
+
+Defects found in v0.1 and corrected in v0.2:
+
+- **Band determination was not total.** Combinations with an active W-05, W-06, or W-10 and no other trigger (e.g., E2=N alone), or with a partial W-04 or W-09 (e.g., A2=P alone), satisfied no band rule and fell through undefined. v0.2 closes the state space: any active non-Ungoverned-class weakness, or a partial W-01/W-02/W-03/W-04/W-09, resolves to Provisional. The closure is conservative — every previously undefined combination receives the lower band — and no combination that resolved under v0.1 changes band.
+- **Rule-table annotations conflicted with the named activation rules.** The v0.1 table's D1 row made W-04 activation conditional on A2 also being -N, and the E2 row made W-10 activation conditional on B2 also being -N, while the named W-04 and W-10 rules activate on either input alone. The named rules are declared the sole authority for the two-input classes and the table cells now defer to them.
+- **W-08 and W-10 partial conditions had uncovered input pairs** (e.g., A2=N with D1=Y; E2=P at -P under the table but unaddressed by the named rule's phrasing). The v0.2 named rules are stated as complete case analyses: active / partial / inactive conditions that partition all nine value pairs.
+
+Implications:
+
+- **AVATAR_STRENGTH_ASSESSMENT_PROTOCOL.md** versioned 0.1 → 0.2: total band determination, complete two-input activation rules, corrected rule-table annotations, machine-verified reproducibility guarantee, and a Machine-Readable Specification section.
+- **STRONG_AVATAR_STANDARD.md** versioned 0.1 → 0.2: Band Determination Rules restated as a total partition consistent with the protocol; Sovereign criterion expressed as full deactivation of all weakness classes.
+- **spec/avatar-strength-protocol.schema.json** created: JSON Schema (draft 2020-12) interchange format for assessment inputs and outputs. Conformance is defined as full-input-space agreement with the reference implementation.
+- **spec/reference_implementation.py** created: normative executable expression of the rule table, band determination, dominant-class priority, ranked remediation, and minimum band-elevation path. Standard library only; no dependencies.
+- **spec/test_vectors.json** created: 12 canonical vectors covering all four bands, the three unconditional Ungoverned cases, and the v0.2 closure cases.
+- **spec/README.md** created: layer contract, conformance definition, and governance rules for the spec layer.
+- **tests/test_protocol_determinism.py** created: exhaustive verification across all 59,049 input combinations — totality, determinism, unconditional Ungoverned rule, all-Y Sovereign rule, elevation-path validity, output link rule against launch_set.json registered routes, and canonical vector conformance. All 10 tests pass.
+- **governance/REGULATORY_ALIGNMENT.md** created: internal analysis mapping C-components and W-classes to C2PA/Content Credentials, EU AI Act transparency obligations, GDPR consent and withdrawal, US likeness legislation, and the NIST AI RMF. Framed strictly under SOURCE_AND_CLAIM_DISCIPLINE.md: analysis only, not legal advice, primary-source verification required before any public use.
+- Public deployment posture unchanged: `diagnostic_engine_enabled` remains false, no new routes, nothing in spec/ or tests/ is copied into output/, no JavaScript, no monetization. Public exposure of the engine or a spec page requires a future DECISION_LOG.md authorization.
+- A future protocol revision that fails exhaustive verification may not be versioned forward.

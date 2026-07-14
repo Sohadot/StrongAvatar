@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://strongavatar.com/spec/avatar-strength-protocol.schema.json",
+  "title": "Avatar Strength Assessment Protocol",
+  "description": "Machine-readable interchange format for the Avatar Strength Assessment Protocol (v0.2). An assessment maps ten bounded-choice inputs about one avatar deployment to exactly one strength band, one dominant weakness class, and a deterministic remediation set. Normative text: AVATAR_STRENGTH_ASSESSMENT_PROTOCOL.md and STRONG_AVATAR_STANDARD.md. Reference implementation: spec/reference_implementation.py. Two conforming implementations given the same input MUST produce the same strength_band, dominant_weakness_class, active/partial weakness classes, ranked_remediating_components, and band_elevation_path.",
+  "$comment": "Version 0.2.0. Identifiers W-01..W-10 and C-01..C-08 are permanent once assigned (AVATAR_INTEGRITY_ONTOLOGY.md versioning rules). Band criteria may not be relaxed to accommodate common practice.",
+  "type": "object",
+  "properties": {
+    "assessment_input": { "$ref": "#/$defs/assessmentInput" },
+    "assessment_output": { "$ref": "#/$defs/assessmentOutput" }
+  },
+  "required": ["assessment_input"],
+  "additionalProperties": false,
+  "$defs": {
+    "inputValue": {
+      "type": "string",
+      "enum": ["Y", "P", "N"],
+      "description": "Bounded-choice response: Y = criterion fully met, P = partially met, N = not met. No free text is scored."
+    },
+    "assessmentInput": {
+      "type": "object",
+      "description": "The bounded questionnaire for one avatar deployment in one deployment context. Multi-context assessments require one protocol run per context.",
+      "properties": {
+        "A1": { "$ref": "#/$defs/inputValue", "description": "Consent Documentation: does a documented consent basis exist for the use of this likeness?" },
+        "A2": { "$ref": "#/$defs/inputValue", "description": "Consent Scope: does the consent basis specify permitted use contexts, platforms, and duration?" },
+        "A3": { "$ref": "#/$defs/inputValue", "description": "Revocation Mechanism: is there a documented process for the subject or rights holder to withdraw consent and remove the avatar from deployment?" },
+        "B1": { "$ref": "#/$defs/inputValue", "description": "Origin Documentation: is the origin of this avatar (capture, generation, or training source) documented and traceable?" },
+        "B2": { "$ref": "#/$defs/inputValue", "description": "Content Credentials: are content credentials or provenance metadata attached to the avatar in a tamper-evident form?" },
+        "C1": { "$ref": "#/$defs/inputValue", "description": "Synthetic Disclosure: is the synthetic nature of this avatar disclosed in contexts where a viewer would reasonably need to know?" },
+        "D1": { "$ref": "#/$defs/inputValue", "description": "Usage Scope Binding: are the avatar's authorized behaviors, roles, and statements documented and bounded?" },
+        "D2": { "$ref": "#/$defs/inputValue", "description": "Accountable Owner: is there a named, contactable accountable party bound to this avatar's governance and behavior?" },
+        "E1": { "$ref": "#/$defs/inputValue", "description": "Rights Chain: is the chain of title for the likeness or identity clear, current, and complete?" },
+        "E2": { "$ref": "#/$defs/inputValue", "description": "Anti-Impersonation Controls: are there technical or procedural barriers that prevent this avatar from being cloned or repurposed for impersonation?" }
+      },
+      "required": ["A1", "A2", "A3", "B1", "B2", "C1", "D1", "D2", "E1", "E2"],
+      "additionalProperties": false
+    },
+    "weaknessClass": {
+      "type": "string",
+      "enum": ["W-01", "W-02", "W-03", "W-04", "W-05", "W-06", "W-07", "W-08", "W-09", "W-10"],
+      "description": "Observable failure modes of a synthetic avatar or digital likeness deployment. W-01 Consent Absence, W-02 Provenance Void, W-03 Disclosure Failure, W-04 Identity Drift, W-05 Impersonation Exposure, W-06 Rights Ambiguity, W-07 Revocation Gap, W-08 Context Collapse, W-09 Attribution Loss, W-10 Robustness Weakness."
+    },
+    "governanceComponent": {
+      "type": "string",
+      "enum": ["C-01", "C-02", "C-03", "C-04", "C-05", "C-06", "C-07", "C-08"],
+      "description": "Structural mechanisms that eliminate or reduce weakness classes. C-01 Consent Infrastructure, C-02 Provenance and Content Credentials Layer, C-03 Disclosure Layer, C-04 Scope and Usage Binding, C-05 Anti-Impersonation Controls, C-06 Rights Chain Documentation, C-07 Revocation and Kill-Switch Mechanism, C-08 Attribution and Accountable-Owner Binding."
+    },
+    "strengthBand": {
+      "type": "string",
+      "enum": ["Ungoverned", "Provisional", "Governed", "Sovereign"],
+      "description": "The four strength bands of the Strong Avatar Standard, ordered weakest to strongest. Band determination is total: every input combination resolves to exactly one band."
+    },
+    "referenceRoute": {
+      "type": "string",
+      "pattern": "^/(standard|ontology|protocol|weakness/[a-z-]+|component/[a-z-]+)/$",
+      "description": "A registered reference route on strongavatar.com. Output link rule: an output element that points nowhere is a protocol violation."
+    },
+    "assessmentOutput": {
+      "type": "object",
+      "description": "The complete protocol output. Contains no numeric score, no subjective commentary on realism or aesthetics, and no recommendation outside the C-01..C-08 set.",
+      "properties": {
+        "protocol_version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+          "description": "Version of the protocol rule table used to produce this output."
+        },
+        "strength_band": { "$ref": "#/$defs/strengthBand" },
+        "dominant_weakness_class": {
+          "oneOf": [{ "$ref": "#/$defs/weaknessClass" }, { "type": "null" }],
+          "description": "Highest-severity active class using the priority order W-01 > W-02 > W-03 > W-04 > W-07 > W-08 > W-09 > W-05 > W-06 > W-10; if no class is active, the highest-severity partial class; null only when every class is inactive (Sovereign)."
+        },
+        "active_weakness_classes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/weaknessClass" },
+          "uniqueItems": true,
+          "description": "All fully active weakness classes, in identifier order."
+        },
+        "partial_weakness_classes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/weaknessClass" },
+          "uniqueItems": true,
+          "description": "All partially active weakness classes, in identifier order."
+        },
+        "ranked_remediating_components": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/governanceComponent" },
+          "uniqueItems": true,
+          "description": "Primary remediating components: components for active classes first in severity-priority order, then components for partial classes, deduplicated."
+        },
+        "band_elevation_path": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/governanceComponent" },
+          "uniqueItems": true,
+          "description": "Minimum set of components whose full implementation raises the band by at least one level. Ties resolve to the smallest set, then lexicographic component order. Empty only for Sovereign."
+        },
+        "references": {
+          "type": "object",
+          "description": "Registered reference routes for every output element.",
+          "properties": {
+            "strength_band": { "$ref": "#/$defs/referenceRoute" },
+            "weakness_classes": {
+              "type": "object",
+              "propertyNames": { "$ref": "#/$defs/weaknessClass" },
+              "additionalProperties": { "$ref": "#/$defs/referenceRoute" }
+            },
+            "components": {
+              "type": "object",
+              "propertyNames": { "$ref": "#/$defs/governanceComponent" },
+              "additionalProperties": { "$ref": "#/$defs/referenceRoute" }
+            }
+          },
+          "required": ["strength_band", "weakness_classes", "components"],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "protocol_version",
+        "strength_band",
+        "dominant_weakness_class",
+        "active_weakness_classes",
+        "partial_weakness_classes",
+        "ranked_remediating_components",
+        "band_elevation_path",
+        "references"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
